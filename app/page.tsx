@@ -154,12 +154,12 @@ export default function HomePage() {
             <Link href="/termeni" className="text-sm text-muted-foreground hover:underline underline-offset-4">
               Termeni și Condiții
             </Link>
-            <Link
+            {/* <Link
               href="/confidentialitate"
               className="text-sm text-muted-foreground hover:underline underline-offset-4"
             >
               Politica de Confidențialitate
-            </Link>
+            </Link> */}
           </div>
         </div>
       </footer>
