@@ -40,7 +40,7 @@ export default function TermeniPage() {
         </div>
       </header>
       <main className="flex-1 mx-auto">
-        <section className="w-full py-3 md:py-6 lg:py-8 bg-muted">
+        <section className="w-full py-3 md:py-3 lg:py-4 bg-muted">
 
             <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
             <h1 className="text-3xl font-bold mb-4">Termeni și Condiții</h1>
@@ -69,7 +69,7 @@ export default function TermeniPage() {
                 </li>
                 <li className="mb-4">
                 <strong>Contacte</strong>
-                <p>Pentru orice clarificări sau suport în utilizarea Platformei, vă rugăm să contactați formatorul – Aurel Zghibarta, la adresa de email: <a href="mailto:zghibarta@gmail.com">zghibarta@gmail.com</a>.</p>
+                <p>Pentru orice clarificări sau suport în utilizarea Platformei, vă rugăm să contactați formatorul – Aurel Zghibarta, email: <a href="mailto:zghibarta@gmail.com">zghibarta@gmail.com</a>.</p>
                 </li>
             </ol>
             </div>
