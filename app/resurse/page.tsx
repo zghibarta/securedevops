@@ -301,17 +301,11 @@ export default function ResursePage() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             &copy; {new Date().getFullYear()}{" "}
-            <a href="mailto:Cybersec@egov.md" className="hover:underline">
-              Cybersec@egov.md
-            </a>
-            . Toate drepturile rezervate.
+            Securedevops - platformă informativ-educațională despre securitatea în DevOps
           </p>
           <div className="flex gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:underline underline-offset-4">
               Termeni și Condiții
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:underline underline-offset-4">
-              Politica de Confidențialitate
             </Link>
           </div>
         </div>
@@ -319,4 +313,3 @@ export default function ResursePage() {
     </div>
   )
 }
-

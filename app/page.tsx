@@ -142,10 +142,7 @@ export default function HomePage() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             &copy; {new Date().getFullYear()}{" "}
-            <a href="mailto:Cybersec@egov.md" className="hover:underline">
-              Cybersec@egov.md
-            </a>
-            . Toate drepturile rezervate.
+            Securedevops - platformă informativ-educațională despre securitatea în DevOps
           </p>
           {/*<p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             SecureDevOps - Platformă informativ-educațională dedicată integrării securității în fluxul DevOps 
@@ -154,12 +151,7 @@ export default function HomePage() {
             <Link href="/termeni" className="text-sm text-muted-foreground hover:underline underline-offset-4">
               Termeni și Condiții
             </Link>
-            {/* <Link
-              href="/confidentialitate"
-              className="text-sm text-muted-foreground hover:underline underline-offset-4"
-            >
-              Politica de Confidențialitate
-            </Link> */}
+            {/*  */}
           </div>
         </div>
       </footer>
