@@ -16,7 +16,9 @@ export default function TermeniPage() {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6" />
-            <span className="text-lg font-bold">SecureDevOps</span>
+            <Link href="/" className="text-lg font-bold">
+              SecureDevOps
+            </Link>
           </div>
           <nav className="hidden md:flex gap-6">
             <Link href="/owasp" className="text-sm font-medium hover:underline underline-offset-4">
@@ -38,7 +40,7 @@ export default function TermeniPage() {
         </div>
       </header>
       <main className="flex-1 mx-auto">
-        <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
+        <section className="w-full py-3 md:py-6 lg:py-8 bg-muted">
 
             <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
             <h1 className="text-3xl font-bold mb-4">Termeni și Condiții</h1>

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Shield, BookOpen, CheckCircle, Library } from "lucide-react"
+import React from 'react';
 
 export default function HomePage() {
   return (
@@ -83,7 +84,7 @@ export default function HomePage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secțiuni principale</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Explorați conținutul nostru educațional structurat pentru a înțelege mai bine securitatea în DevOps.
+                  Explorați conținutul educațional structurat pentru a înțelege mai bine securitatea în DevOps.
                 </p>
               </div>
             </div>
@@ -158,4 +159,3 @@ export default function HomePage() {
     </div>
   )
 }
-
