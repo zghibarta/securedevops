@@ -26,34 +26,33 @@ export default function SSDLCPage() {
       icon: <Code className="h-6 w-6" />,
       description:
         "Descrierea procesului de management al vulnerabilităților și practicilor de integrare în DevOps.",
-      link: "/ssdlc/vulnerabilitati",
-    },
-{/*
-    {
-      id: "testing",
-      title: "Testare de securitate",
-      icon: <Bug className="h-6 w-6" />,
-      description:
-        "Testarea aplicației pentru vulnerabilități folosind metode precum SAST, DAST, testare de penetrare și revizuirea codului.",
-      link: "#",
-    },
-    {
-      id: "deployment",
-      title: "Implementare securizată",
-      icon: <Server className="h-6 w-6" />,
-      description:
-        "Configurarea securizată a infrastructurii și implementarea controalelor de securitate în mediul de producție.",
-      link: "#",
-    },
-    {
-      id: "maintenance",
-      title: "Mentenanță și răspuns",
-      icon: <Zap className="h-6 w-6" />,
-      description: "Monitorizarea continuă, gestionarea vulnerabilităților și răspunsul la incidente de securitate.",
-      link: "#",
-    },
+      link: "/ssdlc/vulnerabilitati"
+    }
   ]
-*/}
+  // Commented out phases:
+  // {
+  //   id: "testing",
+  //   title: "Testare de securitate",
+  //   icon: <Bug className="h-6 w-6" />,
+  //   description:
+  //     "Testarea aplicației pentru vulnerabilități folosind metode precum SAST, DAST, testare de penetrare și revizuirea codului.",
+  //   link: "#",
+  // },
+  // {
+  //   id: "deployment",
+  //   title: "Implementare securizată",
+  //   icon: <Server className="h-6 w-6" />,
+  //   description:
+  //     "Configurarea securizată a infrastructurii și implementarea controalelor de securitate în mediul de producție.",
+  //   link: "#",
+  // },
+  // {
+  //   id: "maintenance",
+  //   title: "Mentenanță și răspuns",
+  //   icon: <Zap className="h-6 w-6" />,
+  //   description: "Monitorizarea continuă, gestionarea vulnerabilităților și răspunsul la incidente de securitate.",
+  //   link: "#",
+  // }
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b">
@@ -115,7 +114,7 @@ export default function SSDLCPage() {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {phases.map((phase) => (
+              {phases.map((phase: any) => (
                 <Card key={phase.id} className="flex flex-col h-full">
                   <CardHeader>
                     <div className="flex items-center gap-2">
@@ -127,12 +126,14 @@ export default function SSDLCPage() {
                     <p className="text-sm">{phase.description}</p>
                   </CardContent>
                   <CardFooter>
-                    <Link href={phase.link}>
-                      <Button variant="outline" size="sm" className="w-full">
-                        Citește mai mult
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                    {phase.link && (
+                      <Link href={phase.link}>
+                        <Button variant="outline" size="sm" className="w-full">
+                          Citește mai mult
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    )}
                   </CardFooter>
                 </Card>
               ))}

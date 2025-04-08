@@ -142,7 +142,7 @@ export default function ResursePage() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Bibliotecă de resurse</h1>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Ghiduri de implementare, instrumente și resurse suplimentare pentru securitatea în DevOps.
+                Ghiduri de implementare, instrumente și resurse suplimentare pentru securitatea în DevOps.</p>
               </div>
             </div>
           </div>

@@ -137,7 +137,7 @@ export default function EvaluarePage() {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <Link href={quiz.link} className="w-full" onclick="event.preventDefault();" title="În dezvoltare">
+                        <Link href={quiz.link} className="w-full" title="În dezvoltare">
                           <Button variant="default" size="sm" className="w-full">
                             Începe Testul
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -168,7 +168,7 @@ export default function EvaluarePage() {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <Link href={scenario.link} className="w-full" onclick="event.preventDefault();" title="În dezvoltare">
+                        <Link href={scenario.link} className="w-full" title="În dezvoltare">
                           <Button variant="outline" size="sm" className="w-full">
                             Începe Scenariul
                             <ArrowRight className="ml-2 h-4 w-4" />
