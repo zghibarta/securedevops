@@ -56,7 +56,7 @@ export default function SSDLCPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6" />
             <Link href="/" className="text-lg font-bold">
@@ -83,21 +83,18 @@ export default function SSDLCPage() {
         </div>
       </header>
       <main className="flex-1 mx-auto">
-        <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
+      <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Secure Software Development Life Cycle (SSDLC)
-                </h1>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secure Software Development Life Cycle (SSDLC)</h1>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Integrarea securității în fiecare etapă a ciclului de dezvoltare software în contextul DevOps.
+                Integrarea securității în fiecare etapă a ciclului de dezvoltare software în contextul DevOps
                 </p>
               </div>
             </div>
           </div>
         </section>
-
         <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <div className="mb-12">
@@ -142,7 +139,7 @@ export default function SSDLCPage() {
         </section>
       </main>
       <footer className="border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6">
+        <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             &copy; {new Date().getFullYear()}{" "}
             Securedevops - platformă informativ-educațională despre securitatea în DevOps
