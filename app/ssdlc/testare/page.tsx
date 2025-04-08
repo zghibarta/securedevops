@@ -253,8 +253,8 @@ export default function TestarePage() {
                     <div className="space-y-2">
                       <h3 className="font-medium">Instrumente IAST (Interactive Application Security Testing)</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Contrast Security - unul dintre liderii pieței în IAST, oferind o integrare puternică în mediile de execuție (monitoriza în timp real)</li>
-                        <li>Seeker by Synopsys - o soluție modernă ce combină avantajele SAST și DAST cu monitorizarea interactivă a aplicației</li>
+                        <li>Contrast Security - oferă o integrare puternică în mediile de execuție (monitoriza în timp real)</li>
+                        <li>Seeker by Synopsys - combină avantajele SAST și DAST cu monitorizarea interactivă a aplicației</li>
                         <p>Observații: IAST este încă într-o fază de maturizare, iar implementările sunt adesea destinate organizațiilor cu infrastructuri complexe. Pentru echipele mai mici, integrarea poate fi considerată prea specializată sau costisitoare dacă nu este corelată cu fluxuri automatizate de CI/CD</p> 
                       </ul>
                     </div>
@@ -262,9 +262,9 @@ export default function TestarePage() {
                     <div className="space-y-2">
                       <h3 className="font-medium">Instrumente Penetration Testing (Pen Testing)</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Metasploit Framework - este un standard pentru testele de penetrare, cu o vastă bibliotecă de exploit-uri și module de test</li>
-                        <li>Kali Linux - include un set cuprinzător de instrumente (Nmap, Wireshark, etc.) folosite de experți în pen testing</li>
-                        <li>Burp Suite (modulul manual de pen testing) - pe lângă DAST, este folosit și pentru evaluări manuale (flexibilitate în simularea atacurilor)</li>
+                        <li>Metasploit Framework - standard pentru testele de penetrare, cu exploit-uri și module de test</li>
+                        <li>Kali Linux - include un set cuprinzător de instrumente folosite de experți în pen testing</li>
+                        <li>Burp Suite - pe lângă DAST, este folosit și pentru evaluări manuale (flexibilitate în simularea atacurilor)</li>
                         <li>Nmap - esențial pentru identificarea serviciilor expuse și a configurărilor incorecte la nivel de rețea</li>
                         <p>Observații: Deoarece pen testing-ul este adesea realizat manual de experți, instrumentele trebuie să fie alese în funcție de specificul mediului și de expertiza echipei</p> 
                       </ul>
@@ -286,7 +286,7 @@ export default function TestarePage() {
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>ImmuniWeb Community Edition - furnizează o gamă largă de teste gratuite</li>
                         <li>HostedScan Security - furnizează un scaner online de vulnerabilități pentru aplicații web</li>
-                        <li>InternetSecure.org - serviciu gratuit care combină teste pentru anteturi de securitate SSL/TLS, DNSSEC și detectarea WAF</li>
+                        <li>InternetSecure.org - teste pentru anteturi de securitate SSL/TLS, DNSSEC și detectarea WAF</li>
                         <p>Observații: Utilizarea instrumentelor online de testare a securității implică anumite riscuri asociate, precum divulgarea codului sursă, expunerea vulnerabilităților către terți, ș.a.
                         Ori de câte ori este posibil, efectuați testele de securitate folosind instrumente instalate și rulate în mediul intern al organizației. Anonimizați datele sensibile: Înainte de a încărca codul sau datele într-un serviciu online.</p> 
                       </ul>
