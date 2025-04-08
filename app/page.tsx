@@ -7,10 +7,12 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6" />
-            <span className="text-lg font-bold">SecureDevOps</span>
+            <Link href="/" className="text-lg font-bold">
+              SecureDevOps
+            </Link>
           </div>
           <nav className="hidden md:flex gap-6">
             <Link href="/owasp" className="text-sm font-medium hover:underline underline-offset-4">
@@ -140,19 +142,15 @@ export default function HomePage() {
         </section>
       </main>
       <footer className="border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6">
+        <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             &copy; {new Date().getFullYear()}{" "}
             Securedevops - platformă informativ-educațională despre securitatea în DevOps
           </p>
-          {/*<p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            SecureDevOps - Platformă informativ-educațională dedicată integrării securității în fluxul DevOps 
-          </p>*/}
           <div className="flex gap-4">
             <Link href="/termeni" className="text-sm text-muted-foreground hover:underline underline-offset-4">
               Termeni și Condiții
             </Link>
-            {/*  */}
           </div>
         </div>
       </footer>
