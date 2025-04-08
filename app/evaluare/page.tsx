@@ -103,7 +103,7 @@ export default function EvaluarePage() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Evaluare cunoștințe</h1>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Testează-ți cunoștințele despre securitatea în DevOps prin teste și scenarii practice.
+                  Testează-ți cunoștințele despre securitatea în DevOps prin teste și scenarii practice
                 </p>
               </div>
             </div>
