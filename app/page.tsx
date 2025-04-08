@@ -80,60 +80,58 @@ export default function HomePage() {
           </div>
         </section>*/}
 
-        <section className="w-full py-6 md:py-12 lg:py-16">
+        <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secțiuni principale</h2>
+                {/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secțiuni principale</h2> */}
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Explorați conținutul educațional structurat pentru a înțelege mai bine securitatea în DevOps.
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+            <div className="mx-auto grid items-center gap-2 py-6 lg:grid-cols-4 lg:gap-3">
               <Link href="/owasp" className="group">
-                <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 transition-all hover:bg-muted">
+                <div className="flex flex-col items-center space-y-4 rounded-lg border p-2 transition-all hover:bg-muted">
                   <div className="rounded-full bg-primary/10 p-4">
                     <Shield className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">OWASP Top Ten 2021</h3>
                   <p className="text-center text-muted-foreground">
-                    Cele mai critice vulnerabilități de securitate web conform OWASP, cu exemple practice și metode de
-                    prevenire.
+                    Vulnerabilități de securitate web conform OWASP, cu exemple practice și metode de prevenire.
                   </p>
                 </div>
               </Link>
               <Link href="/ssdlc" className="group">
-                <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 transition-all hover:bg-muted">
+                <div className="flex flex-col items-center space-y-4 rounded-lg border p-2 transition-all hover:bg-muted">
                   <div className="rounded-full bg-primary/10 p-4">
                     <BookOpen className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">SSDLC în DevOps</h3>
                   <p className="text-center text-muted-foreground">
-                    Integrarea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului în fluxul de lucru
-                    DevOps.
-                  </p>
-                </div>
-              </Link>
-              <Link href="/evaluare" className="group">
-                <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 transition-all hover:bg-muted">
-                  <div className="rounded-full bg-primary/10 p-4">
-                    <CheckCircle className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold group-hover:underline">Evaluare cunoștințe</h3>
-                  <p className="text-center text-muted-foreground">
-                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre securitatea în DevOps.
+                    Integrarea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului în fluxul DevOps.
                   </p>
                 </div>
               </Link>
               <Link href="/resurse" className="group">
-                <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 transition-all hover:bg-muted">
+                <div className="flex flex-col items-center space-y-4 rounded-lg border p-2 transition-all hover:bg-muted">
                   <div className="rounded-full bg-primary/10 p-4">
                     <Library className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">Bibliotecă de resurse</h3>
                   <p className="text-center text-muted-foreground">
                     Ghiduri de implementare, bune practici și resurse suplimentare pentru securitatea în DevOps.
+                  </p>
+                </div>
+              </Link>
+              <Link href="/evaluare" className="group">
+                <div className="flex flex-col items-center space-y-4 rounded-lg border p-2 transition-all hover:bg-muted">
+                  <div className="rounded-full bg-primary/10 p-4">
+                    <CheckCircle className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold group-hover:underline">Evaluare cunoștințe</h3>
+                  <p className="text-center text-muted-foreground">
+                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre securitatea în DevOps.
                   </p>
                 </div>
               </Link>
