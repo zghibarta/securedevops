@@ -6,10 +6,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "SecureDevOps - Platformă informativ-educațională pentru Securitate în DevOps",
+  title: "SecureDevOps - platformă informativ-educațională pentru Securitate în DevOps",
   description:
-    "Învățați cum să integrați securitatea în fluxul de lucru DevOps și să preveniți vulnerabilitățile comune folosind OWASP Top Ten 2021 și SSDLC.",
-    generator: 'v0.dev'
+    "Integrăm securitatea în DevOps și prevenim vulnerabilitățile comune folosind OWASP Top Ten 2021 și practicile SSDLC",
+    generator: 'stackblitz'
 }
 
 export default function RootLayout({
