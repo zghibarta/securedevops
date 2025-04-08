@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Shield, Code, FileSearch, Bug, Zap, Lock, Server } from "lucide-react"
+import { ArrowRight, RefreshCcw, AlertTriangle, Shield, Code, FileSearch, Bug, Zap, Lock, Server } from "lucide-react"
 
 export default function SSDLCPage() {
   const phases = [
