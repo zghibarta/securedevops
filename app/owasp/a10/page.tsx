@@ -84,6 +84,9 @@ export default function A10Page() {
                     height={400}
                     className="rounded-lg"
                   />
+                <p>
+                Exemplu în imagine: un atacator poate determina serverul să se conecteze la servicii interne (protejate de firewall și inaccesibile din exterior) și să sustragă date.
+                </p>
                 </div>
               </CardContent>
             </Card>

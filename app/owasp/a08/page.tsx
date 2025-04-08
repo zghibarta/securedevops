@@ -69,7 +69,7 @@ export default function A08Page() {
                   Eșecurile de integritate a software-ului și datelor se referă la situațiile în care aplicațiile și
                   infrastructura nu verifică integritatea codului și a datelor, permițând astfel introducerea de
                   componente sau actualizări neautorizate. Aceasta include utilizarea de plugin-uri, biblioteci sau
-                  module din surse netrustate, actualizări nesemnate, precum și injecții de cod pe partea clientului.
+                  module din surse nesigure, actualizări nesemnate, precum și injecții de cod pe partea clientului.
                 </p>
                 <p>
                   Această vulnerabilitate este o categorie nouă în topul OWASP 2021, ocupând poziția 8, reflectând

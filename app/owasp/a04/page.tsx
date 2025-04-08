@@ -82,6 +82,9 @@ export default function A04Page() {
                     className="rounded-lg"
                   />
                 </div>
+                <p>
+                Exemplu în imagine: un atacator poate rezerva 600 de bilete de film pentru o anumită perioadă, împiedicând cumpărătorii reali să le rezerve. Aceasta putea fi evitată printr-un design care să limiteze rezervările la maxim 15 bilete.
+                </p>
               </CardContent>
             </Card>
 

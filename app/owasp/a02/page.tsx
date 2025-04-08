@@ -82,6 +82,9 @@ export default function A02Page() {
                     className="rounded-lg"
                   />
                 </div>
+                <p>
+                Exemplu în imagine: un site care nu aplică TLS poate permite unui atacator să fure cookie-ul de sesiune al utilizatorului, să îl modifice și să deturneze sesiunea autentificată, obținând acces la datele private ale utilizatorului.
+                </p>
               </CardContent>
             </Card>
 
