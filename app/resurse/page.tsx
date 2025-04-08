@@ -59,6 +59,13 @@ export default function ResursePage() {
       link: "https://owasp.org/www-project-dependency-check/",
     },
     {
+      id: "empty",
+      title: "",
+      description: "",
+      category: "empty",
+      link: "",
+    },
+    {
       id: "other-instruments",
       title: "Instrumente pentru testarea securității",
       description: "Vezi instrumentele de testare a securității si descrierile acestora în tabul Instrumente din secțiunea Testare de Securitate",
@@ -151,7 +158,7 @@ export default function ResursePage() {
         <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <Tabs defaultValue="ghiduri" className="w-full">
-              <TabsList className="grid w-full max-w-md mx-auto grid-cols-3">
+              <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
                 <TabsTrigger value="ghiduri">Ghiduri</TabsTrigger>
                 <TabsTrigger value="instrumente">Instrumente</TabsTrigger>
                 {/* <TabsTrigger value="documente">Documente</TabsTrigger> */}
