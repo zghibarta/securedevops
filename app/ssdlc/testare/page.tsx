@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { TestTube, ArrowLeft, Shield, CheckCircle, AlertTriangle } from "lucide-react"
+import { TestTube, ArrowLeft, Shield, CheckCircle, AlertTriangle, Lock } from "lucide-react"
 
 export default function TestarePage() {
   return (
