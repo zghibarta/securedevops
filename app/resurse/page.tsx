@@ -173,7 +173,7 @@ export default function ResursePage() {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <Link href={guide.link} className="w-full">
+                        <Link href={guide.link} className="w-full" target="_blank">
                           <Button variant="outline" size="sm" className="w-full">
                             Citește ghidul
                             <ExternalLink className="ml-2 h-4 w-4" />
