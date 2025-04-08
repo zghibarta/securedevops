@@ -145,7 +145,7 @@ export default function OwaspPage() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">OWASP Top Ten 2021</h1>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Cele mai critice riscuri de securitate pentru aplicațiile web conform Open Web Application Security
+                  Riscuri de securitate pentru aplicațiile web conform Open Web Application Security
                   Project (OWASP).
                 </p>
               </div>
@@ -153,7 +153,7 @@ export default function OwaspPage() {
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-12 lg:py-16">
+        <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {vulnerabilities.map((vulnerability) => (

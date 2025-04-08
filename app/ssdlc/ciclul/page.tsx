@@ -34,8 +34,9 @@ export default function CiclulPage() {
           </Button>
         </div>
       </header>
-      <main className="flex-1">
-        <div className="container px-4 py-6 md:px-6 md:py-12">
+      
+      <main className="flex-1 flex justify-center">
+        <div className="container max-w-4xl px-4 py-6 md:px-6 md:py-12">
           <div className="flex items-center gap-2 mb-4">
             <Link href="/ssdlc">
               <Button variant="outline" size="sm">
@@ -51,7 +52,7 @@ export default function CiclulPage() {
                 <RefreshCcw className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">Securitate în Ciclul de Dezvoltare</h1>
+                <h1 className="text-3xl font-bold tracking-tighter">Securitate în ciclul de dezvoltare</h1>
                 <p className="text-muted-foreground">Security in Development Lifecycle</p>
               </div>
             </div>
@@ -63,10 +64,8 @@ export default function CiclulPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Securitatea în ciclul de dezvoltare software (SSDLC - Secure Software Development Lifecycle)
-                  reprezintă integrarea sistematică a activităților de securitate în fiecare etapă a procesului de
-                  dezvoltare software. Scopul este de a identifica și remedia vulnerabilitățile de securitate cât mai
-                  devreme în ciclul de dezvoltare, când costurile de remediere sunt mai mici.
+                  Ciclul de Viață pentru dezvoltarea securizată a software-ului (SSDLC) este o metodologie care integrează
+                  securitatea în fiecare etapă a procesului de dezvoltare software.
                 </p>
                 <p>
                   Un SSDLC eficient ajută organizațiile să producă software mai sigur, să reducă costurile asociate cu
@@ -78,7 +77,7 @@ export default function CiclulPage() {
 
             <Tabs defaultValue="faze">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="faze">Fazele SSDLC</TabsTrigger>
+                <TabsTrigger value="faze">Etapele SSDLC</TabsTrigger>
                 <TabsTrigger value="practici">Practici Recomandate</TabsTrigger>
                 <TabsTrigger value="modele">Modele SSDLC</TabsTrigger>
               </TabsList>
@@ -86,14 +85,14 @@ export default function CiclulPage() {
               <TabsContent value="faze" className="space-y-4 pt-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Fazele Secure Software Development Lifecycle</CardTitle>
+                    <CardTitle>Etapele Secure Software Development Lifecycle</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="space-y-2">
-                      <h3 className="font-medium">1. Planificare și Cerințe</h3>
+                      <h3 className="font-medium">1. Planificare și cerințe</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          În această fază, se definesc cerințele de securitate și se efectuează o analiză inițială a
+                          În această etapă, se definesc cerințele de securitate și se efectuează o analiză inițială a
                           riscurilor. Activitățile includ:
                         </p>
                         <ul className="list-disc pl-6 text-sm mt-2">
@@ -106,10 +105,10 @@ export default function CiclulPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">2. Design Securizat</h3>
+                      <h3 className="font-medium">2. Design securizat</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          În faza de design, se creează o arhitectură care implementează controalele de securitate
+                          În etapa de design, se creează o arhitectură care implementează controalele de securitate
                           necesare. Activitățile includ:
                         </p>
                         <ul className="list-disc pl-6 text-sm mt-2">
@@ -122,10 +121,10 @@ export default function CiclulPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">3. Implementare Securizată</h3>
+                      <h3 className="font-medium">3. Implementare securizată</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          În faza de implementare, se scrie cod securizat și se efectuează verificări de securitate pe
+                          În etapa de implementare, se scrie cod securizat și se efectuează verificări de securitate pe
                           măsură ce codul este dezvoltat. Activitățile includ:
                         </p>
                         <ul className="list-disc pl-6 text-sm mt-2">
@@ -138,10 +137,10 @@ export default function CiclulPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">4. Verificare și Testare</h3>
+                      <h3 className="font-medium">4. Verificare și testare</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          În faza de verificare, se efectuează teste de securitate pentru a identifica
+                          În etapa de verificare, se efectuează teste de securitate pentru a identifica
                           vulnerabilitățile. Activitățile includ:
                         </p>
                         <ul className="list-disc pl-6 text-sm mt-2">
@@ -154,10 +153,10 @@ export default function CiclulPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">5. Deployment Securizat</h3>
+                      <h3 className="font-medium">5. Deployment securizat</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          În faza de deployment, se asigură că aplicația este implementată într-un mediu securizat.
+                          În etapa de deployment, se asigură că aplicația este implementată într-un mediu securizat.
                           Activitățile includ:
                         </p>
                         <ul className="list-disc pl-6 text-sm mt-2">
@@ -170,10 +169,10 @@ export default function CiclulPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">6. Operare și Mentenanță</h3>
+                      <h3 className="font-medium">6. Operare și mentenanță</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          În faza de operare, se monitorizează și se menține securitatea aplicației în producție.
+                          În etapa de operare, se monitorizează și se menține securitatea aplicației în producție.
                           Activitățile includ:
                         </p>
                         <ul className="list-disc pl-6 text-sm mt-2">
@@ -191,7 +190,7 @@ export default function CiclulPage() {
               <TabsContent value="practici" className="space-y-4 pt-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Practici Recomandate pentru SSDLC</CardTitle>
+                    <CardTitle>Practici recomandate pentru SSDLC</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-start gap-2">
@@ -220,7 +219,7 @@ export default function CiclulPage() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Educație și Conștientizare</h3>
+                        <h3 className="font-medium">Educație și conștientizare</h3>
                         <p className="text-sm text-muted-foreground">
                           Instruiți dezvoltatorii și alte părți interesate cu privire la principiile și practicile de
                           securitate. Creați o cultură a securității în cadrul organizației.
@@ -231,7 +230,7 @@ export default function CiclulPage() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Modelarea Amenințărilor</h3>
+                        <h3 className="font-medium">Modelarea amenințărilor</h3>
                         <p className="text-sm text-muted-foreground">
                           Utilizați modelarea amenințărilor pentru a identifica potențiale riscuri de securitate și
                           pentru a prioritiza controalele de securitate. Aceasta ajută la concentrarea eforturilor pe
@@ -243,7 +242,7 @@ export default function CiclulPage() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Defense in Depth</h3>
+                        <h3 className="font-medium">Defense in depth</h3>
                         <p className="text-sm text-muted-foreground">
                           Implementați multiple straturi de controale de securitate pentru a proteja aplicația. Acest
                           lucru asigură că, dacă un control eșuează, altele sunt în loc pentru a preveni compromiterea.
@@ -254,7 +253,7 @@ export default function CiclulPage() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Măsurare și Îmbunătățire Continuă</h3>
+                        <h3 className="font-medium">Măsurare și îmbunătățire continuă</h3>
                         <p className="text-sm text-muted-foreground">
                           Definiți metrici de securitate și monitorizați-le pentru a măsura eficacitatea SSDLC.
                           Utilizați aceste informații pentru a îmbunătăți continuu procesul.
@@ -288,7 +287,7 @@ export default function CiclulPage() {
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Dezvoltat de Microsoft, SDL este unul dintre primele și cele mai influente modele SSDLC.
-                          Acesta include practici de securitate pentru fiecare fază a ciclului de dezvoltare, de la
+                          Acesta include practici de securitate pentru fiecare etapă a ciclului de dezvoltare, de la
                           instruire până la răspunsul la incidente.
                         </p>
                         <p className="text-sm mt-2">
@@ -344,7 +343,7 @@ export default function CiclulPage() {
                     <div className="rounded-md bg-amber-50 border border-amber-200 p-4 flex items-start gap-2">
                       <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium text-amber-800">Recomandare pentru Alegerea Modelului</h3>
+                        <h3 className="font-medium text-amber-800">Recomandare pentru alegerea modelului</h3>
                         <p className="text-sm text-amber-700">
                           Nu există un model "one-size-fits-all" pentru SSDLC. Alegeți un model care se potrivește cel
                           mai bine cu cultura organizației, procesele existente și obiectivele de securitate. Adesea, o

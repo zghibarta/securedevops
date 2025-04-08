@@ -34,8 +34,8 @@ export default function VulnerabilitatiPage() {
           </Button>
         </div>
       </header>
-      <main className="flex-1">
-        <div className="container px-4 py-6 md:px-6 md:py-12">
+      <main className="flex-1 flex justify-center">
+        <div className="container max-w-4xl px-4 py-6 md:px-6 md:py-12">
           <div className="flex items-center gap-2 mb-4">
             <Link href="/ssdlc">
               <Button variant="outline" size="sm">
@@ -51,7 +51,7 @@ export default function VulnerabilitatiPage() {
                 <Bug className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">Managementul Vulnerabilităților</h1>
+                <h1 className="text-3xl font-bold tracking-tighter">Managementul ulnerabilităților</h1>
                 <p className="text-muted-foreground">Vulnerability Management</p>
               </div>
             </div>
@@ -86,11 +86,11 @@ export default function VulnerabilitatiPage() {
               <TabsContent value="proces" className="space-y-4 pt-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Procesul de Management al Vulnerabilităților</CardTitle>
+                    <CardTitle>Procesul de management al vulnerabilităților</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="space-y-2">
-                      <h3 className="font-medium">1. Descoperire și Inventariere</h3>
+                      <h3 className="font-medium">1. Descoperire și inventariere</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Identificarea și inventarierea tuturor activelor, inclusiv hardware, software, aplicații,
@@ -101,7 +101,7 @@ export default function VulnerabilitatiPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">2. Scanare și Identificare</h3>
+                      <h3 className="font-medium">2. Scanare și identificare</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Utilizarea instrumentelor de scanare pentru a identifica vulnerabilitățile în sisteme,
@@ -112,7 +112,7 @@ export default function VulnerabilitatiPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">3. Evaluare și Prioritizare</h3>
+                      <h3 className="font-medium">3. Evaluare și prioritizare</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Evaluarea vulnerabilităților identificate în funcție de severitate, exploatabilitate, impact
@@ -144,7 +144,7 @@ export default function VulnerabilitatiPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">6. Raportare și Monitorizare</h3>
+                      <h3 className="font-medium">6. Raportare și monitorizare</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Generarea de rapoarte privind starea vulnerabilităților, progresul remedierii și tendințele.
@@ -159,7 +159,7 @@ export default function VulnerabilitatiPage() {
               <TabsContent value="prioritizare" className="space-y-4 pt-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Prioritizarea Vulnerabilităților</CardTitle>
+                    <CardTitle>Prioritizarea vulnerabilităților</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-start gap-2">
@@ -246,14 +246,14 @@ export default function VulnerabilitatiPage() {
                       <h3 className="font-medium">Automatizare</h3>
                       <p className="text-sm">Integrați managementul vulnerabilităților în pipeline-urile CI/CD:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Automatizați scanările de vulnerabilit��ți în fiecare etapă a pipeline-ului</li>
+                        <li>Automatizați scanările de vulnerabilități în fiecare etapă a pipeline-ului</li>
                         <li>Configurați gate-uri de calitate care blochează build-urile cu vulnerabilități critice</li>
                         <li>Implementați scanări automate pentru dependențe și componente terțe</li>
                       </ul>
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">Feedback Rapid</h3>
+                      <h3 className="font-medium">Feedback rapid</h3>
                       <p className="text-sm">Implementați mecanisme de feedback rapid pentru dezvoltatori:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Integrați rezultatele scanărilor direct în IDE-urile dezvoltatorilor</li>
@@ -263,7 +263,7 @@ export default function VulnerabilitatiPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">Monitorizare Continuă</h3>
+                      <h3 className="font-medium">Monitorizare continuă</h3>
                       <p className="text-sm">Implementați monitorizare continuă pentru vulnerabilități:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Monitorizați bazele de date de vulnerabilități (CVE, NVD) pentru noi amenințări</li>
@@ -273,7 +273,7 @@ export default function VulnerabilitatiPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-medium">Colaborare între Echipe</h3>
+                      <h3 className="font-medium">Colaborare între echipe</h3>
                       <p className="text-sm">
                         Promovați colaborarea între echipele de dezvoltare, operațiuni și securitate:
                       </p>

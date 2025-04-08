@@ -134,8 +134,21 @@ export default function ResursePage() {
           </Button>
         </div>
       </header>
-      <main className="flex-1">
+      
+      <main className="flex-1 mx-auto">
         <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Bibliotecă de resurse</h1>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Ghiduri de implementare, instrumente și resurse suplimentare pentru securitatea în DevOps.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -148,7 +161,7 @@ export default function ResursePage() {
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-12 lg:py-16">
+        <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <Tabs defaultValue="ghiduri" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3">
@@ -247,7 +260,7 @@ export default function ResursePage() {
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
+        <section className="w-full py-3 md:py-6 lg:py-8 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">

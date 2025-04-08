@@ -207,7 +207,7 @@ export default function A02Page() {
                       <div>
                         <h3 className="font-medium">Practici de evitat</h3>
                         <p className="text-sm text-muted-foreground">
-                          Nu utiliza��i algoritmi criptografici depreciați (MD5, SHA1, DES, etc.). Nu implementați
+                          Nu utilizați algoritmi criptografici depreciați (MD5, SHA1, DES, etc.). Nu implementați
                           propriile soluții criptografice. Nu stocați secrete în codul sursă.
                         </p>
                       </div>

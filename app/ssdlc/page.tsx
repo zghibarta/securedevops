@@ -6,28 +6,29 @@ import { ArrowRight, Shield, Code, FileSearch, Bug, Zap, Lock, Server } from "lu
 export default function SSDLCPage() {
   const phases = [
     {
-      id: "requirements",
-      title: "Cerințe de securitate",
+      id: "ssdlc",
+      title: "Securitate în ciclul de dezvoltare",
       icon: <FileSearch className="h-6 w-6" />,
-      description: "Definirea cerințelor de securitate și a modelelor de amenințare în faza inițială a proiectului.",
-      link: "#",
+      description: "Descrierea SSDLC, practicilor recomandate și modelor cadru.",
+      link: "/ssdlc/ciclul",
     },
     {
-      id: "design",
-      title: "Design securizat",
+      id: "testing",
+      title: "Testare de securitate",
       icon: <Lock className="h-6 w-6" />,
       description:
-        "Proiectarea arhitecturii și a componentelor cu securitatea ca prioritate, folosind principii precum 'security by design'.",
-      link: "#",
+        "Prezentarea tipurilor de testsre, modalităților de integrare și instrumentelor aferente.",
+      link: "/ssdlc/testare",
     },
     {
-      id: "implementation",
-      title: "Implementare securizată",
+      id: "vulnerabilities",
+      title: "Managementul vulnerabilităților",
       icon: <Code className="h-6 w-6" />,
       description:
-        "Utilizarea de practici de codare sigure și evitarea vulnerabilităților comune în timpul dezvoltării.",
-      link: "#",
+        "Descrierea procesului de management al vulnerabilităților și practicilor de integrare în DevOps.",
+      link: "/ssdlc/vulnerabilitati",
     },
+{/*
     {
       id: "testing",
       title: "Testare de securitate",
@@ -52,7 +53,7 @@ export default function SSDLCPage() {
       link: "#",
     },
   ]
-
+*/}
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b">
@@ -98,15 +99,12 @@ export default function SSDLCPage() {
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-12 lg:py-16">
+        <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <div className="mb-12">
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl mb-4">Ce este SSDLC?</h2>
               <p className="text-muted-foreground mb-6">
-                Ciclul de Viață pentru Dezvoltarea Securizată a Software-ului (SSDLC) este o metodologie care integrează
-                securitatea în fiecare etapă a procesului de dezvoltare software. Scopul SSDLC este de a identifica și
-                remedia vulnerabilitățile de securitate cât mai devreme în ciclul de dezvoltare, reducând astfel
-                costurile și riscurile asociate.
+              Securitatea în ciclul de dezvoltare software (SSDLC - Secure Software Development Lifecycle) reprezintă integrarea sistematică a activităților de securitate în fiecare etapă a procesului de dezvoltare software. Scopul este de a identifica și remedia vulnerabilitățile de securitate cât mai devreme în ciclul de dezvoltare, când costurile de remediere sunt mai mici.
               </p>
               <p className="text-muted-foreground">
                 În contextul DevOps, SSDLC devine și mai important, deoarece viteza de livrare a software-ului crește,
@@ -141,75 +139,6 @@ export default function SSDLCPage() {
             </div>
           </div>
         </section>
-
-        {/*
-        <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4 justify-center text-center">
-                <h2 className="text-3xl font-bold tracking-tighter">Integrarea SSDLC în DevOps</h2>
-                <p className="text-muted-foreground">
-                  Integrarea SSDLC în DevOps, cunoscută și sub numele de DevSecOps, implică încorporarea securității în
-                  fiecare etapă a pipeline-ului CI/CD și în cultura organizațională.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <p>
-                      <span className="font-medium">Automatizare:</span> Automatizarea testelor de securitate în
-                      pipeline-ul CI/CD
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <p>
-                      <span className="font-medium">Shift Left:</span> Mutarea verificărilor de securitate cât mai
-                      devreme în ciclul de dezvoltare
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <p>
-                      <span className="font-medium">Colaborare:</span> Colaborarea strânsă între echipele de dezvoltare,
-                      operațiuni și securitate
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <p>
-                      <span className="font-medium">Monitorizare continuă:</span> Monitorizarea continuă a aplicațiilor
-                      și infrastructurii pentru vulnerabilități
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <p>
-                      <span className="font-medium">Infrastructure as Code (IaC):</span> Definirea și aplicarea
-                      politicilor de securitate prin cod
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4">
-                  <Link href="#">
-                    <Button>
-                      Explorează DevSecOps
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <div className="relative w-full max-w-[500px] aspect-video bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center">
-                  <BookOpen className="h-24 w-24 text-slate-400" />
-                  <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium">
-                    DevSecOps
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        */}
       </main>
       <footer className="border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6">

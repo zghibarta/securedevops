@@ -110,7 +110,7 @@ export default function EvaluarePage() {
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-12 lg:py-16">
+        <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <Tabs defaultValue="teste" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
@@ -137,7 +137,7 @@ export default function EvaluarePage() {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <Link href={quiz.link} className="w-full">
+                        <Link href={quiz.link} className="w-full" onclick="event.preventDefault();" title="În dezvoltare">
                           <Button variant="default" size="sm" className="w-full">
                             Începe Testul
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -168,7 +168,7 @@ export default function EvaluarePage() {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <Link href={scenario.link} className="w-full">
+                        <Link href={scenario.link} className="w-full" onclick="event.preventDefault();" title="În dezvoltare">
                           <Button variant="outline" size="sm" className="w-full">
                             Începe Scenariul
                             <ArrowRight className="ml-2 h-4 w-4" />
