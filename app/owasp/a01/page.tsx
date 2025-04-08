@@ -52,7 +52,7 @@ export default function A01Page() {
                 <Lock className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A01:2021 – Control de Acces Defectuos</h1>
+                <h1 className="text-3xl font-bold tracking-tighter">A01:2021 – Control defectuos al accesului</h1>
                 <p className="text-muted-foreground">Broken Access Control</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function A01Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Controlul de acces defectuos se referă la situațiile în care restricțiile privind acțiunile
+                  Controlul defectuos al accesului se referă la situațiile în care restricțiile privind acțiunile
                   utilizatorilor autentificați nu sunt aplicate corespunzător. Atacatorii pot exploata aceste defecte
                   pentru a accesa neautorizat funcționalități și/sau date, conturi de utilizatori, fișiere sensibile,
                   pentru a modifica drepturile de acces ale utilizatorilor, etc.

@@ -20,7 +20,7 @@ export default function OwaspPage() {
     {
       id: "a01",
       title: "A01:2021 – Broken Access Control",
-      titleRo: "A01 – Control de acces defectuos",
+      titleRo: "A01 – Controlul defectuos al accesului",
       icon: <Lock className="h-6 w-6" />,
       description:
         "Restricțiile privind acțiunile utilizatorilor autentificați nu sunt aplicate corespunzător. Atacatorii pot exploata aceste defecte pentru a accesa neautorizat funcționalități și/sau date.",
@@ -38,7 +38,7 @@ export default function OwaspPage() {
     {
       id: "a03",
       title: "A03:2021 – Injection",
-      titleRo: "A03 – Injecție",
+      titleRo: "A03 – Injectare",
       icon: <FileCode className="h-6 w-6" />,
       description:
         "Datele ostile sunt trimise către un interpretor ca parte a unei comenzi sau interogări. Atacatorul poate executa comenzi neintenționate sau accesa date fără autorizație.",
@@ -47,16 +47,16 @@ export default function OwaspPage() {
     {
       id: "a04",
       title: "A04:2021 – Insecure Design",
-      titleRo: "A04 – Design nesigur",
+      titleRo: "A04 – Proiectare nesecurizată",
       icon: <Bug className="h-6 w-6" />,
       description:
-        "O nouă categorie care se concentrează pe riscurile legate de defecte de design. Un design sigur poate reduce semnificativ severitatea multor vulnerabilități.",
+        "O nouă categorie care se concentrează pe riscurile legate de defecte de design/proiectare. Securitatea adecvată la nivel de proiectare poate reduce semnificativ severitatea multor vulnerabilități.",
       link: "/owasp/a04#top",
     },
     {
       id: "a05",
       title: "A05:2021 – Security Misconfiguration",
-      titleRo: "A05 – Configurare greșită de securitate",
+      titleRo: "A05 – Configurare inadecvată a securității",
       icon: <Server className="h-6 w-6" />,
       description:
         "Configurări implicite nesigure, configurări incomplete, stocarea în cloud deschisă, mesaje de eroare care conțin informații sensibile și lipsa patch-urilor de securitate.",

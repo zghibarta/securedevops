@@ -52,7 +52,7 @@ export default function A05Page() {
                 <Settings className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A05:2021 – Configurare Greșită de Securitate</h1>
+                <h1 className="text-3xl font-bold tracking-tighter">A05:2021 – Configurare inadecvată a securității</h1>
                 <p className="text-muted-foreground">Security Misconfiguration</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function A05Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Configurarea greșită de securitate apare atunci când sistemele, framework-urile, aplicațiile sau
+                  Configurarea inadecvată de securitate apare atunci când sistemele, framework-urile, aplicațiile sau
                   infrastructura nu sunt configurate corespunzător din punct de vedere al securității. Aceasta include
                   utilizarea configurărilor implicite nesigure, configurări incomplete, stocarea în cloud deschisă,
                   mesaje de eroare care conțin informații sensibile și lipsa patch-urilor de securitate.

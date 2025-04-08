@@ -52,7 +52,7 @@ export default function A03Page() {
                 <Code className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A03:2021 – Injecție</h1>
+                <h1 className="text-3xl font-bold tracking-tighter">A03:2021 – Injectare</h1>
                 <p className="text-muted-foreground">Injection</p>
               </div>
             </div>

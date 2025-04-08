@@ -52,7 +52,7 @@ export default function A04Page() {
                 <Lightbulb className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A04:2021 – Design Nesigur</h1>
+                <h1 className="text-3xl font-bold tracking-tighter">A04:2021 – Proiectare nesecurizată</h1>
                 <p className="text-muted-foreground">Insecure Design</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function A04Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Design-ul nesigur se referă la defecte de securitate la nivel de arhitectură și design, care nu pot fi
+                  Design-ul nesecurizat se referă la defecte de securitate la nivel de proiect de arhitectură, care nu pot fi
                   remediate doar prin implementare corectă. Această categorie se concentrează pe lipsa sau insuficiența
                   controalelor de securitate necesare, precum și pe deciziile de design care introduc vulnerabilități
                   inerente în aplicație.
