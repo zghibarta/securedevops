@@ -9,7 +9,7 @@ export default function SSDLCPage() {
       id: "ssdlc",
       title: "Securitate în ciclul de dezvoltare",
       icon: <FileSearch className="h-6 w-6" />,
-      description: "Descrierea SSDLC, practicilor recomandate și modelor cadru.",
+      description: "Descrierea SSDLC, practici recomandate și modele cadru.",
       link: "/ssdlc/ciclul",
     },
     {
@@ -17,7 +17,7 @@ export default function SSDLCPage() {
       title: "Testare de securitate",
       icon: <Lock className="h-6 w-6" />,
       description:
-        "Prezentarea tipurilor de testsre, modalităților de integrare și instrumentelor aferente.",
+        "Tipuri de testare a securității, modalități de integrare și instrumente aferente.",
       link: "/ssdlc/testare",
     },
     {
@@ -25,7 +25,7 @@ export default function SSDLCPage() {
       title: "Managementul vulnerabilităților",
       icon: <Code className="h-6 w-6" />,
       description:
-        "Descrierea procesului de management al vulnerabilităților și practicilor de integrare în DevOps.",
+        "Procesul de management al vulnerabilităților și practici de integrare în DevOps.",
       link: "/ssdlc/vulnerabilitati"
     }
   ]

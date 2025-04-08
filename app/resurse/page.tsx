@@ -8,14 +8,14 @@ export default function ResursePage() {
   const guides = [
     {
       id: "product-security",
-      title: "Ensuring Product Security in DevSecOps",
+      title: "Ensuring Product Security",
       description: "Strategii pentru integrarea securității în etapele dezvoltării, rolurile echipelor de dezvoltare și securitate, precum și bune practici pentru gestionarea vulnerabilităților, scanarea codului sursă și verificarea componentelor open-source.",
       category: "ghid",
       link: "https://www.practical-devsecops.com/wp-content/uploads/2024/12/Ensuring-Product-Security-in-DevSecOps.pdf",
     },
     {
       id: "devsecops-implementation",
-      title: "Integrating Security into CI/CD Pipelines",
+      title: "Integrating Security into CI/CD",
       description: "Aplicarea principiilor DevSecOps direct în fluxurile CI/CD. Sunt detaliate instrumentele și tehnicile care permit detectarea timpurie a riscurilor de securitate, automatizarea testelor de securitate și prevenirea livrării codului vulnerabil în producție.",
       category: "ghid",
       link: "https://www.practical-devsecops.com/wp-content/uploads/2024/06/eBook-Integrating-Security-into-CI_CD-Pipelines-through-DevSecOps-Approach-1.pdf",
@@ -57,13 +57,6 @@ export default function ResursePage() {
       description: "Instrument pentru identificarea dependențelor vulnerabile în proiectele software.",
       category: "analiza-dependente",
       link: "https://owasp.org/www-project-dependency-check/",
-    },
-    {
-      id: "empty",
-      title: "",
-      description: "",
-      category: "empty",
-      link: "",
     },
     {
       id: "other-instruments",
