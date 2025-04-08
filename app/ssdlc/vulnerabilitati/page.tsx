@@ -22,11 +22,11 @@ export default function VulnerabilitatiPage() {
             <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
               SSDLC
             </Link>
-            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
-              Evaluare
-            </Link>
             <Link href="/resurse" className="text-sm font-medium hover:underline underline-offset-4">
               Resurse
+            </Link>
+            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
+              Evaluare
             </Link>
           </nav>
           <Button variant="outline" size="sm" className="hidden md:flex">
@@ -52,7 +52,7 @@ export default function VulnerabilitatiPage() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold tracking-tighter">Managementul ulnerabilităților</h1>
-                <p className="text-muted-foreground">Vulnerability Management</p>
+                {/* <p className="text-muted-foreground">Vulnerability Management</p> */}
               </div>
             </div>
 

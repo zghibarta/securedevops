@@ -7,33 +7,33 @@ import { Shield, BookOpen, FileText, Link2, Download, ExternalLink } from "lucid
 export default function ResursePage() {
   const guides = [
     {
-      id: "secure-coding",
-      title: "Ghid de codare securizată",
-      description: "Cele mai bune practici pentru scrierea de cod securizat în diferite limbaje de programare.",
+      id: "product-security",
+      title: "Ensuring Product Security in DevSecOps",
+      description: "Strategii pentru integrarea securității în etapele dezvoltării, rolurile echipelor de dezvoltare și securitate, precum și bune practici pentru gestionarea vulnerabilităților, scanarea codului sursă și verificarea componentelor open-source.",
       category: "ghid",
-      link: "#",
+      link: "https://www.practical-devsecops.com/wp-content/uploads/2024/12/Ensuring-Product-Security-in-DevSecOps.pdf",
     },
     {
       id: "devsecops-implementation",
-      title: "Implementarea DevSecOps",
-      description: "Ghid pas cu pas pentru implementarea DevSecOps în organizația ta.",
+      title: "Integrating Security into CI/CD Pipelines",
+      description: "Aplicarea principiilor DevSecOps direct în fluxurile CI/CD. Sunt detaliate instrumentele și tehnicile care permit detectarea timpurie a riscurilor de securitate, automatizarea testelor de securitate și prevenirea livrării codului vulnerabil în producție.",
       category: "ghid",
-      link: "#",
+      link: "https://www.practical-devsecops.com/wp-content/uploads/2024/06/eBook-Integrating-Security-into-CI_CD-Pipelines-through-DevSecOps-Approach-1.pdf",
     },
     {
       id: "secure-api",
-      title: "Securizarea API-urilor",
-      description: "Cum să proiectezi și să implementezi API-uri securizate.",
+      title: "API Security Fundamentals",
+      description: "Ghidul oferă o introducere esențială în securizarea API-urilor, subliniind amenințările comune (precum OWASP API Top 10), metodele de autentificare și autorizare (OAuth2, JWT), precum și tehnici de validare a inputului și rate-limiting.",
       category: "ghid",
-      link: "#",
+      link: "https://www.practical-devsecops.com/wp-content/uploads/2023/04/API-Security-Fundamentals-ebook.pdf",
     },
-    {
-      id: "container-security",
-      title: "Securitatea containerelor",
-      description: "Cele mai bune practici pentru securizarea containerelor Docker și Kubernetes.",
-      category: "ghid",
-      link: "#",
-    },
+    // {
+    //   id: "container-security",
+    //   title: "Securitatea containerelor",
+    //   description: "Cele mai bune practici pentru securizarea containerelor Docker și Kubernetes.",
+    //   category: "ghid",
+    //   link: "#",
+    // },
   ]
 
   const tools = [
@@ -59,19 +59,19 @@ export default function ResursePage() {
       link: "https://owasp.org/www-project-dependency-check/",
     },
     {
-      id: "docker-bench",
-      title: "Docker Bench for Security",
-      description: "Script pentru verificarea configurațiilor de securitate ale containerelor Docker.",
+      id: "other-instruments",
+      title: "Instrumente pentru testarea securității",
+      description: "Vezi instrumentele de testare a securității si descrierile acestora în tabul Instrumente din secțiunea Testare de Securitate",
       category: "containere",
-      link: "https://github.com/docker/docker-bench-security",
+      link: "ssdlc/testare",
     },
-    {
-      id: "trivy",
-      title: "Trivy",
-      description: "Scanner pentru vulnerabilități în imagini de containere și fișiere de configurare.",
-      category: "containere",
-      link: "https://github.com/aquasecurity/trivy",
-    },
+    // {
+    //   id: "trivy",
+    //   title: "Trivy",
+    //   description: "Scanner pentru vulnerabilități în imagini de containere și fișiere de configurare.",
+    //   category: "containere",
+    //   link: "https://github.com/aquasecurity/trivy",
+    // },
   ]
 
   const documents = [
@@ -122,11 +122,11 @@ export default function ResursePage() {
             <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
               SSDLC
             </Link>
-            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
-              Evaluare
-            </Link>
             <Link href="/resurse" className="text-sm font-medium hover:underline underline-offset-4">
               Resurse
+            </Link>
+            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
+              Evaluare
             </Link>
           </nav>
           <Button variant="outline" size="sm" className="hidden md:flex">
@@ -150,28 +150,15 @@ export default function ResursePage() {
 
         <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Bibliotecă de resurse</h1>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Ghiduri de implementare, instrumente și resurse suplimentare pentru securitatea în DevOps.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-3 md:py-6 lg:py-8">
-          <div className="container px-4 md:px-6">
             <Tabs defaultValue="ghiduri" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3">
                 <TabsTrigger value="ghiduri">Ghiduri</TabsTrigger>
                 <TabsTrigger value="instrumente">Instrumente</TabsTrigger>
-                <TabsTrigger value="documente">Documente</TabsTrigger>
+                {/* <TabsTrigger value="documente">Documente</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="ghiduri" className="mt-6">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {guides.map((guide) => (
                     <Card key={guide.id} className="flex flex-col h-full">
                       <CardHeader>
@@ -218,7 +205,7 @@ export default function ResursePage() {
                       <CardFooter>
                         <a href={tool.link} target="_blank" rel="noopener noreferrer" className="w-full">
                           <Button variant="outline" size="sm" className="w-full">
-                            Accesează instrumentul
+                            Accesează resursa
                             <ExternalLink className="ml-2 h-4 w-4" />
                           </Button>
                         </a>
@@ -228,7 +215,7 @@ export default function ResursePage() {
                 </div>
               </TabsContent>
 
-              <TabsContent value="documente" className="mt-6">
+              {/* <TabsContent value="documente" className="mt-6">
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
                   {documents.map((document) => (
                     <Card key={document.id} className="flex flex-col h-full">
@@ -255,7 +242,7 @@ export default function ResursePage() {
                     </Card>
                   ))}
                 </div>
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </div>
         </section>
@@ -266,8 +253,7 @@ export default function ResursePage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter">Resurse externe recomandate</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Linkuri către resurse externe valoroase pentru aprofundarea cunoștințelor despre securitatea în
-                  DevOps.
+                  Linkuri către resurse externe despre securitatea în DevOps.
                 </p>
               </div>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
@@ -317,7 +303,7 @@ export default function ResursePage() {
             Securedevops - platformă informativ-educațională despre securitatea în DevOps
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="text-sm text-muted-foreground hover:underline underline-offset-4">
+            <Link href="/termeni" className="text-sm text-muted-foreground hover:underline underline-offset-4">
               Termeni și Condiții
             </Link>
           </div>

@@ -22,11 +22,11 @@ export default function CiclulPage() {
             <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
               SSDLC
             </Link>
-            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
-              Evaluare
-            </Link>
             <Link href="/resurse" className="text-sm font-medium hover:underline underline-offset-4">
               Resurse
+            </Link>
+            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
+              Evaluare
             </Link>
           </nav>
           <Button variant="outline" size="sm" className="hidden md:flex">
@@ -53,7 +53,7 @@ export default function CiclulPage() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold tracking-tighter">Securitate în ciclul de dezvoltare</h1>
-                <p className="text-muted-foreground">Security in Development Lifecycle</p>
+                {/* <p className="text-muted-foreground">Security in Development Lifecycle</p> */}
               </div>
             </div>
 

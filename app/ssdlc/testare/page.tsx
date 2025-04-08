@@ -22,11 +22,11 @@ export default function TestarePage() {
             <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
               SSDLC
             </Link>
-            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
-              Evaluare
-            </Link>
             <Link href="/resurse" className="text-sm font-medium hover:underline underline-offset-4">
               Resurse
+            </Link>
+            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
+              Evaluare
             </Link>
           </nav>
           <Button variant="outline" size="sm" className="hidden md:flex">
@@ -49,11 +49,11 @@ export default function TestarePage() {
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-primary/10 p-3">
-                <TestTube className="h-8 w-8 text-primary" />
+               <Lock className="h-8 w-8 text-primary" />
               </div>
               <div>
                 <h1 className="text-3xl font-bold tracking-tighter">Testare de Securitate</h1>
-                <p className="text-muted-foreground">Security Testing</p>
+                {/* <p className="text-muted-foreground">Security Testing</p> */}
               </div>
             </div>
 
@@ -235,7 +235,6 @@ export default function TestarePage() {
                         <li>SonarQube - analiză de cod pentru multiple limbaje de programare</li>
                         <li>Checkmarx - identifică vulnerabilități în codul sursă</li>
                         <li>Fortify - analiză statică de cod cu suport pentru multiple limbaje</li>
-                        <li>Veracode - oferă o platformă bazată pe cloud, ușor de integrat în procesele agile.</li>
                         <p>Observații: Soluțiile moderne SAST trebuie să fie actualizate constant pentru a detecta noile tipologii de vulnerabilități</p> 
                       </ul>
                     </div>
@@ -243,19 +242,19 @@ export default function TestarePage() {
                     <div className="space-y-2">
                       <h3 className="font-medium">Instrumente DAST (Dynamic Application Security Testing)</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Nessus - scanează vulnerabilitățile în infrastructură și aplicații. Este folosit pentru evaluarea dinamică a securității, identificând punctele slabe care pot fi exploatate în mediul de producție</li>
-                        <li>OpenVAS - alternativă open-source la Nessus, utilizată pentru scanări de vulnerabilități. Oferă o soluție gratuită pentru evaluarea dinamică a securității, fiind potrivită pentru mediile care preferă soluții open-source</li>
-                        <li>Burp Suite Professional - rămâne o referință în testarea aplicațiilor web, oferind un set bogat de funcționalități pentru identificarea vulnerabilităților la runtime</li>
-                        <li>OWASP ZAP - popular și open-source, cu comunitate activă și suport constant pentru a acoperi cele mai noi amenințări</li>
-                        <p>Observații: Actualizarea regulată a bazelor de date de vulnerabilități este esențială. Versiunile mai vechi sau neactualizate ale instrumentelor DAST pot să nu detecteze cele mai recente tehnici de atac</p> 
+                        <li>Nessus - scanează vulnerabilitățile în infrastructură și aplicații</li>
+                        <li>OpenVAS - alternativă open-source la Nessus, utilizată pentru scanări de vulnerabilități</li>
+                        <li>Burp Suite Professional - pentru testarea aplicațiilor web, oferind un set vast de funcționalități</li>
+                        <li>OWASP ZAP - popular și open-source, cu comunitate activă și suport constant</li>
+                        <p>Observații: Actualizarea regulată a bazelor de date de vulnerabilități este esențială. Versiunile mai vechi sau neactualizate pot să nu detecteze cele mai recente tehnici de atac</p> 
                       </ul>
                     </div>
                     
                     <div className="space-y-2">
                       <h3 className="font-medium">Instrumente IAST (Interactive Application Security Testing)</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Contrast Security - este unul dintre liderii pieței în IAST, oferind o integrare puternică în mediile de execuție pentru a monitoriza comportamentul aplicațiilor în timp real</li>
-                        <li>Seeker by Synopsys - o altă soluție modernă ce combină avantajele SAST și DAST cu monitorizarea interactivă a aplicației</li>
+                        <li>Contrast Security - unul dintre liderii pieței în IAST, oferind o integrare puternică în mediile de execuție (monitoriza în timp real)</li>
+                        <li>Seeker by Synopsys - o soluție modernă ce combină avantajele SAST și DAST cu monitorizarea interactivă a aplicației</li>
                         <p>Observații: IAST este încă într-o fază de maturizare, iar implementările sunt adesea destinate organizațiilor cu infrastructuri complexe. Pentru echipele mai mici, integrarea poate fi considerată prea specializată sau costisitoare dacă nu este corelată cu fluxuri automatizate de CI/CD</p> 
                       </ul>
                     </div>
@@ -263,10 +262,10 @@ export default function TestarePage() {
                     <div className="space-y-2">
                       <h3 className="font-medium">Instrumente Penetration Testing (Pen Testing)</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Metasploit Framework - este un standard pentru testele de penetrare, oferind o vastă bibliotecă de exploit-uri și module de test</li>
-                        <li>Kali Linux (și distribuții bazate pe aceasta) - include un set cuprinzător de instrumente (Nmap, Wireshark, etc.) folosite de experți în pen testing</li>
-                        <li>Burp Suite (modulul manual de pen testing) - pe lângă DAST, este folosit și pentru evaluări manuale, oferind flexibilitate în simularea atacurilor</li>
-                        <li>Nmap - esențial pentru identificarea serviciilor expuse și a configurărilor incorecte la nivel de rețea. Acesta este folosit în etapa de recunoaștere în cadrul testelor de penetrare, furnizând o hartă a infrastructurii ce poate fi exploatată</li>
+                        <li>Metasploit Framework - este un standard pentru testele de penetrare, cu o vastă bibliotecă de exploit-uri și module de test</li>
+                        <li>Kali Linux - include un set cuprinzător de instrumente (Nmap, Wireshark, etc.) folosite de experți în pen testing</li>
+                        <li>Burp Suite (modulul manual de pen testing) - pe lângă DAST, este folosit și pentru evaluări manuale (flexibilitate în simularea atacurilor)</li>
+                        <li>Nmap - esențial pentru identificarea serviciilor expuse și a configurărilor incorecte la nivel de rețea</li>
                         <p>Observații: Deoarece pen testing-ul este adesea realizat manual de experți, instrumentele trebuie să fie alese în funcție de specificul mediului și de expertiza echipei</p> 
                       </ul>
                     </div>
@@ -278,7 +277,7 @@ export default function TestarePage() {
                         <li>Snyk - monitorizează și remediază vulnerabilități în dependențe</li>
                         <li>WhiteSource - gestionează securitatea și conformitatea componentelor open-source</li>
                         <li>Black Duck - identifică și gestionează riscurile de securitate în componente</li>
-                        <p>Observații: Datorită creșterii rapide a utilizării componentelor open-source, SCA a devenit esențial</p> 
+                        <p>Observații: Datorită creșterii rapide a utilizării componentelor open-source, SCA a devenit destul de popular</p> 
                       </ul>
                     </div>
 
@@ -286,10 +285,10 @@ export default function TestarePage() {
                       <h3 className="font-medium">Instrumente online de testare a securității</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>ImmuniWeb Community Edition - furnizează o gamă largă de teste gratuite</li>
-                        <li>HostedScan Security - furnizează un scaner online de vulnerabilități pentru aplicații web, inclusiv bazate pe OWASP ZAP</li>
-                        <li>InternetSecure.org - serviciu gratuit care combină teste pentru anteturi de securitate, SSL/TLS, DNSSEC și detectarea WAF, oferind opțiuni de scanare programată și monitorizare a modificărilor</li>
-                        <p>Observații: Utilizarea instrumentelor online de testare a securității implică anumite riscuri asociate, precum: divulgarea codului sursă, expunerea vulnerabilităților către terți, ș.a.
-                        Ori de câte ori este posibil, efectuați testele de securitate folosind instrumente instalate și rulate în mediul intern al organizației. Anonimizați datele sensibile: Înainte de a încărca codul sau datele într-un serviciu online, asigurați-vă că informațiile sensibile sunt eliminate sau mascate.</p> 
+                        <li>HostedScan Security - furnizează un scaner online de vulnerabilități pentru aplicații web</li>
+                        <li>InternetSecure.org - serviciu gratuit care combină teste pentru anteturi de securitate SSL/TLS, DNSSEC și detectarea WAF</li>
+                        <p>Observații: Utilizarea instrumentelor online de testare a securității implică anumite riscuri asociate, precum divulgarea codului sursă, expunerea vulnerabilităților către terți, ș.a.
+                        Ori de câte ori este posibil, efectuați testele de securitate folosind instrumente instalate și rulate în mediul intern al organizației. Anonimizați datele sensibile: Înainte de a încărca codul sau datele într-un serviciu online.</p> 
                       </ul>
                     </div>
                     

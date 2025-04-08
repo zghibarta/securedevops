@@ -84,11 +84,11 @@ export default function EvaluarePage() {
             <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
               SSDLC
             </Link>
-            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
-              Evaluare
-            </Link>
             <Link href="/resurse" className="text-sm font-medium hover:underline underline-offset-4">
               Resurse
+            </Link>
+            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
+              Evaluare
             </Link>
           </nav>
           <Button variant="outline" size="sm" className="hidden md:flex">
