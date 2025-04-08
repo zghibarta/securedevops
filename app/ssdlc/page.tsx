@@ -8,7 +8,7 @@ export default function SSDLCPage() {
     {
       id: "ssdlc",
       title: "Securitate în ciclul de dezvoltare",
-      icon: <FileSearch className="h-6 w-6" />,
+      icon: <RefreshCcw className="h-6 w-6" />,
       description: "Descrierea SSDLC, practici recomandate și modele cadru.",
       link: "/ssdlc/ciclul",
     },
@@ -23,7 +23,7 @@ export default function SSDLCPage() {
     {
       id: "vulnerabilities",
       title: "Managementul vulnerabilităților",
-      icon: <Code className="h-6 w-6" />,
+      icon: <AlertTriangle className="h-6 w-6" />,
       description:
         "Procesul de management al vulnerabilităților și practici de integrare în DevOps.",
       link: "/ssdlc/vulnerabilitati"

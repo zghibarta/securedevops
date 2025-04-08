@@ -3,9 +3,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   ArrowRight,
+  Lightbulb,
   Shield,
   AlertTriangle,
+  KeyRound,
   Lock,
+  Code,
+  Settings,
   UserX,
   Server,
   FileCode,
@@ -30,7 +34,7 @@ export default function OwaspPage() {
       id: "a02",
       title: "A02:2021 – Cryptographic Failures",
       titleRo: "A02 – Eșecuri criptografice",
-      icon: <Shield className="h-6 w-6" />,
+      icon: <KeyRound className="h-6 w-6" />,
       description:
         "Eșecuri legate de criptografie care duc la expunerea datelor sensibile. Aceste vulnerabilități apar când datele sensibile nu sunt protejate adecvat.",
       link: "/owasp/a02#top",
@@ -39,7 +43,7 @@ export default function OwaspPage() {
       id: "a03",
       title: "A03:2021 – Injection",
       titleRo: "A03 – Injectare",
-      icon: <FileCode className="h-6 w-6" />,
+      icon: <Code className="h-6 w-6" />,
       description:
         "Datele ostile sunt trimise către un interpretor ca parte a unei comenzi sau interogări. Atacatorul poate executa comenzi neintenționate sau accesa date fără autorizație.",
       link: "/owasp/a03#top",
@@ -48,7 +52,7 @@ export default function OwaspPage() {
       id: "a04",
       title: "A04:2021 – Insecure Design",
       titleRo: "A04 – Proiectare nesecurizată",
-      icon: <Bug className="h-6 w-6" />,
+      icon: <Lightbulb className="h-6 w-6" />,
       description:
         "O nouă categorie care se concentrează pe riscurile legate de defecte de design/proiectare. Securitatea adecvată la nivel de proiectare poate reduce semnificativ severitatea multor vulnerabilități.",
       link: "/owasp/a04#top",
@@ -57,7 +61,7 @@ export default function OwaspPage() {
       id: "a05",
       title: "A05:2021 – Security Misconfiguration",
       titleRo: "A05 – Configurare inadecvată a securității",
-      icon: <Server className="h-6 w-6" />,
+      icon: <Settings className="h-6 w-6" />,
       description:
         "Configurări implicite nesigure, configurări incomplete, stocarea în cloud deschisă, mesaje de eroare care conțin informații sensibile și lipsa patch-urilor de securitate.",
       link: "/owasp/a05#top",

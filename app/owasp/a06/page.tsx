@@ -49,10 +49,10 @@ export default function A06Page() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-primary/10 p-3">
-                <Package className="h-8 w-8 text-primary" />
+                <AlertTriangle className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A06:2021 – Componente Vulnerabile și Învechite</h1>
+                <h1 className="text-3xl font-bold tracking-tighter">A06:2021 – Componente vulnerabile și învechite</h1>
                 <p className="text-muted-foreground">Vulnerable and Outdated Components</p>
               </div>
             </div>
