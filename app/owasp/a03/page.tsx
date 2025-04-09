@@ -64,7 +64,7 @@ export default function A03Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Vulnerabilitățile de injecție apar atunci când datele furnizate de utilizator nu sunt validate,
+                  Vulnerabilitățile de injectare apar atunci când datele furnizate de utilizator nu sunt validate,
                   filtrate sau sanitizate corespunzător. Atacatorii pot trimite date ostile care fac parte din comenzi
                   sau interogări, înșelând interpretorul să execute comenzi neintenționate sau să acceseze date fără
                   autorizație.

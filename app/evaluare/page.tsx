@@ -111,7 +111,8 @@ export default function EvaluarePage() {
         </section>
 
         <section className="w-full py-3 md:py-6 lg:py-8">
-          <div className="container px-4 md:px-6">
+         <div className="container px-4 md:px-6">
+         <p className="text-red-500 text-center">Pagină în dezvoltare</p>
             <Tabs defaultValue="teste" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
                 <TabsTrigger value="teste">Teste</TabsTrigger>
