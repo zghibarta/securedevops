@@ -73,7 +73,7 @@ export default function HomePage() {
                   <div className="rounded-full bg-primary/10 p-4">
                     <Shield className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold group-hover:underline">OWASP Top Ten 2021</h3>
+                  <h3 className="text-xl font-bold group-hover:underline">OWASP Top 10: 2021</h3>
                   <p className="text-center text-muted-foreground">
                     Vulnerabilități de securitate web conform OWASP, cu exemple practice și metode de prevenire
                   </p>

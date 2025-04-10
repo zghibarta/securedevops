@@ -10,7 +10,7 @@ export default function SSDLCPage() {
       title: "Securitate în ciclul de dezvoltare",
       icon: <RefreshCcw className="h-6 w-6" />,
       description: "Descrierea SSDLC, practici recomandate și modele cadru.",
-      link: "/ssdlc/ciclul",
+      link: "/ssdlc/securitate",
     },
     {
       id: "testing",
