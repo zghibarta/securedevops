@@ -8,33 +8,6 @@ import Image from "next/image"
 export default function A10Page() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center gap-2">
-            <Shield className="h-6 w-6" />
-            <Link href="/" className="text-lg font-bold">
-              SecureDevOps
-            </Link>
-          </div>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/owasp" className="text-sm font-medium hover:underline underline-offset-4">
-              OWASP Top Ten 2021
-            </Link>
-            <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
-              SSDLC
-            </Link>
-            <Link href="/resurse" className="text-sm font-medium hover:underline underline-offset-4">
-              Resurse
-            </Link>
-            <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
-              Evaluare
-            </Link>
-          </nav>
-          <Button variant="outline" size="sm" className="hidden md:flex">
-            Autentificare
-          </Button>
-        </div>
-      </header>
       <main className="flex-1 flex justify-center">
         <div className="container max-w-4xl px-4 py-6 md:px-6 md:py-12">
           <div className="flex items-center gap-2 mb-4">
