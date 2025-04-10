@@ -20,7 +20,7 @@ export function Header() {
 
         <nav className={`flex flex-col absolute top-16 right-0 mx-auto w-auto bg-background border-b gap-2 p-4 md:relative md:top-0 md:flex-row md:p-0 md:border-b-0 md:gap-6 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
           <Link href="/owasp" className="text-sm font-medium hover:underline underline-offset-4">
-            OWASP Top Ten 2021
+            OWASP Top Ten
           </Link>
           <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
             SSDLC
@@ -33,13 +33,13 @@ export function Header() {
           </Link>
 
           {/* Buton Autentificare mutat în meniu */}
-          <Button variant="outline" size="sm" className="md:hidden">
+          <Button variant="outline" size="sm" className="md:hidden" title="În dezvoltare">
             Autentificare
           </Button>
         </nav>
 
         {/* Buton Autentificare pentru desktop */}
-        <div className="hidden md:flex items-center gap-2 px-4">
+        <div className="hidden md:flex items-center gap-2 px-4" title="În dezvoltare">
           <Button variant="outline" size="sm">
             Autentificare
           </Button>

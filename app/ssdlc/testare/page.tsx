@@ -21,10 +21,10 @@ export default function TestarePage() {
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-primary/10 p-3">
-               <Lock className="h-8 w-8 text-primary" />
+               <Lock className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">Testare de Securitate</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">Testare de Securitate</h1>
                 {/* <p className="text-muted-foreground">Security Testing</p> */}
               </div>
             </div>

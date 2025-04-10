@@ -60,9 +60,9 @@ export default function SSDLCPage() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secure Software Development Life Cycle (SSDLC)</h1>
+                <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">Secure Software Development Life Cycle (SSDLC)</h1>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Integrarea securității în fiecare etapă a ciclului de dezvoltare software în contextul DevOps
+                Integrarea securității în fiecare etapă a ciclului de dezvoltare software
                 </p>
               </div>
             </div>
@@ -71,16 +71,16 @@ export default function SSDLCPage() {
         <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container px-4 md:px-6">
             <div className="mb-12">
-              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl mb-4">Ce este SSDLC?</h2>
+              <h2 className="text-xl font-bold tracking-tighter sm:text-xl mb-4">Ce este SSDLC?</h2>
               <p className="text-muted-foreground mb-6">
               Securitatea în ciclul de dezvoltare software (SSDLC - Secure Software Development Lifecycle) reprezintă integrarea sistematică a activităților de securitate în fiecare etapă a procesului de dezvoltare software. Scopul este de a identifica și remedia vulnerabilitățile de securitate cât mai devreme în ciclul de dezvoltare, când costurile de remediere sunt mai mici.
               </p>
-              <p className="text-muted-foreground">
+              {/* <p className="text-muted-foreground">
                 În contextul DevOps, SSDLC devine și mai important, deoarece viteza de livrare a software-ului crește,
                 iar securitatea trebuie să țină pasul cu această viteză fără a deveni un blocaj. Acest lucru a dus la
                 apariția conceptului de "DevSecOps", care încorporează securitatea ca parte integrantă a culturii
                 DevOps.
-              </p>
+              </p> */}
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

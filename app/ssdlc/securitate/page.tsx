@@ -21,10 +21,10 @@ export default function CiclulPage() {
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-primary/10 p-3">
-                <RefreshCcw className="h-8 w-8 text-primary" />
+                <RefreshCcw className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">Securitate în ciclul de dezvoltare</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">Securitate în ciclul de dezvoltare</h1>
                 {/* <p className="text-muted-foreground">Security in Development Lifecycle</p> */}
               </div>
             </div>
@@ -36,7 +36,7 @@ export default function CiclulPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Ciclul de Viață pentru dezvoltarea securizată a software-ului (SSDLC) este o metodologie care integrează
+                  Ciclul de viață pentru dezvoltarea securizată a software-ului (SSDLC) - o metodologie care integrează
                   securitatea în fiecare etapă a procesului de dezvoltare software.
                 </p>
                 <p>

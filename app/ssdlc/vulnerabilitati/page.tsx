@@ -21,10 +21,10 @@ export default function VulnerabilitatiPage() {
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-primary/10 p-3">
-                <AlertTriangle className="h-8 w-8 text-primary" />
+                <AlertTriangle className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">Managementul ulnerabilităților</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">Managementul ulnerabilităților</h1>
                 {/* <p className="text-muted-foreground">Vulnerability Management</p> */}
               </div>
             </div>

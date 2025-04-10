@@ -15,9 +15,9 @@ export default function HomePage() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Securitate în DevOps</h1>
+                <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">Securitate în DevOps</h1>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Integrăm securitatea în fluxul de lucru DevOps și prevenim vulnerabilitățile comune folosind OWASP Top Ten 2021 și practicile SSDLC
+                Integrarea securității în DevOps și prevenirea vulnerabilităților OWASP Top Ten prin practici SSDLC
                 </p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function HomePage() {
               <div className="space-y-2">
                 {/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secțiuni principale</h2> */}
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Explorați conținutul educațional structurat pentru a înțelege mai bine securitatea în DevOps.
+                  Explorați conținutul educațional structurat pentru a înțelege mai bine securitatea în DevOps
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">OWASP Top Ten 2021</h3>
                   <p className="text-center text-muted-foreground">
-                    Vulnerabilități de securitate web conform OWASP, cu exemple practice și metode de prevenire.
+                    Vulnerabilități de securitate web conform OWASP, cu exemple practice și metode de prevenire
                   </p>
                 </div>
               </Link>
@@ -86,7 +86,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">SSDLC în DevOps</h3>
                   <p className="text-center text-muted-foreground">
-                    Integrarea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului în fluxul DevOps.
+                    Integrarea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului în fluxul DevOps
                   </p>
                 </div>
               </Link>
@@ -97,7 +97,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">Bibliotecă de resurse</h3>
                   <p className="text-center text-muted-foreground">
-                    Ghiduri de implementare, bune practici și resurse suplimentare pentru securitatea în DevOps.
+                    Ghiduri de implementare, bune practici și resurse suplimentare pentru securitatea în DevOps
                   </p>
                 </div>
               </Link>
@@ -108,7 +108,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">Evaluare cunoștințe</h3>
                   <p className="text-center text-muted-foreground">
-                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre securitatea în DevOps.
+                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre securitatea în DevOps
                   </p>
                 </div>
               </Link>
