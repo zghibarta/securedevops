@@ -6,10 +6,29 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "SecureDevOps - platformă informativ-educațională pentru Securitate în DevOps",
+  title: "SecureDevOps – OWASP și SSDLC",
   description:
-    "Integrăm securitatea în DevOps și prevenim vulnerabilitățile comune folosind OWASP Top Ten 2021 și practicile SSDLC",
-    generator: 'stackblitz'
+    "Platformă informativ-educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
+  generator: 'stackblitz',
+  icon: {
+    url: 'https://8nmeoqw9aev37hfc.public.blob.vercel-storage.com/favicon.ico',
+    type: 'image/x-icon',
+  },
+  openGraph: {
+    title: "SecureDevOps – OWASP și SSDLC",
+    description: "Platformă informativ-educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
+    url: "https://securedevops.site",
+    siteName: "SecureDevOps",
+    images: [
+      {
+        url: "https://8nmeoqw9aev37hfc.public.blob.vercel-storage.com/og-securedev.jpg",
+        width: 1024,
+        height: 541,
+      },
+    ],
+    locale: "ro_RO",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
@@ -27,7 +46,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

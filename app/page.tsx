@@ -1,9 +1,13 @@
+'use client';
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, BookOpen, CheckCircle, Library } from "lucide-react"
-import React from 'react';
+import { ArrowRight, Shield, BookOpen, CheckCircle, Library, Menu } from "lucide-react"
+import React, { useState } from 'react';
 
 export default function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b">
@@ -14,7 +18,8 @@ export default function HomePage() {
               SecureDevOps
             </Link>
           </div>
-          <nav className="hidden md:flex gap-6">
+
+          <nav className={`flex flex-col absolute top-16 right-0 mx-auto w-auto bg-background border-b gap-2 p-4 md:relative md:top-0 md:flex-row md:p-0 md:border-b-0 md:gap-6 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
             <Link href="/owasp" className="text-sm font-medium hover:underline underline-offset-4">
               OWASP Top Ten 2021
             </Link>
@@ -27,10 +32,27 @@ export default function HomePage() {
             <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
               Evaluare
             </Link>
+
+            {/* Buton Autentificare mutat în meniu */}
+            <Button variant="outline" size="sm" className="md:hidden">
+              Autentificare
+            </Button>
           </nav>
-          <Button variant="outline" size="sm" className="hidden md:flex">
-            Autentificare
-          </Button>
+
+          {/* Buton Autentificare pentru desktop */}
+          <div className="hidden md:flex items-center gap-2">
+            <Button variant="outline" size="sm">
+              Autentificare
+            </Button>
+          </div>
+
+          {/* Hamburger menu */}
+          <button 
+            className="md:hidden flex items-center justify-center w-8 h-8 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Menu className="h-4 w-4" />
+          </button>
         </div>
       </header>
       <main className="flex-1 mx-auto">
