@@ -39,7 +39,7 @@ export function Header() {
         </nav>
 
         {/* Buton Autentificare pentru desktop */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2 px-4">
           <Button variant="outline" size="sm">
             Autentificare
           </Button>
