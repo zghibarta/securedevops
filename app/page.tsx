@@ -17,7 +17,7 @@ export default function HomePage() {
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">Securitate în DevOps</h1>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Integrarea securității în DevOps și prevenirea vulnerabilităților OWASP Top Ten prin practici SSDLC
+                Integrarea securității în DevOps și prevenirea vulnerabilităților OWASP Top Ten
                 </p>
               </div>
             </div>

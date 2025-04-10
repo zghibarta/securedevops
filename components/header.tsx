@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Shield, Menu } from "lucide-react"
+import { Shield, Menu, X } from "lucide-react"
 import React, { useState } from 'react';
 
 export function Header() {
@@ -19,16 +19,16 @@ export function Header() {
         </div>
 
         <nav className={`flex flex-col absolute top-16 right-0 mx-auto w-auto bg-background border-b gap-2 p-4 md:relative md:top-0 md:flex-row md:p-0 md:border-b-0 md:gap-6 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
-          <Link href="/owasp" className="text-sm font-medium hover:underline underline-offset-4">
+          <Link href="/owasp" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium hover:underline underline-offset-4">
             OWASP Top Ten
           </Link>
-          <Link href="/ssdlc" className="text-sm font-medium hover:underline underline-offset-4">
+          <Link href="/ssdlc" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium hover:underline underline-offset-4">
             SSDLC
           </Link>
-          <Link href="/resurse" className="text-sm font-medium hover:underline underline-offset-4">
+          <Link href="/resurse" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium hover:underline underline-offset-4">
             Resurse
           </Link>
-          <Link href="/evaluare" className="text-sm font-medium hover:underline underline-offset-4">
+          <Link href="/evaluare" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium hover:underline underline-offset-4">
             Evaluare
           </Link>
 
@@ -50,7 +50,8 @@ export function Header() {
           className="md:hidden flex items-center justify-center w-8 h-8 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <Menu className="h-4 w-4" />
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* <Menu className="h-4 w-4" /> */}
         </button>
       </div>
     </header>
