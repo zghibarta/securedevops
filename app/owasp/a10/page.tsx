@@ -68,7 +68,7 @@ export default function A10Page() {
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="exemple">Exemple</TabsTrigger>
                 <TabsTrigger value="prevenire">Prevenire</TabsTrigger>
-                <TabsTrigger value="devops">Integrare în DevOps</TabsTrigger>
+                <TabsTrigger value="devops">DevOps</TabsTrigger>
               </TabsList>
 
               <TabsContent value="exemple" className="space-y-2 pt-2">

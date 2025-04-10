@@ -49,9 +49,9 @@ export default function CiclulPage() {
 
             <Tabs defaultValue="faze">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="faze">Etapele SSDLC</TabsTrigger>
-                <TabsTrigger value="practici">Practici Recomandate</TabsTrigger>
-                <TabsTrigger value="modele">Modele SSDLC</TabsTrigger>
+                <TabsTrigger value="faze">Etape SSDLC</TabsTrigger>
+                <TabsTrigger value="practici">Recomandări</TabsTrigger>
+                <TabsTrigger value="modele">Modele</TabsTrigger>
               </TabsList>
 
               <TabsContent value="faze" className="space-y-4 pt-4">

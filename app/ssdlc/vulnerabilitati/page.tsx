@@ -51,9 +51,9 @@ export default function VulnerabilitatiPage() {
 
             <Tabs defaultValue="proces">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="proces">Procesul</TabsTrigger>
+                <TabsTrigger value="proces">Proces</TabsTrigger>
                 <TabsTrigger value="prioritizare">Prioritizare</TabsTrigger>
-                <TabsTrigger value="devops">Integrare în DevOps</TabsTrigger>
+                <TabsTrigger value="devops">Integrare</TabsTrigger>
               </TabsList>
 
               <TabsContent value="proces" className="space-y-4 pt-4">

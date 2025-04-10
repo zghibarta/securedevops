@@ -51,8 +51,8 @@ export default function TestarePage() {
 
             <Tabs defaultValue="tipuri">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="tipuri">Tipuri de testare</TabsTrigger>
-                <TabsTrigger value="integrare">Integrare în SSDLC</TabsTrigger>
+                <TabsTrigger value="tipuri">Testări</TabsTrigger>
+                <TabsTrigger value="integrare">Recomandări</TabsTrigger>
                 <TabsTrigger value="instrumente">Instrumente</TabsTrigger>
               </TabsList>
 
