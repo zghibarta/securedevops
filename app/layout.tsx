@@ -42,11 +42,13 @@ export default function RootLayout({
     <html lang="ro" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <Header />
-          <div className="flex-grow">
-            {children}
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
           </div>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
