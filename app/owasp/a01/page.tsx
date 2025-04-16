@@ -48,7 +48,7 @@ export default function A01Page() {
                 </p>
                 <div className="flex justify-center my-6">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A01.jpg-zaP6gZkQCQl8SlDBmrNsFf6gol7BLH.jpeg"
+                    src="/images/A01.jpg"
                     alt="Control de Acces Defectuos - Diagram showing how an attacker can intercept and change user IDs"
                     width={800}
                     height={400}

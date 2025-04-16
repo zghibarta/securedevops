@@ -48,7 +48,7 @@ export default function A02Page() {
                 </p>
                 <div className="flex justify-center my-6">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A02.jpg-GK8kIDqGmwnxhZ4O6q5cFkawv1EDg9.jpeg"
+                    src="/images/A02.jpg"
                     alt="Eșecuri Criptografice - Diagram showing how a hacker can monitor network, steal cookies and hijack sessions"
                     width={800}
                     height={400}

@@ -48,7 +48,7 @@ export default function A05Page() {
                 </p>
                 <div className="flex justify-center my-6">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A05.jpg-5uo7BNMal8N2nxSAvHAnnWRF6evr2a.jpeg"
+                    src="/images/A05.jpg"
                     alt="Configurare Greșită de Securitate - Diagram showing security misconfiguration with default credentials"
                     width={800}
                     height={400}

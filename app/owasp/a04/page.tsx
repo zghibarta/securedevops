@@ -48,7 +48,7 @@ export default function A04Page() {
                 </p>
                 <div className="flex justify-center my-6">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A04.jpg-VaxvY5DULFvW7oZ8msj8y7PAqDO1hd.jpeg"
+                    src="/images/A04.jpg"
                     alt="Design Nesigur - Diagram showing insecure design in a booking portal"
                     width={800}
                     height={400}

@@ -51,7 +51,7 @@ export default function A08Page() {
                 </p>
                 <div className="flex justify-center my-6">
                   <Image
-                    src="https://8nmeoqw9aev37hfc.public.blob.vercel-storage.com/A08.jpg"
+                    src="/images/A08.jpg"
                     alt="A08"
                     width={800}
                     height={400}
@@ -306,4 +306,3 @@ export default function A08Page() {
     </div>
   )
 }
-

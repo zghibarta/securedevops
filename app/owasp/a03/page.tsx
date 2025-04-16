@@ -48,7 +48,7 @@ export default function A03Page() {
                 </p>
                 <div className="flex justify-center my-6">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A03.jpg-HeJlHFGSBpmq1oGZz4U4CkiG7g8gRr.jpeg"
+                    src="/images/A03.jpg"
                     alt="Injecție - Diagram showing SQL injection attack flow"
                     width={800}
                     height={400}
