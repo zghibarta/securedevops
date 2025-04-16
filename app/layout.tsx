@@ -43,7 +43,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
-          {children}
+          <div className="flex-grow">
+            {children}
+          </div>
           <Footer />
         </ThemeProvider>
       </body>
