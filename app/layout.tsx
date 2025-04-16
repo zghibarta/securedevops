@@ -12,7 +12,7 @@ export const metadata = {
     "Platformă informativ-educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
   generator: 'stackblitz',
   icon: {
-    url: 'https://8nmeoqw9aev37hfc.public.blob.vercel-storage.com/favicon.ico',
+    url: '/images/favicon.ico',
     type: 'image/x-icon',
   },
   openGraph: {
@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "SecureDevOps",
     images: [
       {
-        url: "https://8nmeoqw9aev37hfc.public.blob.vercel-storage.com/og-securedev.jpg",
+        url: "/images/og-securedev.jpg",
         width: 1024,
         height: 541,
       },
