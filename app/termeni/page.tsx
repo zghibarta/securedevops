@@ -11,7 +11,7 @@ import { ArrowRight, Shield, BookOpen, CheckCircle, Library } from "lucide-react
 
 export default function TermeniPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <main className="flex-1 mx-auto">
         <section className="w-full py-3 md:py-3 lg:py-4 bg-muted">
 

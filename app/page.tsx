@@ -9,7 +9,7 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <main className="flex-1 mx-auto">
         <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
           <div className="container px-4 md:px-6">
@@ -67,7 +67,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid items-center gap-2 py-6 lg:grid-cols-4 lg:gap-3">
+            <div className="mx-auto grid items-center gap-2 py-4 lg:grid-cols-4 lg:gap-3">
               <Link href="/owasp" className="group">
                 <div className="flex flex-col items-center space-y-4 rounded-lg border p-2 transition-all hover:bg-muted">
                   <div className="rounded-full bg-primary/10 p-4">
@@ -108,7 +108,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-bold group-hover:underline">Evaluare cunoștințe</h3>
                   <p className="text-center text-muted-foreground">
-                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre securitatea în DevOps
+                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre OWASP și securitatea în DevOps
                   </p>
                 </div>
               </Link>

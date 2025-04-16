@@ -54,7 +54,7 @@ export default function SSDLCPage() {
   //   link: "#",
   // }
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <main className="flex-1 mx-auto">
       <section className="w-full py-6 md:py-12 lg:py-16 bg-muted">
           <div className="container px-4 md:px-6">
