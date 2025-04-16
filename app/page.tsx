@@ -1,13 +1,8 @@
-'use client';
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Shield, BookOpen, CheckCircle, Library, Menu } from "lucide-react"
-import React, { useState } from 'react';
 
 export default function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <div className="flex flex-col">
       <main className="flex-1 mx-auto">

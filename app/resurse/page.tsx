@@ -219,14 +219,14 @@ export default function ResursePage() {
           </div>
         </section>
 
-        <section className="w-full py-3 md:py-6 lg:py-8 bg-muted">
+        <section className="w-full py-3 md:py-4 lg:py-6 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-xl font-bold tracking-tighter">Resurse externe recomandate</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+                {/* <p className="max-w-[900px] text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
                   Linkuri către resurse externe despre securitatea în DevOps
-                </p>
+                </p> */}
               </div>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
                 <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer" className="group">
