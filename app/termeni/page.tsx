@@ -27,12 +27,12 @@ export default function TermeniPage() {
                 <strong>Scopul Platformei</strong>
                 <p>Platforma SecureDevOps a fost creată în scopuri informative și educaționale.</p> 
                 <p>Informațiile și instrumentele furnizate sunt destinate îmbunătățirii cunoștințelor în domeniul securității în DevOps.</p> 
-                <p>Utilizatorul își asumă întreaga responsabilitate pentru modul în care utilizează informațiile și instrumentele prezentate.</p>
                 </li>
                 <li className="mb-4">
                 <strong>Utilizarea și Responsabilitățile Utilizatorului</strong>
                 <p>Platforma poate fi accesată și utilizată în mod liber, însă utilizatorul este responsabil de interpretarea și aplicarea informațiilor în contextul propriu.</p>
                 <p>Utilizatorul se obligă să verifice cu atenție sursele și să consulte specialiști înainte de implementarea oricăror soluții tehnice bazate pe informațiile primite.</p>
+                <p>Utilizatorul își asumă întreaga responsabilitate pentru modul în care utilizează informațiile și instrumentele prezentate.</p>
                 </li>
                 <li className="mb-4">
                 <strong>Limitarea Răspunderii</strong>
