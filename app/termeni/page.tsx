@@ -20,11 +20,14 @@ export default function TermeniPage() {
             <ol className="list-decimal list-inside">
                 <li className="mb-4">
                 <strong>Acceptarea Termenilor</strong>
-                <p>Prin accesarea și utilizarea Platformei SecureDevOps, utilizatorul declară că a citit, a înțeles și este de acord cu acești Termeni și Condiții. Utilizarea Platformei implică acceptarea automată a tuturor condițiilor stipulate.</p>
+                <p>Prin accesarea și utilizarea Platformei SecureDevOps, utilizatorul declară că a citit, a înțeles și este de acord cu acești Termeni și Condiții.</p> 
+                <p>Utilizarea Platformei implică acceptarea automată a tuturor condițiilor stipulate.</p>
                 </li>
                 <li className="mb-4">
                 <strong>Scopul Platformei</strong>
-                <p>Platforma SecureDevOps a fost creată în scopuri informative și educaționale. Informațiile și instrumentele furnizate sunt destinate îmbunătățirii cunoștințelor în domeniul securității în DevOps. Utilizatorul își asumă întreaga responsabilitate pentru modul în care utilizează informațiile și instrumentele prezentate.</p>
+                <p>Platforma SecureDevOps a fost creată în scopuri informative și educaționale.</p> 
+                <p>Informațiile și instrumentele furnizate sunt destinate îmbunătățirii cunoștințelor în domeniul securității în DevOps.</p> 
+                <p>Utilizatorul își asumă întreaga responsabilitate pentru modul în care utilizează informațiile și instrumentele prezentate.</p>
                 </li>
                 <li className="mb-4">
                 <strong>Utilizarea și Responsabilitățile Utilizatorului</strong>
@@ -34,7 +37,7 @@ export default function TermeniPage() {
                 <li className="mb-4">
                 <strong>Limitarea Răspunderii</strong>
                 <p>Platforma oferă informații și instrumente „așa cum sunt”, fără garanții explicite sau implicite privind acuratețea, actualitatea sau completețea acestora.</p>
-                <p>În niciun caz, autorul Platformei (formatorul cursului respectiv) nu va fi răspunzător pentru eventualele daune sau pierderi cauzate de utilizarea informațiilor furnizate.</p>
+                <p>În niciun caz, autorul Platformei (formatorul cursului) nu va fi răspunzător pentru eventualele daune sau pierderi cauzate de utilizarea informațiilor furnizate.</p>
                 </li>
                 <li className="mb-4">
                 <strong>Politica de Confidențialitate</strong>
@@ -42,7 +45,7 @@ export default function TermeniPage() {
                 </li>
                 <li className="mb-4">
                 <strong>Contacte</strong>
-                <p>Pentru orice clarificări sau suport în utilizarea Platformei, vă rugăm să contactați formatorul – Aurel Zghibarta, email: <a href="mailto:zghibarta@gmail.com">zghibarta@gmail.com</a>.</p>
+                <p>Pentru orice clarificări sau suport în utilizarea Platformei, vă rugăm să contactați formatorul cursului – Aurel Zghibarta, email: <a href="mailto:zghibarta@gmail.com">zghibarta@gmail.com</a>.</p>
                 </li>
             </ol>
             </div>
