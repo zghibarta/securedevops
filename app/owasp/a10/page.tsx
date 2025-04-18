@@ -234,7 +234,7 @@ export default function A10Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Securizarea Infrastructurii Cloud</h3>
+                      <h3 className="font-medium">Securizarea infrastructurii Cloud</h3>
                       <p className="text-sm">Implementați măsuri de securitate pentru infrastructura cloud:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați servicii de metadate IMDSv2 în AWS, care sunt mai rezistente la SSRF</li>
@@ -244,8 +244,8 @@ export default function A10Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Testarea de Securitate</h3>
-                      <p className="text-sm">Implementați testare de securitate pentru SSRF:</p>
+                      <h3 className="font-medium">Testarea de securitate</h3>
+                      <p className="text-sm">Implementați Testare de securitate pentru SSRF:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Includeți teste specifice pentru SSRF în testele de penetrare</li>
                         <li>Utilizați instrumente de scanare de securitate care pot detecta vulnerabilități SSRF</li>
@@ -254,7 +254,7 @@ export default function A10Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare și Detectare</h3>
+                      <h3 className="font-medium">Monitorizare și detectare</h3>
                       <p className="text-sm">Implementați monitorizare pentru detectarea atacurilor SSRF:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Monitorizați și alertați pentru cereri neobișnuite către servicii interne</li>

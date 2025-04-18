@@ -24,7 +24,7 @@ export default function TestarePage() {
                <Lock className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tighter">Testare de Securitate</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">Testare de securitate</h1>
                 {/* <p className="text-muted-foreground">Security Testing</p> */}
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function TestarePage() {
               <TabsContent value="tipuri" className="space-y-4 pt-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Tipuri de testare de securitate</CardTitle>
+                    <CardTitle>Tipuri de Testare de securitate</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="space-y-2">
@@ -143,7 +143,7 @@ export default function TestarePage() {
                         <h3 className="font-medium">Etapa de design</h3>
                         <p className="text-sm text-muted-foreground">
                           Efectuați revizuiri de securitate a arhitecturii și design-ului. Identificați și planificați
-                          controalele de securitate necesare. Creați planuri de testare de securitate.
+                          controalele de securitate necesare. Creați planuri de Testare de securitate.
                         </p>
                       </div>
                     </div>
@@ -198,7 +198,7 @@ export default function TestarePage() {
               <TabsContent value="instrumente" className="space-y-4 pt-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Instrumente de testare de securitate</CardTitle>
+                    <CardTitle>Instrumente de Testare de securitate</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="space-y-2">

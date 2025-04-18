@@ -225,7 +225,7 @@ export default function A06Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Automatizarea Scanării Dependențelor</h3>
+                      <h3 className="font-medium">Automatizarea scanării dependențelor</h3>
                       <p className="text-sm">Integrați scanarea automată a dependențelor în pipeline-urile CI/CD:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați instrumente precum OWASP Dependency-Check, Snyk sau WhiteSource</li>
@@ -235,7 +235,7 @@ export default function A06Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Gestionarea Dependențelor</h3>
+                      <h3 className="font-medium">Gestionarea dependențelor</h3>
                       <p className="text-sm">Implementați practici de gestionare a dependențelor:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați manageri de dependențe pentru a controla versiunile componentelor</li>
@@ -245,7 +245,7 @@ export default function A06Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Automatizarea Actualizărilor</h3>
+                      <h3 className="font-medium">Automatizarea actualizărilor</h3>
                       <p className="text-sm">Automatizați procesul de actualizare a dependențelor:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați instrumente precum Dependabot sau Renovate pentru a automatiza actualizările</li>
@@ -255,7 +255,7 @@ export default function A06Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare Continuă</h3>
+                      <h3 className="font-medium">Monitorizare continuă</h3>
                       <p className="text-sm">Implementați monitorizare continuă pentru vulnerabilități:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Monitorizați bazele de date de vulnerabilități pentru alerte noi</li>

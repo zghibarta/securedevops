@@ -199,7 +199,7 @@ export default function A03Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Testare Automată de Securitate</h3>
+                      <h3 className="font-medium">Testare automată de securitate</h3>
                       <p className="text-sm">Integrați teste de securitate în pipeline-ul CI/CD:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați scanere SAST pentru a identifica vulnerabilități de injecție în cod</li>
@@ -219,7 +219,7 @@ export default function A03Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare și Detectare</h3>
+                      <h3 className="font-medium">Monitorizare și detectare</h3>
                       <p className="text-sm">Implementați monitorizare pentru a detecta încercări de injecție:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Configurați Web Application Firewalls (WAF) pentru a bloca atacuri comune</li>

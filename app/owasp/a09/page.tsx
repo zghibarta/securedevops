@@ -232,7 +232,7 @@ export default function A09Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Centralizarea Jurnalelor</h3>
+                      <h3 className="font-medium">Centralizarea jurnalelor</h3>
                       <p className="text-sm">Implementați centralizarea jurnalelor în infrastructura DevOps:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați soluții precum ELK Stack (Elasticsearch, Logstash, Kibana) sau Graylog</li>
@@ -242,8 +242,8 @@ export default function A09Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare și Alertare</h3>
-                      <p className="text-sm">Implementați monitorizare și alertare automată:</p>
+                      <h3 className="font-medium">Monitorizare și alertare</h3>
+                      <p className="text-sm">Implementați Monitorizare și alertare automată:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați soluții precum Prometheus, Grafana sau New Relic pentru monitorizare</li>
                         <li>Configurați alerte pentru evenimente de securitate și anomalii</li>
@@ -252,7 +252,7 @@ export default function A09Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Automatizarea Răspunsului</h3>
+                      <h3 className="font-medium">Automatizarea răspunsului</h3>
                       <p className="text-sm">Implementați automatizarea răspunsului la incidente:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>
@@ -264,7 +264,7 @@ export default function A09Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Testarea Jurnalizării</h3>
+                      <h3 className="font-medium">Testarea jurnalizării</h3>
                       <p className="text-sm">Includeți testarea jurnalizării în pipeline-urile CI/CD:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Verificați că evenimentele de securitate sunt jurnalizate corespunzător</li>
@@ -279,7 +279,7 @@ export default function A09Page() {
                         <h3 className="font-medium text-amber-800">Recomandare pentru DevOps</h3>
                         <p className="text-sm text-amber-700">
                           Implementați "Observability as Code" în pipeline-urile DevOps, definind și gestionând
-                          configurațiile de jurnalizare, monitorizare și alertare ca cod. Aceasta asigură consistența
+                          configurațiile de jurnalizare, Monitorizare și alertare ca cod. Aceasta asigură consistența
                           între medii și facilitează auditarea și îmbunătățirea continuă a capacităților de detectare și
                           răspuns.
                         </p>

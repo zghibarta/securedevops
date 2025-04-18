@@ -252,8 +252,8 @@ export default function A05Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Gestionarea Patch-urilor</h3>
-                      <p className="text-sm">Automatizați gestionarea patch-urilor de securitate:</p>
+                      <h3 className="font-medium">Gestionarea patch-urilor</h3>
+                      <p className="text-sm">Automatizați Gestionarea patch-urilor de securitate:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Implementați scanări automate pentru vulnerabilități cunoscute</li>
                         <li>Utilizați instrumente de gestionare a dependențelor pentru a actualiza bibliotecile</li>
@@ -262,7 +262,7 @@ export default function A05Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Imagini de Bază Securizate</h3>
+                      <h3 className="font-medium">Imagini de bază securizate</h3>
                       <p className="text-sm">Utilizați imagini de bază securizate pentru deployment:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Creați imagini de bază hardened pentru servere, containere și mașini virtuale</li>

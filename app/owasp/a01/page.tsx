@@ -210,7 +210,7 @@ export default function A01Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Testare Automată</h3>
+                      <h3 className="font-medium">Testare automată</h3>
                       <p className="text-sm">
                         Integrați teste automate de securitate care verifică controlul accesului în pipeline-ul CI/CD:
                       </p>
@@ -225,8 +225,8 @@ export default function A01Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare și Alertare</h3>
-                      <p className="text-sm">Implementați monitorizare și alertare pentru activități suspecte:</p>
+                      <h3 className="font-medium">Monitorizare și alertare</h3>
+                      <p className="text-sm">Implementați Monitorizare și alertare pentru activități suspecte:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Monitorizați încercările de acces neautorizat</li>
                         <li>Configurați alerte pentru modele de acces anormale</li>

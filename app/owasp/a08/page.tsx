@@ -261,7 +261,7 @@ export default function A08Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare și Detectare</h3>
+                      <h3 className="font-medium">Monitorizare și detectare</h3>
                       <p className="text-sm">Implementați monitorizare pentru detectarea modificărilor neautorizate:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Monitorizați modificările în fișierele de configurare și cod</li>

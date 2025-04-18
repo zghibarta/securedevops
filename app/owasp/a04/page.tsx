@@ -215,7 +215,7 @@ export default function A04Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Securitate în Faza de Planificare</h3>
+                      <h3 className="font-medium">Securitate în etapa de Planificare</h3>
                       <p className="text-sm">Integrați securitatea în faza de planificare a ciclului DevOps:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Includeți experți în securitate în echipele de planificare și design</li>
@@ -225,10 +225,10 @@ export default function A04Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Revizuiri de Arhitectură</h3>
-                      <p className="text-sm">Implementați revizuiri de arhitectură de securitate:</p>
+                      <h3 className="font-medium">Revizuiri de arhitectură</h3>
+                      <p className="text-sm">Implementați Revizuiri de arhitectură de securitate:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Efectuați revizuiri de arhitectură de securitate înainte de implementare</li>
+                        <li>Efectuați Revizuiri de arhitectură de securitate înainte de implementare</li>
                         <li>Utilizați liste de verificare de securitate pentru evaluarea design-ului</li>
                         <li>Documentați deciziile de design legate de securitate</li>
                       </ul>
@@ -245,7 +245,7 @@ export default function A04Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Feedback și Îmbunătățire Continuă</h3>
+                      <h3 className="font-medium">Feedback și îmbunătățire continuă</h3>
                       <p className="text-sm">Implementați mecanisme de feedback și îmbunătățire continuă:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Colectați feedback de la utilizatori și echipe de securitate</li>

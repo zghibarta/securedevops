@@ -61,7 +61,7 @@ export default function ResursePage() {
     {
       id: "other-instruments",
       title: "Instrumente pentru testarea securității",
-      description: "Vezi instrumentele de testare a securității si descrierile acestora în tabul Instrumente din secțiunea Testare de Securitate",
+      description: "Vezi instrumentele de testare a securității si descrierile acestora în tabul Instrumente din secțiunea Testare de securitate",
       category: "containere",
       link: "ssdlc/testare",
     },

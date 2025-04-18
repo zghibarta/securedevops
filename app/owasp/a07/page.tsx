@@ -246,7 +246,7 @@ export default function A07Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare și Detectare</h3>
+                      <h3 className="font-medium">Monitorizare și detectare</h3>
                       <p className="text-sm">Implementați monitorizare pentru activități suspecte:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Monitorizați și alertați pentru încercări multiple de autentificare eșuate</li>
@@ -258,7 +258,7 @@ export default function A07Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Gestionarea Secretelor</h3>
+                      <h3 className="font-medium">Gestionarea secretelor</h3>
                       <p className="text-sm">Implementați gestionarea sigură a secretelor:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați servicii de gestionare a secretelor (HashiCorp Vault, AWS Secrets Manager)</li>

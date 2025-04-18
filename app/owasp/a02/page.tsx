@@ -199,7 +199,7 @@ export default function A02Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Scanare Automată de Cod</h3>
+                      <h3 className="font-medium">Scanare automată de cod</h3>
                       <p className="text-sm">
                         Integrați scanere de securitate în pipeline-ul CI/CD pentru a detecta probleme criptografice:
                       </p>
@@ -211,7 +211,7 @@ export default function A02Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Gestionarea Secretelor</h3>
+                      <h3 className="font-medium">Gestionarea secretelor</h3>
                       <p className="text-sm">Implementați soluții de gestionare a secretelor în pipeline-ul DevOps:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Utilizați servicii precum HashiCorp Vault, AWS Secrets Manager sau Azure Key Vault</li>
@@ -221,7 +221,7 @@ export default function A02Page() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Testare de Securitate</h3>
+                      <h3 className="font-medium">Testare de securitate</h3>
                       <p className="text-sm">
                         Includeți teste specifice pentru verificarea implementărilor criptografice:
                       </p>
