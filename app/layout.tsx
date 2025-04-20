@@ -1,4 +1,5 @@
-import type React from "react"
+import type { Metadata } from "next"
+import { headers } from "next/headers"
 import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -7,14 +8,16 @@ import { Footer } from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "SecureDevOps – OWASP & SSDLC",
   description:
     "Platformă informativ-educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
   generator: 'stackblitz',
-  icon: {
-    url: '/images/favicon.ico',
-    type: 'image/x-icon',
+  icons: {
+    icon: {
+      url: '/images/favicon.ico',
+      type: 'image/x-icon',
+    },
   },
   openGraph: {
     title: "SecureDevOps – OWASP & SSDLC",
@@ -38,18 +41,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const nonce = headers().get("x-nonce") || ""
+
   return (
     <html lang="ro" suppressHydrationWarning>
       <head>
-        {/*-- Google tag (gtag.js) --*/}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H78B1NW7ND"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-H78B1NW7ND');
-        </script>
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-H78B1NW7ND"
+        ></script>
+        <script
+          nonce={nonce}
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-H78B1NW7ND');
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
