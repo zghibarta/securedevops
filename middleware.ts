@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import crypto from "crypto"
+
+const generateNonce = () =>
+  Buffer.from(crypto.getRandomValues(new Uint8Array(16))).toString("base64")
 
 export function middleware(request: NextRequest) {
-  const nonce = crypto.randomBytes(16).toString("base64")
+  const nonce = generateNonce()
 
   const csp = `
     default-src 'self';
@@ -35,7 +37,7 @@ export function middleware(request: NextRequest) {
   response.headers.set("X-DNS-Prefetch-Control", "on")
   response.headers.set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload")
 
-  response.headers.set("x-nonce", nonce) // important pentru layout
+  response.headers.set("x-nonce", nonce)
 
   return response
 }
