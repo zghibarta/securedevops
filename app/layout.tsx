@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://securedevops.site"),
   title: "SecureDevOps – OWASP & SSDLC",
   description:
     "Platformă informativ-educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
