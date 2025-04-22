@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
     style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
     font-src 'self' https://fonts.gstatic.com;
     img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com;
-    connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;
+    connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com *.googleapis.com;
     frame-src https://www.googletagmanager.com;
     object-src 'none';
     base-uri 'self';

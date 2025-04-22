@@ -7,6 +7,7 @@ import {
   CheckCircle,
   Library,
 } from 'lucide-react';
+import Image from 'next/image';
 import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from 'firebase/auth';
 import { app } from '@/lib/firebaseConfig';
 import { useEffect } from 'react';
@@ -53,9 +54,20 @@ export default function HomePage() {
                   vulnerabilităților OWASP Top Ten
                 </p>
               </div>
-              <Button onClick={handleSignIn} className='w-1/2'>
-                    Loghează-te cu Google
-                  </Button>
+              <button
+                onClick={handleSignIn}
+                className="flex w-1/2 items-center justify-center gap-4 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow transition-all hover:bg-gray-100"
+              >
+                <Image
+                  src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg"
+                  alt="Google Logo"
+                  width={24}
+                  height={24}
+                />
+                <span className="text-center">
+                  Conectează-te cu Google
+                </span>
+              </button>
             </div>
           </div>
           

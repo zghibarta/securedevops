@@ -43,11 +43,18 @@ export default async function RootLayout({
 }) {
   const nonce = (await headers()).get("x-nonce") || ""
 
+  const csp = `
+    default-src 'self';
+    script-src 'self' https://www.googletagmanager.com 'nonce-${nonce}';
+    style-src 'self' 'unsafe-inline';
+  `
   return (
     <html lang="ro" suppressHydrationWarning>
-      <head>
+      <head nonce={nonce}>
+      <meta http-equiv="Content-Security-Policy" content={csp} />
         {/* Google Tag Manager */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H78B1NW7ND" nonce={nonce}></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H78B1NW7ND" ></script>
+
         <script nonce={nonce} dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
