@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+//import { Button } from '@/components/ui/button';
 import {
   Shield,
   BookOpen,
@@ -13,30 +13,30 @@ import { app } from '@/lib/firebaseConfig';
 import { useEffect } from 'react';
 
 export default function HomePage() {
-  useEffect(() => {
-    const auth = getAuth(app);
-    getRedirectResult(auth)
-      .then((result) => {
-        if (result && result.user) {
-          const user = result.user;
-          const userDetails = {
-            email: user.email,
-            name: user.displayName,
-            uid: user.uid,
-          };
-          localStorage.setItem('user', JSON.stringify(userDetails));
-        }
-      })
-      .catch((error) => {
-        console.error('Error during redirect result:', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   const auth = getAuth(app);
+  //   getRedirectResult(auth)
+  //     .then((result) => {
+  //       if (result && result.user) {
+  //         const user = result.user;
+  //         const userDetails = {
+  //           email: user.email,
+  //           name: user.displayName,
+  //           uid: user.uid,
+  //         };
+  //         localStorage.setItem('user', JSON.stringify(userDetails));
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error during redirect result:', error);
+  //     });
+  // }, []);
 
-  const handleSignIn = async () => {
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
-  };
+  // const handleSignIn = async () => {
+  //   const auth = getAuth(app);
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithRedirect(auth, provider);
+  // };
 
 
   return (
@@ -54,7 +54,7 @@ export default function HomePage() {
                   vulnerabilităților OWASP Top Ten
                 </p>
               </div>
-              <button
+              {/* <button
                 onClick={handleSignIn}
                 className="flex w-1/2 items-center justify-center gap-4 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow transition-all hover:bg-gray-100"
               >
@@ -67,7 +67,7 @@ export default function HomePage() {
                 <span className="text-center">
                   Conectează-te cu Google
                 </span>
-              </button>
+              </button> */}
             </div>
           </div>
           
