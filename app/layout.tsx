@@ -41,7 +41,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const nonce = headers().get("x-nonce") || ""
+  const nonce = (await headers()).get("x-nonce") || ""
 
   return (
     <html lang="ro" suppressHydrationWarning>
