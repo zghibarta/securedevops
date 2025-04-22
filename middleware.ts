@@ -8,7 +8,7 @@ export function middleware(request: NextRequest) {
   const nonce = generateNonce()
 
   const csp = `
-    default-src 'self';
+    default-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com https://fonts.googleapis.com https://fonts.gstatic.com;
     script-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com 'nonce-${nonce}';
     style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
     font-src 'self' https://fonts.gstatic.com;
