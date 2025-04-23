@@ -51,7 +51,7 @@ export default async function RootLayout({
   return (
     <html lang="ro" suppressHydrationWarning>
       <head nonce={nonce}>
-      <meta http-equiv="Content-Security-Policy" content={csp} />
+      <meta httpEquiv="Content-Security-Policy" content={csp} />
         {/* Google Tag Manager */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-H78B1NW7ND" ></script>
 
