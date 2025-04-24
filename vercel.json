@@ -1,5 +1,3 @@
 {
-  // Secțiunea 'headers' a fost eliminată pentru a evita duplicarea
-  // setărilor din middleware.ts
- }
- 
+
+}
