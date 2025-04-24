@@ -1,14 +1,5 @@
 {
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "X-Frame-Options",
-            "value": "DENY"
-          }
-        ]
-      }
-    ]
-  }
-  
+  // Secțiunea 'headers' a fost eliminată pentru a evita duplicarea
+  // setărilor din middleware.ts
+ }
+ 
