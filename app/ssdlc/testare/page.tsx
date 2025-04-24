@@ -264,6 +264,18 @@ export default function TestarePage() {
                       </ul>
                     </div>
                     
+                    <div className="space-y-2">
+                      <h3 className="font-medium">Instrumente din cele mai recente și populare </h3>
+                      <ul className="list-disc pl-6 text-sm space-y-1">
+                        <li>Snyk – pentru analiza vulnerabilităților în cod și dependențe</li>
+                        <li>HashiCorp Vault – pentru gestionarea secretelor</li>
+                        <li>Semgrep – pentru analiza statică a codului</li>
+                        <li>Trivy – pentru scanarea vulnerabilităților în containere</li>
+                        <li>Terraform Validator și Checkov - securitatea infrastructurii ca cod (IaC)</li>
+                      </ul>
+                    </div>
+
+
                     <div className="rounded-md bg-amber-50 border border-amber-200 p-4 flex items-start gap-2">
                       <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5" />
                       <div>
