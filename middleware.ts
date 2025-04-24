@@ -9,12 +9,14 @@ export function middleware(request: NextRequest) {
   // Generează un nonce unic pentru fiecare cerere
   const nonce = generateNonce();
 
+  // Determină dacă suntem în modul de dezvoltare
+  const isDevelopment = process.env.NODE_ENV === 'development';
+
   // Definește politica Content Security Policy (CSP)
-  // Am eliminat 'unsafe-inline' din style-src și 'data:' din img-src pentru testare.
-  // Am eliminat 'preload' din HSTS pentru siguranță pe termen scurt.
+  // Adăugăm 'unsafe-eval' la script-src DOAR în dezvoltare pentru React Refresh / HMR
   const csp = `
     default-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com https://fonts.googleapis.com https://fonts.gstatic.com;
-    script-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com 'nonce-${nonce}';
+    script-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com 'nonce-${nonce}' ${isDevelopment ? "'unsafe-eval'" : ''};
     style-src 'self' https://fonts.googleapis.com; /* 'unsafe-inline'; // Comentat pentru testare - poate fi necesar pentru shadcn/ui */
     font-src 'self' https://fonts.gstatic.com;
     img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://fonts.gstatic.com; /* data: // Comentat pentru testare */
