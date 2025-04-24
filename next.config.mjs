@@ -1,8 +1,6 @@
-let userConfig = undefined
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  poweredByHeader: false, 
+  poweredByHeader: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -13,15 +11,19 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
+    // Păstrăm setările experimentale originale
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+    // Am eliminat cheia 'allowedDevOrigins' deoarece nu este recunoscută
   },
-}
+};
 
+// Păstrăm logica originală pentru userConfig, deși userConfig este undefined
+let userConfig = undefined;
 if (userConfig) {
   // ESM imports will have a "default" property
-  const config = userConfig.default || userConfig
+  const config = userConfig.default || userConfig;
 
   for (const key in config) {
     if (
@@ -31,11 +33,11 @@ if (userConfig) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...config[key],
-      }
+      };
     } else {
-      nextConfig[key] = config[key]
+      nextConfig[key] = config[key];
     }
   }
 }
 
-export default nextConfig
+export default nextConfig;
