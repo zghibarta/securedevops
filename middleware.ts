@@ -11,21 +11,19 @@ export function middleware(request: NextRequest) {
 
   // Determină dacă suntem în modul de dezvoltare
   const isDevelopment = process.env.NODE_ENV === 'development';
-  // Afișează în loguri pentru debugging (se va vedea în terminalul unde rulează `next dev`)
   console.log(`Middleware running in ${process.env.NODE_ENV} mode. isDevelopment: ${isDevelopment}`);
-
 
   // Definește politica Content Security Policy (CSP)
   // Adăugăm 'unsafe-eval' la script-src DOAR în dezvoltare
-  // Păstrăm 'unsafe-inline' la style-src
-  // Adăugăm wildcard și domeniu explicit pentru google-analytics și googletagmanager
+  // Adăugăm hash-ul specific pentru scriptul inline blocat anterior
+  // Adăugăm sursa Cloudflare la connect-src
   const csp = `
     default-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com https://fonts.googleapis.com https://fonts.gstatic.com;
-    script-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com 'nonce-${nonce}' ${isDevelopment ? "'unsafe-eval'" : ''};
+    script-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com 'nonce-${nonce}' ${isDevelopment ? "'unsafe-eval'" : ''} 'sha256-QaDv8TLjywIM3mKcA73bK0btmqNpUfcuwzqZ4U9KTsk='; 
     style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
     font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com https://fonts.gstatic.com; /* data: // Comentat */
-    connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com;
+    img-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com https://fonts.gstatic.com; 
+    connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com https://apis.google.com https://identitytoolkit.googleapis.com https://cloudflareinsights.com; 
     frame-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://*.googletagmanager.com https://www.googletagmanager.com;
     object-src 'none';
     base-uri 'self';
