@@ -59,11 +59,11 @@ export default function SSDLCPage() {
               </p> */}
             </div>
 
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-2">
               {phases.map((phase: any) => (
                 <Card key={phase.id} className="flex flex-col h-full">
                   <CardHeader>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-4">
                       {phase.icon}
                       <CardTitle>{phase.title}</CardTitle>
                     </div>
