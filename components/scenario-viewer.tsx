@@ -103,7 +103,7 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
          </div>
 
       </CardContent>
-      <CardFooter className="flex justify-start">
+      <CardFooter>
         <Button variant="outline" onClick={onCancel}>
           Înapoi la Scenarii
         </Button>
