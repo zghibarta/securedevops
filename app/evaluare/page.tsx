@@ -42,16 +42,16 @@ export default function EvaluarePage() {
   // Datele pentru cardurile de quiz, corectate pentru testul general
   const quizzes: QuizMeta[] = [
     // Preluăm definițiile din fișierul tău, dar corectăm numărul de întrebări și datele
-    { id: "owasp", title: "Test OWASP Top Ten 2021", description: "Testează-ți cunoștințele despre cele mai critice vulnerabilități web conform OWASP.", questions: owaspQuizData.length, time: 15, data: owaspQuizData }, // Folosim lungimea reală
-    { id: "ssdlc", title: "Test SSDLC", description: "Verifică-ți înțelegerea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului.", questions: ssdlcQuizData.length, time: 15, data: ssdlcQuizData }, // Folosim lungimea reală
-    { id: "devsecops", title: "Test DevSecOps", description: "Evaluează-ți cunoștințele despre integrarea securității în DevOps.", questions: devsecopsQuizData.length, time: 15, data: devsecopsQuizData }, // Folosim lungimea reală
+    { id: "owasp", title: "Test OWASP Top Ten 2021", description: "Testează-ți cunoștințele despre cele mai critice vulnerabilități web conform OWASP.", questions: owaspQuizData.length, time: 10, data: owaspQuizData }, // Folosim lungimea reală
+    { id: "ssdlc", title: "Test SSDLC", description: "Verifică-ți înțelegerea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului.", questions: ssdlcQuizData.length, time: 10, data: ssdlcQuizData }, // Folosim lungimea reală
+    { id: "devsecops", title: "Test DevSecOps", description: "Evaluează-ți cunoștințele despre integrarea securității în DevOps.", questions: devsecopsQuizData.length, time: 10, data: devsecopsQuizData }, // Folosim lungimea reală
     // Corectăm definiția pentru testul general
     {
       id: "general", // ID schimbat din "tbd"
       title: "Test general recapitulativ", // Titlu schimbat
       description: "Un test combinat cu întrebări din OWASP, SSDLC și DevSecOps.", // Descriere schimbată
       questions: allQuizData.length, // Numărul total din care se aleg 10
-      time: 15, // Timp estimat pentru 10 întrebări
+      time: 10, // Timp estimat pentru 10 întrebări
       data: allQuizData, // Folosim datele combinate
     },
   ];
@@ -164,9 +164,9 @@ export default function EvaluarePage() {
                         <CardContent className="flex-grow">
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
                              {/* Modificat textul pentru claritate */}
-                             <span>Disponibile: {quiz.questions}</span>
-                             <span>•</span>
-                             <span>Test: 10 întrebări</span>
+                            <span>Întrebări: 10</span>
+                            <span>•</span>
+                            <span>Timp estimat: {quiz.time} minute</span>
                             {/* <span>•</span>
                             <span>Timp estimat: {quiz.time} minute</span> */}
                           </div>
