@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Lightbulb, CheckSquare, XSquare } from "lucide-react";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-// Modificăm importul stilului - încercăm o cale comună și un stil standard (okaidia)
-// Dacă dorești alt stil, poți încerca să îl imporți similar (ex: darcula, atomDark etc.)
-import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+// Eliminăm importurile pentru react-syntax-highlighter
+// import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+// import { okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Scenario } from '@/lib/scenarioData';
 
 // Define the props for the ScenarioViewer component
@@ -35,19 +34,16 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
           <p className="text-muted-foreground">{scenario.description}</p>
         </div>
 
-        {/* Vulnerable Code (if exists) */}
+        {/* Vulnerable Code (if exists) - Folosim <pre> și <code> */}
         {scenario.vulnerableCode && (
           <div>
             <h3 className="text-lg font-semibold mb-2">Cod Vulnerabil:</h3>
-            <SyntaxHighlighter
-              language="javascript"
-              style={okaidia} // Folosim stilul importat corect
-              className="rounded-md text-sm"
-              wrapLines={true}
-              showLineNumbers={true}
-            >
-              {scenario.vulnerableCode.trim()}
-            </SyntaxHighlighter>
+            {/* Utilizăm tag-uri standard pre/code cu stilizare Tailwind */}
+            <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
+              <code className="font-mono text-sm text-gray-800 dark:text-gray-200">
+                {scenario.vulnerableCode.trim()}
+              </code>
+            </pre>
           </div>
         )}
 
@@ -82,19 +78,16 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
             </Button>
             {showSolution && (
                <div className="mt-3 space-y-4 bg-muted p-4 rounded-md">
-                  {/* Secure Code (if exists) */}
+                  {/* Secure Code (if exists) - Folosim <pre> și <code> */}
                   {scenario.secureCode && (
                      <div>
                         <h4 className="text-md font-semibold mb-2">Cod Securizat (Exemplu):</h4>
-                         <SyntaxHighlighter
-                            language="javascript"
-                            style={okaidia} // Folosim stilul importat corect
-                            className="rounded-md text-sm"
-                            wrapLines={true}
-                            showLineNumbers={true}
-                          >
-                           {scenario.secureCode.trim()}
-                        </SyntaxHighlighter>
+                         {/* Utilizăm tag-uri standard pre/code cu stilizare Tailwind */}
+                         <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
+                           <code className="font-mono text-sm text-gray-800 dark:text-gray-200">
+                             {scenario.secureCode.trim()}
+                           </code>
+                         </pre>
                      </div>
                   )}
                   {/* Explanation */}
