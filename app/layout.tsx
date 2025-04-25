@@ -17,7 +17,7 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-
 export const metadata = { // Păstrăm metadata definită în fișierul tău
   metadataBase: new URL("https://securedevops.site"),
   title: "SecureDevOps – OWASP & SSDLC",
-  description: "Platformă educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
+  description: "Platformă educațională despre securitatea în DevOps",
   generator: 'stackblitz',
   icons: {
     icon: {
@@ -27,7 +27,7 @@ export const metadata = { // Păstrăm metadata definită în fișierul tău
   },
   openGraph: {
     title: "SecureDevOps – OWASP & SSDLC",
-    description: "Platformă educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
+    description: "Platformă educațională despre securitatea în DevOps",
     url: "https://securedevops.site",
     siteName: "SecureDevOps",
     images: [
