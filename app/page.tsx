@@ -79,8 +79,7 @@ export default function HomePage() {
               <div className="space-y-2">
                 {/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secțiuni principale</h2> */}
                 <p className="max-w-4xl text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Explorați conținutul educațional structurat pentru a
-                  înțelege mai bine securitatea în DevOps
+                  Explorați conținutul educațional structurat pe secțiuni
                   </p>
               </div>
             </div>
@@ -133,7 +132,7 @@ export default function HomePage() {
                     Evaluare cunoștințe
                   </h3>
                   <p className="text-center text-muted-foreground" >
-                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre OWASP și securitatea în DevOps
+                    Scenarii practice și exerciții pentru a vă testa cunoștințele despre OWASP și SecureDevOps
                   </p>
                 </div>
               </Link>
