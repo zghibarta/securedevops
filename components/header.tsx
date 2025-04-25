@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/owasp", label: "OWASP Top Ten" },
   { href: "/ssdlc", label: "SSDLC" },
   { href: "/resurse", label: "Resurse" },
-  { href: "/evaluare", label: "Evaluare" },
+  { href: "/evaluare", label: "Evaluare" }, // Linkul cu stil special
 ];
 
 export function Header() {
@@ -33,9 +33,9 @@ export function Header() {
         {/* Navigație Desktop */}
         <nav className="hidden md:flex flex-grow justify-center items-center gap-6">
           {navLinks.map((link) => {
-            // Verificăm dacă ruta curentă începe cu href-ul linkului
-            // Sau dacă este o potrivire exactă (pentru link-uri fără subpagini, cum ar fi /resurse)
+            // Verificăm dacă secțiunea linkului este activă
             const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href + '/')) || (link.href === '/owasp' && pathname.startsWith('/owasp/')) || (link.href === '/ssdlc' && pathname.startsWith('/ssdlc/'));
+            const isEvaluare = link.href === "/evaluare";
 
             return (
               <Link
@@ -43,10 +43,13 @@ export function Header() {
                 href={link.href}
                 className={cn(
                   "text-sm font-medium transition-colors", // Clase comune
-                  // Aplicăm stilul activ dacă isActive este true
-                  isActive
-                    ? "text-primary underline underline-offset-4 decoration-2" // Stil activ desktop
-                    : "text-muted-foreground hover:text-primary" // Stil inactiv desktop
+                  isEvaluare
+                    ? isActive
+                      ? "text-amber-800 dark:text-amber-500 font-semibold" // Stil activ pentru Evaluare (maro mai intens/bold)
+                      : "text-amber-700 dark:text-amber-600 hover:text-amber-800 dark:hover:text-amber-500" // Stil inactiv pentru Evaluare (maro)
+                    : isActive
+                    ? "text-primary font-medium" // Stil activ (fără subliniere)
+                    : "text-muted-foreground hover:text-primary" // Stil inactiv
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -78,8 +81,8 @@ export function Header() {
         <div className="md:hidden absolute top-16 left-0 right-0 z-40 bg-background border-b shadow-md">
           <nav className="container mx-auto flex flex-col gap-1 p-4">
             {navLinks.map((link) => {
-               // Folosim aceeași logică isActive ca pe desktop
                const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href + '/')) || (link.href === '/owasp' && pathname.startsWith('/owasp/')) || (link.href === '/ssdlc' && pathname.startsWith('/ssdlc/'));
+               const isEvaluare = link.href === "/evaluare";
 
                return (
                  <Link
@@ -87,10 +90,13 @@ export function Header() {
                    href={link.href}
                    className={cn(
                      "px-3 py-2 rounded-md text-sm font-medium", // Clase comune mobile
-                     // Aplicăm stilul activ dacă isActive este true
-                     isActive
-                       ? "bg-accent text-primary font-semibold" // Stil activ mobil
-                       : "text-muted-foreground hover:bg-accent hover:text-primary" // Stil inactiv mobil
+                      isEvaluare
+                        ? isActive
+                          ? "text-amber-800 dark:text-amber-500 font-semibold bg-amber-100 dark:bg-amber-900/30" // Stil activ mobil pentru Evaluare
+                          : "text-amber-700 dark:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20" // Stil inactiv mobil pentru Evaluare
+                        : isActive
+                        ? "bg-accent text-primary font-semibold" // Stil activ mobil
+                        : "text-muted-foreground hover:bg-accent hover:text-primary" // Stil inactiv mobil
                    )}
                    onClick={() => setIsMenuOpen(false)} // Închide meniul la click
                  >
