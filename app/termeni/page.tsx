@@ -15,7 +15,7 @@ export default function TermeniPage() {
       <main className="flex-1 mx-auto">
         <section className="w-full py-3 md:py-3 lg:py-4 bg-muted">
 
-            <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
+            <div className="container max-w-4xl mx-auto p-4 pt-6 md:p-6 lg:p-12">
             <h1 className="text-3xl font-bold mb-4">Termeni și Condiții</h1>
             <ol className="list-decimal list-inside">
                 <li className="mb-4">
