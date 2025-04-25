@@ -174,7 +174,7 @@ export default function EvaluarePage() {
                         <CardFooter>
                           <Button
                              // Adăugăm variantă diferită pentru testul general
-                             variant={quiz.id === 'general' ? "secondary" : "default"}
+                             variant={quiz.id === 'general' ? "default" : "outline"}
                              size="sm"
                              className="w-full"
                              onClick={() => handleStartQuiz(quiz.id)}
