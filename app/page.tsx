@@ -50,8 +50,7 @@ export default function HomePage() {
                   Securitate în DevOps
                 </h1>
                 <p className="max-w-4xl text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Integrarea securității în DevOps și prevenirea
-                  vulnerabilităților OWASP Top Ten
+                Integrarea securității în DevOps și prevenirea riscurilor OWASP Top 10
                 </p>
               </div>
               {/* <button
