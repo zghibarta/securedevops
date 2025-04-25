@@ -38,9 +38,10 @@ export default function EvaluarePage() {
 
   // Datele pentru cardurile de quiz
   const quizzes: QuizMeta[] = [
-    { id: "owasp", title: "Test OWASP Top Ten 2021", description: "...", questions: owaspQuizData.length, time: 15, data: owaspQuizData },
-    { id: "ssdlc", title: "Test SSDLC", description: "...", questions: ssdlcQuizData.length, time: 15, data: ssdlcQuizData },
-    { id: "devsecops", title: "Test DevSecOps", description: "...", questions: devsecopsQuizData.length, time: 15, data: devsecopsQuizData },
+    { id: "owasp", title: "Test OWASP Top Ten 2021", description: "Testează-ți cunoștințele despre cele mai critice vulnerabilități web conform OWASP.", questions: 10, time: 10, data: owaspQuizData },
+    { id: "ssdlc", title: "Test SSDLC", description: "Verifică-ți înțelegerea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului.", questions: 10, time: 10, data: ssdlcQuizData },
+    { id: "devsecops", title: "Test DevSecOps", description: "Evaluează-ți cunoștințele despre integrarea securității în DevOps.", questions: 10, time: 10, data: devsecopsQuizData },
+    { id: "tbd", title: "Testul testelor", description: "În curînd...", questions: 10, time: 10, data: devsecopsQuizData },
   ];
 
   // Datele pentru cardurile de scenarii
@@ -145,7 +146,7 @@ export default function EvaluarePage() {
                     {quizzes.map((quiz) => (
                       <Card key={quiz.id} className="flex flex-col h-full">
                          {/* ... header, content ... */}
-                         <CardHeader>
+                        <CardHeader>
                           <div className="flex items-center gap-2">
                             <FileText className="h-5 w-5" />
                             <CardTitle>{quiz.title}</CardTitle>

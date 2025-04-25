@@ -18,7 +18,7 @@ export const scenarioData: Scenario[] = [
   {
     id: "sql-injection",
     title: "Injecție SQL - Autentificare",
-    description: "Analizează funcția de autentificare de mai jos...", // Prescurtat
+    description: "Analizează funcția de autentificare de mai jos și identifică vulnerabilitatea.", // Prescurtat
     difficulty: "Mediu",
     task: "Identifică vulnerabilitatea principală din acest cod și propune o metodă de remediere.",
     vulnerableCode:
@@ -42,9 +42,9 @@ export const scenarioData: Scenario[] = [
   },
   {
     id: "xss",
-    title: "Cross-Site Scripting (XSS) - Reflected",
-    description: "O pagină de căutare afișează termenul căutat de utilizator direct în pagină, fără nicio validare sau codificare.",
-    difficulty: "Ușor",
+    title: "Cross-Site Scripting (XSS)",
+    description: "O pagină de căutare afișează termenul căutat de utilizator direct în pagină, fără validare sau codificare.",
+    difficulty: "Dificil",
     task: "Identifică riscul de securitate și explică cum ar putea fi exploatat. Cum poate fi prevenit?",
     // Modificat: Am eliminat ${searchTerm} din string
     vulnerableCode:
