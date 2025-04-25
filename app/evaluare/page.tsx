@@ -150,7 +150,7 @@ export default function EvaluarePage() {
 
                 {/* Tabul Teste - Modificat pentru 4 carduri */}
                 <TabsContent value="teste" className="mt-6">
-                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2"> {/* Ajustat grid-cols la 2 */}
+                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2"> {/* Ajustat grid-cols la 2 */}
                     {quizzes.map((quiz) => (
                       <Card key={quiz.id} className="flex flex-col h-full">
                          <CardHeader>
@@ -191,7 +191,7 @@ export default function EvaluarePage() {
                 {/* Tabul Scenarii practice */}
                 <TabsContent value="scenarii" className="mt-6">
                    {/* Modificat grid-cols la 3 (așa era în versiunea anterioară) */}
-                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
                     {scenarios.map((scenario) => (
                       <Card key={scenario.id} className="flex flex-col h-full">
                         {/* ... conținut card scenariu (din fișierul tău) ... */}

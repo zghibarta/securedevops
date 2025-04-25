@@ -137,7 +137,7 @@ export default function ResursePage() {
               </TabsList>
 
               <TabsContent value="ghiduri" className="mt-6">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
                   {guides.map((guide) => (
                     <Card key={guide.id} className="flex flex-col h-full">
                       <CardHeader>
@@ -166,7 +166,7 @@ export default function ResursePage() {
               </TabsContent>
 
               <TabsContent value="instrumente" className="mt-6">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
                   {tools.map((tool) => (
                     <Card key={tool.id} className="flex flex-col h-full">
                       <CardHeader>
@@ -195,7 +195,7 @@ export default function ResursePage() {
               </TabsContent>
 
               {/* <TabsContent value="documente" className="mt-6">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
                   {documents.map((document) => (
                     <Card key={document.id} className="flex flex-col h-full">
                       <CardHeader>
@@ -232,7 +232,7 @@ export default function ResursePage() {
               <div className="space-y-2">
                 <h2 className="text-xl font-bold tracking-tighter">Resurse externe recomandate</h2>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 mt-8">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 mt-8">
                 <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer" className="group">
                   <div className="flex flex-col items-center space-y-4 rounded-lg border p-6 transition-all hover:bg-background">
                     <div className="rounded-full bg-primary/10 p-4">

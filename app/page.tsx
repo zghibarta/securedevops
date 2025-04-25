@@ -83,7 +83,7 @@ export default function HomePage() {
                   </p>
               </div>
             </div>
-            <div className="mx-auto grid items-center gap-2 py-4 lg:grid-cols-2 lg:gap-3">
+            <div className="mx-auto grid items-center gap-4 py-4 lg:grid-cols-2 lg:gap-4">
               <Link href="/owasp" className="group">
                 <div className="flex flex-col items-center space-y-4 rounded-lg border p-2 transition-all hover:bg-muted">
                   <div className="rounded-full bg-primary/10 p-4">

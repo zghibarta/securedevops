@@ -131,7 +131,7 @@ export default function OwaspPage() {
 
         <section className="w-full py-3 md:py-6 lg:py-8">
           <div className="container max-w-4xl px-2 md:px-3">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
               {vulnerabilities.map((vulnerability) => (
                 <Card key={vulnerability.id} className="flex flex-col h-full">
                   <CardHeader>
