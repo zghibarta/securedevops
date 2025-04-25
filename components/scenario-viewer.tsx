@@ -22,6 +22,9 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
   return (
     <Card className="w-full max-w-4xl mx-auto mt-6">
       <CardHeader>
+        <Button variant="outline" onClick={onCancel}>
+          Înapoi la Scenarii
+        </Button>
         <CardTitle className="flex items-center gap-2">
            <Code className="h-6 w-6" /> {scenario.title}
         </CardTitle>
