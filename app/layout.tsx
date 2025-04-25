@@ -6,7 +6,7 @@ import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header" // Asigură-te că importul este corect (posibil "@/components/header")
 import { Footer } from "@/components/footer" // Asigură-te că importul este corect (posibil "@/components/footer")
-// import { Toaster } from "@/components/ui/toaster"; // Import lipsă în fișierul original, dar prezent în versiunea mea anterioară - adaugă dacă e necesar
+import { Toaster } from "@/components/ui/toaster"; 
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -65,7 +65,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            {/* <Toaster /> // Adaugă dacă folosești Toaster din shadcn/ui */}
+            <Toaster /> 
           </div>
         </ThemeProvider>
 
