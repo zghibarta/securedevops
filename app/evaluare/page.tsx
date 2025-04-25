@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from "next/link" // Păstrăm Link, deși nu mai e folosit pentru scenarii momentan
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Shield, ArrowRight, FileText, Code } from "lucide-react"
+import Link from "next/link"; // Păstrăm Link, deși nu e folosit pentru scenarii
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Shield, ArrowRight, FileText, Code } from "lucide-react"; // Eliminat CheckCircle, XCircle dacă nu mai sunt necesare
 import { Quiz } from '@/components/quiz';
-// import { ScenarioViewer } from '@/components/scenario-viewer'; // Comentat - Scenarii dezactivate temporar
+import { ScenarioViewer } from '@/components/scenario-viewer'; // Decomentat importul
 import { owaspQuizData, ssdlcQuizData, devsecopsQuizData } from '@/lib/quizData';
-// import { scenarioData, Scenario } from '@/lib/scenarioData'; // Comentat - Scenarii dezactivate temporar
-import { useToast } from "@/components/ui/use-toast"; // Importăm hook-ul pentru toast
+import { scenarioData, Scenario } from '@/lib/scenarioData'; // Decomentat importul
+// import { useToast } from "@/hooks/use-toast"; // Comentat sau eliminat dacă nu mai e folosit în altă parte pe pagină
 
 // Definim tipul pentru QuizMeta
 type QuizMeta = {
@@ -22,21 +22,20 @@ type QuizMeta = {
   data: any[];
 };
 
-// Definim tipul pentru ScenarioMeta (păstrăm pentru structura cardului)
+// Definim tipul pentru ScenarioMeta
 type ScenarioMeta = {
   id: string;
   title: string;
   description: string;
   difficulty: string;
-  // time: number; // Eliminăm timpul dacă nu mai e afișat
-  // data: any; // Eliminăm data dacă nu mai e folosită
+  data: Scenario; // Readăugăm data
 };
 
 
 export default function EvaluarePage() {
-  const { toast } = useToast(); // Inițializăm hook-ul toast
+  // const { toast } = useToast(); // Comentat sau eliminat
   const [activeQuiz, setActiveQuiz] = useState<string | null>(null);
-  // const [activeScenario, setActiveScenario] = useState<string | null>(null); // Comentat
+  const [activeScenario, setActiveScenario] = useState<string | null>(null); // Decomentat
 
   // Datele pentru cardurile de quiz
   const quizzes: QuizMeta[] = [
@@ -45,38 +44,18 @@ export default function EvaluarePage() {
     { id: "devsecops", title: "Test DevSecOps", description: "Evaluează-ți cunoștințele despre integrarea securității în DevOps.", questions: devsecopsQuizData.length, time: 15, data: devsecopsQuizData },
   ];
 
-  // Datele pentru cardurile de scenarii (păstrăm structura pentru afișare)
-  // Am eliminat maparea din scenarioData, definim direct cardurile
-   const scenarios: ScenarioMeta[] = [
-    {
-      id: "broken-auth",
-      title: "Autentificare defectuoasă",
-      description: "Identifică și remediază vulnerabilitățile de autentificare într-o aplicație web.",
-      difficulty: "Mediu",
-    },
-    {
-      id: "sql-injection",
-      title: "Injecție SQL",
-      description: "Descoperă și corectează vulnerabilitățile de injecție SQL într-o aplicație.",
-      difficulty: "Dificil",
-    },
-    {
-      id: "xss",
-      title: "Cross-Site Scripting (XSS)",
-      description: "Identifică și remediază vulnerabilitățile XSS într-o aplicație web.",
-      difficulty: "Mediu",
-    },
-    {
-      id: "secure-api",
-      title: "Securizarea unui API",
-      description: "Implementează măsuri de securitate pentru un API RESTful.",
-      difficulty: "Dificil",
-    },
-  ]
+  // Datele pentru cardurile de scenarii (mapate din scenarioData importat)
+  const scenarios: ScenarioMeta[] = scenarioData.map(sc => ({
+      id: sc.id,
+      title: sc.title,
+      description: sc.description,
+      difficulty: sc.difficulty,
+      data: sc // Păstrăm obiectul complet al scenariului
+  }));
 
   // --- Handlers pentru Quiz ---
   const handleStartQuiz = (quizId: string) => {
-    // setActiveScenario(null); // Comentat
+    setActiveScenario(null); // Resetăm scenariul la pornirea unui quiz
     setActiveQuiz(quizId);
   };
   const handleQuizComplete = (score: number, totalQuestions: number) => {
@@ -86,21 +65,19 @@ export default function EvaluarePage() {
     setActiveQuiz(null);
    };
 
-   // --- Handlers pentru Scenarii (modificat pentru toast) ---
-   const handleStartScenario = (scenarioTitle: string) => {
-     // setActiveQuiz(null); // Comentat
-     // setActiveScenario(scenarioId); // Comentat
-     toast({
-        title: "În curând...",
-        description: `Scenariul "${scenarioTitle}" este în curs de dezvoltare.`,
-        variant: "default", // Sau altă variantă dacă ai definit
-     });
+   // --- Handlers pentru Scenarii (revenim la funcționalitatea originală) ---
+   const handleStartScenario = (scenarioId: string) => {
+     setActiveQuiz(null); // Resetăm quiz-ul la pornirea unui scenariu
+     setActiveScenario(scenarioId); // Setăm scenariul activ
+     // Eliminăm apelul toast
    };
-   // const handleCancelScenario = () => { setActiveScenario(null); }; // Comentat
+   const handleCancelScenario = () => { // Decomentat handler-ul
+     setActiveScenario(null);
+   };
 
-   // Găsim datele pentru quiz-ul activ
+   // Găsim datele active
    const currentQuiz = quizzes.find(q => q.id === activeQuiz);
-   // const currentScenario = scenarios.find(s => s.id === activeScenario); // Comentat
+   const currentScenario = scenarios.find(s => s.id === activeScenario); // Decomentat
 
   return (
     <div className="flex flex-col">
@@ -119,8 +96,7 @@ export default function EvaluarePage() {
           </div>
         </section>
 
-        {/* Afișăm Quiz-ul activ SAU Tab-urile */}
-        {/* Am eliminat condiția pentru activeScenario */}
+        {/* Afișăm Quiz-ul activ SAU Scenariul activ SAU Tab-urile */}
         {activeQuiz && currentQuiz ? (
             // --- Afișare QUIZ ---
             <section className="w-full py-3 md:py-6 lg:py-8">
@@ -133,6 +109,17 @@ export default function EvaluarePage() {
                 />
               </div>
             </section>
+        ) : activeScenario && currentScenario ? ( // Decomentat condiția pentru scenariu
+             // --- Afișare SCENARIU ---
+             <section className="w-full py-3 md:py-6 lg:py-8">
+               <div className="container px-4 md:px-6">
+                 {/* Decomentat randarea ScenarioViewer */}
+                 <ScenarioViewer
+                    scenario={currentScenario.data} // Trimitem obiectul scenariu
+                    onCancel={handleCancelScenario}
+                  />
+               </div>
+             </section>
         ) : (
           // --- Afișare TAB-uri (default) ---
           <section className="w-full py-3 md:py-6 lg:py-8">
@@ -145,10 +132,11 @@ export default function EvaluarePage() {
 
                 {/* Tabul Teste */}
                 <TabsContent value="teste" className="mt-6">
-                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                   {/* ... conținut tab teste (carduri quiz) ... */}
+                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {quizzes.map((quiz) => (
                       <Card key={quiz.id} className="flex flex-col h-full">
-                         {/* ... conținut card quiz ... */}
+                         {/* ... header, content ... */}
                          <CardHeader>
                           <div className="flex items-center gap-2">
                             <FileText className="h-5 w-5" />
@@ -179,7 +167,7 @@ export default function EvaluarePage() {
                   </div>
                 </TabsContent>
 
-                {/* Tabul Scenarii Practice - Modificat pentru toast */}
+                {/* Tabul Scenarii Practice - Reactivat */}
                 <TabsContent value="scenarii" className="mt-6">
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {scenarios.map((scenario) => (
@@ -197,12 +185,12 @@ export default function EvaluarePage() {
                           </div>
                         </CardContent>
                         <CardFooter>
-                          {/* Modificat: Butonul apelează handleStartScenario care afișează toast */}
+                           {/* Modificat: Butonul apelează handleStartScenario cu ID-ul */}
                           <Button
                             variant="outline"
                             size="sm"
                             className="w-full"
-                            onClick={() => handleStartScenario(scenario.title)} // Apelăm handler-ul cu titlul
+                            onClick={() => handleStartScenario(scenario.id)} // Apelăm handler-ul cu ID-ul
                           >
                             Începe Scenariul
                             <ArrowRight className="ml-2 h-4 w-4" />

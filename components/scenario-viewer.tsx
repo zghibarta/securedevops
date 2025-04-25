@@ -3,15 +3,17 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Lightbulb, CheckSquare, XSquare } from "lucide-react"; // Import icons
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import for syntax highlighting
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Choose a style (sau alt stil preferat)
-import { Scenario } from '@/lib/scenarioData'; // Importăm interfața Scenario
+import { Code, Lightbulb, CheckSquare, XSquare } from "lucide-react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+// Modificăm importul stilului - încercăm o cale comună și un stil standard (okaidia)
+// Dacă dorești alt stil, poți încerca să îl imporți similar (ex: darcula, atomDark etc.)
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Scenario } from '@/lib/scenarioData';
 
 // Define the props for the ScenarioViewer component
 interface ScenarioViewerProps {
   scenario: Scenario;
-  onCancel: () => void; // Callback to go back to the list
+  onCancel: () => void;
 }
 
 export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
@@ -37,13 +39,12 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
         {scenario.vulnerableCode && (
           <div>
             <h3 className="text-lg font-semibold mb-2">Cod Vulnerabil:</h3>
-            {/* Componenta pentru afișarea codului cu evidențiere */}
             <SyntaxHighlighter
-              language="javascript" // Specifică limbajul (sau typescript, python, etc.)
-              style={vscDarkPlus} // Alege o temă de culori
-              className="rounded-md text-sm" // Adaugă clase Tailwind dacă e necesar
-              wrapLines={true} // Permite împărțirea liniilor lungi
-              showLineNumbers={true} // Afișează numerele liniilor
+              language="javascript"
+              style={okaidia} // Folosim stilul importat corect
+              className="rounded-md text-sm"
+              wrapLines={true}
+              showLineNumbers={true}
             >
               {scenario.vulnerableCode.trim()}
             </SyntaxHighlighter>
@@ -87,7 +88,7 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
                         <h4 className="text-md font-semibold mb-2">Cod Securizat (Exemplu):</h4>
                          <SyntaxHighlighter
                             language="javascript"
-                            style={vscDarkPlus}
+                            style={okaidia} // Folosim stilul importat corect
                             className="rounded-md text-sm"
                             wrapLines={true}
                             showLineNumbers={true}
@@ -114,4 +115,3 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
     </Card>
   );
 }
-
