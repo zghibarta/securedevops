@@ -1,11 +1,12 @@
 "use client"; // This component needs client-side interactivity
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react'; // Import useEffect and useMemo
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Progress } from "@/components/ui/progress"; // Import Progress component
+import { Progress } from "@/components/ui/progress";
+import { shuffleArray } from '@/lib/quizData'; // Importăm funcția shuffle
 
 // Define the structure for a single question
 interface Question {
@@ -13,26 +14,43 @@ interface Question {
   question: string;
   options: string[];
   correctAnswer: string;
-  explanation?: string; // Optional explanation for the correct answer
+  explanation?: string;
 }
 
 // Define the props for the Quiz component
 interface QuizProps {
-  quizData: Question[];
+  quizData: Question[]; // Primește TOATE întrebările (ex: 20)
   quizTitle: string;
-  onComplete: (score: number, totalQuestions: number) => void; // Callback when quiz finishes
-  onCancel: () => void; // Callback to cancel/go back
+  onComplete: (score: number, totalQuestions: number) => void;
+  onCancel: () => void;
 }
 
+const QUESTIONS_PER_QUIZ = 10; // Definim numărul de întrebări per test
+
 export function Quiz({ quizData, quizTitle, onComplete, onCancel }: QuizProps) {
+  // State pentru subsetul de întrebări selectate aleatoriu
+  const [selectedQuestions, setSelectedQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  // Store answers as an object: { questionId: selectedAnswer }
   const [userAnswers, setUserAnswers] = useState<{ [key: string]: string }>({});
   const [quizFinished, setQuizFinished] = useState(false);
   const [score, setScore] = useState(0);
 
-  const totalQuestions = quizData.length;
-  const currentQuestion = quizData[currentQuestionIndex];
+  // Efect pentru a selecta întrebările aleatoriu la încărcarea componentei
+  // sau când quizData se schimbă (deși nu ar trebui să se schimbe în timpul unui test)
+  useEffect(() => {
+    // Amestecăm toate întrebările primite și selectăm primele 10
+    const shuffled = shuffleArray(quizData);
+    setSelectedQuestions(shuffled.slice(0, QUESTIONS_PER_QUIZ));
+    // Resetăm starea internă la schimbarea setului de întrebări
+    setCurrentQuestionIndex(0);
+    setUserAnswers({});
+    setQuizFinished(false);
+    setScore(0);
+  }, [quizData]); // Re-rulează efectul dacă quizData se schimbă
+
+  // Folosim useMemo pentru a evita recalcularea inutilă dacă selectedQuestions nu s-a schimbat
+  const totalQuestions = useMemo(() => selectedQuestions.length, [selectedQuestions]);
+  const currentQuestion = useMemo(() => selectedQuestions[currentQuestionIndex], [selectedQuestions, currentQuestionIndex]);
 
   // Handle selecting an answer
   const handleAnswerSelect = (questionId: string, answer: string) => {
@@ -44,7 +62,8 @@ export function Quiz({ quizData, quizTitle, onComplete, onCancel }: QuizProps) {
 
   // Move to the next question or finish the quiz
   const handleNext = () => {
-    if (currentQuestionIndex < totalQuestions - 1) {
+    // Verificăm indexul curent față de numărul de întrebări SELECTATE
+    if (currentQuestionIndex < QUESTIONS_PER_QUIZ - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       // Finish the quiz
@@ -53,28 +72,39 @@ export function Quiz({ quizData, quizTitle, onComplete, onCancel }: QuizProps) {
     }
   };
 
-  // Calculate the final score
+  // Calculate the final score based on SELECTED questions
   const calculateScore = () => {
     let currentScore = 0;
-    quizData.forEach((question) => {
+    selectedQuestions.forEach((question) => {
       if (userAnswers[question.id] === question.correctAnswer) {
         currentScore++;
       }
     });
     setScore(currentScore);
-    onComplete(currentScore, totalQuestions); // Call the onComplete callback
+    // Raportăm scorul față de numărul de întrebări afișate (10)
+    onComplete(currentScore, QUESTIONS_PER_QUIZ);
   };
 
-  // Restart the quiz
+  // Restart the quiz (re-selectează întrebări dacă e necesar, dar useEffect o face deja)
   const handleRestart = () => {
-    setCurrentQuestionIndex(0);
-    setUserAnswers({});
-    setQuizFinished(false);
-    setScore(0);
+     // Re-amestecăm și selectăm un nou set de întrebări
+     const shuffled = shuffleArray(quizData);
+     setSelectedQuestions(shuffled.slice(0, QUESTIONS_PER_QUIZ));
+     // Resetăm starea
+     setCurrentQuestionIndex(0);
+     setUserAnswers({});
+     setQuizFinished(false);
+     setScore(0);
   };
 
-  // Calculate progress percentage
-  const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+  // Calculate progress percentage based on SELECTED questions
+  // Adăugăm +1 la index pentru a începe de la 1, nu 0
+  const progress = totalQuestions > 0 ? ((currentQuestionIndex + 1) / QUESTIONS_PER_QUIZ) * 100 : 0;
+
+  // Așteptăm ca întrebările să fie selectate
+  if (selectedQuestions.length === 0 || !currentQuestion) {
+     return <p>Se încarcă testul...</p>; // Sau un loader/spinner
+  }
 
   // Render the results screen
   if (quizFinished) {
@@ -83,14 +113,15 @@ export function Quiz({ quizData, quizTitle, onComplete, onCancel }: QuizProps) {
         <CardHeader>
           <CardTitle>Rezultate Test: {quizTitle}</CardTitle>
           <CardDescription>
-            Ai răspuns corect la {score} din {totalQuestions} întrebări.
+            {/* Afișăm scorul față de numărul de întrebări afișate */}
+            Ai răspuns corect la {score} din {QUESTIONS_PER_QUIZ} întrebări.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-lg font-semibold">Scor: {((score / totalQuestions) * 100).toFixed(0)}%</p>
-          {/* Optional: Display detailed results or explanations */}
+          <p className="text-lg font-semibold">Scor: {((score / QUESTIONS_PER_QUIZ) * 100).toFixed(0)}%</p>
+          {/* Afișăm detaliile pentru întrebările RĂSPUNSE */}
           <div className="mt-4 space-y-3">
-            {quizData.map((q, index) => (
+            {selectedQuestions.map((q, index) => (
               <div key={q.id} className={`p-2 rounded ${userAnswers[q.id] === q.correctAnswer ? 'bg-green-100 dark:bg-green-900' : 'bg-red-100 dark:bg-red-900'}`}>
                 <p className="font-medium">{index + 1}. {q.question}</p>
                 <p className="text-sm">Răspunsul tău: {userAnswers[q.id] || "Niciun răspuns"}</p>
@@ -118,7 +149,8 @@ export function Quiz({ quizData, quizTitle, onComplete, onCancel }: QuizProps) {
       <CardHeader>
         <CardTitle>{quizTitle}</CardTitle>
         <CardDescription>
-          Întrebarea {currentQuestionIndex + 1} din {totalQuestions}
+           {/* Afișăm progresul față de numărul de întrebări afișate */}
+          Întrebarea {currentQuestionIndex + 1} din {QUESTIONS_PER_QUIZ}
         </CardDescription>
         {/* Progress Bar */}
         <Progress value={progress} className="w-full mt-2" />
@@ -143,7 +175,8 @@ export function Quiz({ quizData, quizTitle, onComplete, onCancel }: QuizProps) {
            Anulează
         </Button>
         <Button onClick={handleNext} disabled={!userAnswers[currentQuestion.id]}>
-          {currentQuestionIndex < totalQuestions - 1 ? "Următoarea Întrebare" : "Finalizează Testul"}
+           {/* Verificăm indexul față de numărul de întrebări afișate */}
+          {currentQuestionIndex < QUESTIONS_PER_QUIZ - 1 ? "Următoarea Întrebare" : "Finalizează Testul"}
         </Button>
       </CardFooter>
     </Card>
