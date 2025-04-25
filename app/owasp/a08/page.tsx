@@ -25,7 +25,7 @@ export default function A08Page() {
                 <FileWarning className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">
+                <h1 className="text-2xl font-bold tracking-tighter">
                   A08:2021 – Eșecuri de Integritate a Software-ului și Datelor
                 </h1>
                 <p className="text-muted-foreground">Software and Data Integrity Failures</p>

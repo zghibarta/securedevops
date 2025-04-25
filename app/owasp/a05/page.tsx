@@ -25,7 +25,7 @@ export default function A05Page() {
                 <Settings className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A05:2021 – Configurare inadecvată a securității</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">A05:2021 – Configurare inadecvată a securității</h1>
                 <p className="text-muted-foreground">Security Misconfiguration</p>
               </div>
             </div>

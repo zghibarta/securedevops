@@ -25,7 +25,7 @@ export default function A07Page() {
                 <UserX className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">
+                <h1 className="text-2xl font-bold tracking-tighter">
                   A07:2021 – Eșecuri de Identificare și Autentificare
                 </h1>
                 <p className="text-muted-foreground">Identification and Authentication Failures</p>

@@ -25,7 +25,7 @@ export default function A10Page() {
                 <Zap className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">
+                <h1 className="text-2xl font-bold tracking-tighter">
                   A10:2021 – Falsificarea Cererilor pe Partea Serverului
                 </h1>
                 <p className="text-muted-foreground">Server-Side Request Forgery (SSRF)</p>

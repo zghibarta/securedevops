@@ -25,7 +25,7 @@ export default function A01Page() {
                 <Lock className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A01:2021 – Control defectuos al accesului</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">A01:2021 – Control defectuos al accesului</h1>
                 <p className="text-muted-foreground">Broken Access Control</p>
               </div>
             </div>

@@ -25,7 +25,7 @@ export default function A02Page() {
                 <KeyRound className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A02:2021 – Eșecuri Criptografice</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">A02:2021 – Eșecuri Criptografice</h1>
                 <p className="text-muted-foreground">Cryptographic Failures</p>
               </div>
             </div>

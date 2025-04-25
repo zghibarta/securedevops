@@ -25,7 +25,7 @@ export default function A04Page() {
                 <Lightbulb className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A04:2021 – Proiectare nesecurizată</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">A04:2021 – Proiectare nesecurizată</h1>
                 <p className="text-muted-foreground">Insecure Design</p>
               </div>
             </div>

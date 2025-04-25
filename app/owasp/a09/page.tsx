@@ -25,7 +25,7 @@ export default function A09Page() {
                 <Search className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">
+                <h1 className="text-2xl font-bold tracking-tighter">
                   A09:2021 – Eșecuri de Jurnalizare și Monitorizare a Securității
                 </h1>
                 <p className="text-muted-foreground">Security Logging and Monitoring Failures</p>

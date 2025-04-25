@@ -25,7 +25,7 @@ export default function A06Page() {
                 <AlertTriangle className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tighter">A06:2021 – Componente vulnerabile și învechite</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">A06:2021 – Componente vulnerabile și învechite</h1>
                 <p className="text-muted-foreground">Vulnerable and Outdated Components</p>
               </div>
             </div>
