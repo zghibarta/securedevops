@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <header className="border-b">
-      <div className="container max-w-4xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container max-w-4xl mx-auto flex h-16 items-center justify-between px-2 md:px-6">
         {/* Logo și Titlu Site */}
         <div className="mr-4">
           <Link href="/" className="flex items-center gap-2 text-lg font-bold whitespace-nowrap">

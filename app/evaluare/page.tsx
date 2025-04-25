@@ -97,7 +97,7 @@ export default function EvaluarePage() {
       {/* Preluăm structura din fișierul tău, aplicând max-w-4xl */}
       <main className="flex-1 mx-auto w-full max-w-4xl">
         <section className="w-full py-6 md:py-8 lg:py-10 bg-muted">
-           <div className="container px-4 md:px-6"> {/* Păstrăm container pentru padding */}
+           <div className="container px-2 md:px-3"> {/* Păstrăm container pentru padding */}
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">Evaluare cunoștințe</h1>
@@ -113,7 +113,7 @@ export default function EvaluarePage() {
         {/* Afișăm Quiz-ul activ SAU Scenariul activ SAU Tab-urile */}
         {activeQuiz && currentQuiz ? (
             <section className="w-full py-3 md:py-6 lg:py-8">
-              <div className="container px-4 md:px-6"> {/* Păstrăm container pentru padding */}
+              <div className="container px-2 md:px-3"> {/* Păstrăm container pentru padding */}
                 <Quiz
                   quizData={currentQuiz.data}
                   quizTitle={currentQuiz.title}
@@ -124,7 +124,7 @@ export default function EvaluarePage() {
             </section>
         ) : activeScenario && currentScenario ? (
              <section className="w-full py-3 md:py-6 lg:py-8">
-               <div className="container px-4 md:px-6"> {/* Păstrăm container pentru padding */}
+               <div className="container px-2 md:px-3"> {/* Păstrăm container pentru padding */}
                  <ScenarioViewer
                     scenario={currentScenario.data}
                     onCancel={handleCancelScenario}
@@ -134,7 +134,7 @@ export default function EvaluarePage() {
         ) : (
           // Afișare TAB-uri (default)
           <section className="w-full py-3 md:py-6 lg:py-8">
-           <div className="container px-4 md:px-6"> {/* Păstrăm container pentru padding */}
+           <div className="container px-2 md:px-3"> {/* Păstrăm container pentru padding */}
               {/* Modificat: Folosim 'value' și 'onValueChange' pentru a controla tab-ul */}
               <Tabs
                  value={activeTab} // Controlăm tab-ul activ cu starea

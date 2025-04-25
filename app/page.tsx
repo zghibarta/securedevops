@@ -43,7 +43,7 @@ export default function HomePage() {
     <div className="flex flex-col">
       <main className="flex-1 mx-auto">
         <section className="w-full py-6 md:py-8 lg:py-10 bg-muted">
-          <div className="container max-w-4xl px-4 md:px-6">
+          <div className="container max-w-4xl px-2 md:px-3">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">
@@ -56,7 +56,7 @@ export default function HomePage() {
               </div>
               {/* <button
                 onClick={handleSignIn}
-                className="flex w-1/2 items-center justify-center gap-4 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow transition-all hover:bg-gray-100"
+                className="flex w-1/2 items-center justify-center gap-4 rounded-md border border-slate-300 bg-white px-2 py-2 text-sm font-medium text-slate-700 shadow transition-all hover:bg-gray-100"
               >
                 <Image
                   src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg"
@@ -74,7 +74,7 @@ export default function HomePage() {
         </section>
         
         <section className="w-full py-3 md:py-6 lg:py-8">
-          <div className="container max-w-4xl px-4 md:px-6">
+          <div className="container max-w-4xl px-2 md:px-3">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 {/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Secțiuni principale</h2> */}

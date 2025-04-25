@@ -9,7 +9,7 @@ export default function A01Page() {
   return (
     <div className="flex flex-col">
       <main className="flex-1 flex justify-center">
-        <div className="container max-w-4xl px-4 py-6 md:px-6 md:py-12">
+        <div className="container max-w-4xl px-2 py-6 md:px-3 md:py-12">
           <div className="flex items-center gap-2 mb-4">
             <Link href="/owasp">
               <Button variant="outline" size="sm" id="top">

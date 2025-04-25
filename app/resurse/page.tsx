@@ -116,7 +116,7 @@ export default function ResursePage() {
     <div className="flex flex-col">
       <main className="flex-1 mx-auto">
         <section className="w-full py-6 md:py-8 lg:py-10 bg-muted">
-          <div className="container max-w-4xl px-4 md:px-6">
+          <div className="container max-w-4xl px-2 md:px-3">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">Bibliotecă de resurse</h1>
@@ -128,7 +128,7 @@ export default function ResursePage() {
         </section>
 
         <section className="w-full py-3 md:py-6 lg:py-8">
-          <div className="container max-w-4xl px-4 md:px-6">
+          <div className="container max-w-4xl px-2 md:px-3">
             <Tabs defaultValue="ghiduri" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
                 <TabsTrigger value="ghiduri">Ghiduri</TabsTrigger>
@@ -227,7 +227,7 @@ export default function ResursePage() {
         </section>
 
         {/* <section className="w-full py-3 md:py-4 lg:py-6 bg-muted">
-          <div className="container max-w-4xl px-4 md:px-6">
+          <div className="container max-w-4xl px-2 md:px-3">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-xl font-bold tracking-tighter">Resurse externe recomandate</h2>

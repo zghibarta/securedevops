@@ -17,7 +17,7 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-
 export const metadata = { // Păstrăm metadata definită în fișierul tău
   metadataBase: new URL("https://securedevops.site"),
   title: "SecureDevOps – OWASP & SSDLC",
-  description: "Platformă informativ-educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
+  description: "Platformă educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
   generator: 'stackblitz',
   icons: {
     icon: {
@@ -27,7 +27,7 @@ export const metadata = { // Păstrăm metadata definită în fișierul tău
   },
   openGraph: {
     title: "SecureDevOps – OWASP & SSDLC",
-    description: "Platformă informativ-educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
+    description: "Platformă educațională despre securitatea în DevOps, OWASP Top 10 și practici SSDLC",
     url: "https://securedevops.site",
     siteName: "SecureDevOps",
     images: [
@@ -61,7 +61,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="min-h-screen flex flex-col">
             <Header />
-            <main className="flex-grow container mx-auto px-4 py-4"> {/* Adăugat container și padding */}
+            <main className="flex-grow container mx-auto px-2 py-4"> {/* Adăugat container și padding */}
               {children}
             </main>
             <Footer />

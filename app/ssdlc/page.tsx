@@ -33,7 +33,7 @@ export default function SSDLCPage() {
     <div className="flex flex-col">
       <main className="flex-1 mx-auto">
       <section className="w-full py-6 md:py-8 lg:py-10 bg-muted">
-          <div className="container max-w-4xl px-4 md:px-6">
+          <div className="container max-w-4xl px-2 md:px-3">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">Secure Software Development Life Cycle (SSDLC)</h1>
@@ -45,9 +45,9 @@ export default function SSDLCPage() {
           </div>
         </section>
         <section className="w-full py-3 md:py-6 lg:py-8">
-          <div className="container max-w-4xl px-4 md:px-6">
+          <div className="container max-w-4xl px-2 md:px-3">
             <div className="mb-12">
-              <h2 className="text-xl font-bold tracking-tighter sm:text-xl mb-4">Ce este SSDLC?</h2>
+              {/* <h2 className="text-xl font-bold tracking-tighter sm:text-xl mb-4">Ce este SSDLC?</h2> */}
               <p className="text-muted-foreground mb-6">
               Securitatea în ciclul de dezvoltare software (SSDLC - Secure Software Development Lifecycle) reprezintă integrarea sistematică a activităților de securitate în fiecare etapă a procesului de dezvoltare software. Scopul este de a identifica și remedia vulnerabilitățile de securitate cât mai devreme în ciclul de dezvoltare, când costurile de remediere sunt mai mici.
               </p>
