@@ -29,39 +29,15 @@ export default function SSDLCPage() {
       link: "/ssdlc/vulnerabilitati"
     }
   ]
-  // Commented out phases:
-  // {
-  //   id: "testing",
-  //   title: "Testare de securitate",
-  //   icon: <Bug className="h-6 w-6" />,
-  //   description:
-  //     "Testarea aplicației pentru vulnerabilități folosind metode precum SAST, DAST, testare de penetrare și revizuirea codului.",
-  //   link: "#",
-  // },
-  // {
-  //   id: "deployment",
-  //   title: "Implementare securizată",
-  //   icon: <Server className="h-6 w-6" />,
-  //   description:
-  //     "Configurarea securizată a infrastructurii și implementarea controalelor de securitate în mediul de producție.",
-  //   link: "#",
-  // },
-  // {
-  //   id: "maintenance",
-  //   title: "Mentenanță și răspuns",
-  //   icon: <Zap className="h-6 w-6" />,
-  //   description: "Monitorizarea continuă, gestionarea vulnerabilităților și răspunsul la incidente de securitate.",
-  //   link: "#",
-  // }
   return (
     <div className="flex flex-col">
       <main className="flex-1 mx-auto">
       <section className="w-full py-6 md:py-8 lg:py-10 bg-muted">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-4xl px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">Secure Software Development Life Cycle (SSDLC)</h1>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-4xl text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Integrarea securității în fiecare etapă a ciclului de dezvoltare software
                 </p>
               </div>
@@ -69,7 +45,7 @@ export default function SSDLCPage() {
           </div>
         </section>
         <section className="w-full py-3 md:py-6 lg:py-8">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-4xl px-4 md:px-6">
             <div className="mb-12">
               <h2 className="text-xl font-bold tracking-tighter sm:text-xl mb-4">Ce este SSDLC?</h2>
               <p className="text-muted-foreground mb-6">

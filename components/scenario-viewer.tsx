@@ -30,14 +30,14 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
       <CardContent className="space-y-6">
         {/* Description */}
         <div>
-          <h3 className="text-lg font-semibold mb-2">Descriere Scenariu:</h3>
+          <h3 className="text-lg font-semibold mb-2">Descriere scenariu:</h3>
           <p className="text-muted-foreground">{scenario.description}</p>
         </div>
 
         {/* Vulnerable Code (if exists) - Folosim <pre> și <code> */}
         {scenario.vulnerableCode && (
           <div>
-            <h3 className="text-lg font-semibold mb-2">Cod Vulnerabil:</h3>
+            <h3 className="text-lg font-semibold mb-2">Cod vulnerabil:</h3>
             {/* Utilizăm tag-uri standard pre/code cu stilizare Tailwind */}
             <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
               <code className="font-mono text-sm text-gray-800 dark:text-gray-200">
@@ -58,7 +58,7 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
           <div>
             <Button variant="outline" size="sm" onClick={() => setShowHints(!showHints)}>
               <Lightbulb className="mr-2 h-4 w-4" />
-              {showHints ? 'Ascunde Indicii' : 'Arată Indicii'}
+              {showHints ? 'Ascunde Indicii' : 'Arată indicii'}
             </Button>
             {showHints && (
               <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-muted-foreground bg-muted p-3 rounded-md">
@@ -74,7 +74,7 @@ export function ScenarioViewer({ scenario, onCancel }: ScenarioViewerProps) {
          <div>
             <Button variant="secondary" size="sm" onClick={() => setShowSolution(!showSolution)}>
                {showSolution ? <XSquare className="mr-2 h-4 w-4"/> : <CheckSquare className="mr-2 h-4 w-4" />}
-              {showSolution ? 'Ascunde Soluția/Explicația' : 'Arată Soluția/Explicația'}
+              {showSolution ? 'Ascunde Soluția/Explicația' : 'Arată soluția/explicația'}
             </Button>
             {showSolution && (
                <div className="mt-3 space-y-4 bg-muted p-4 rounded-md">

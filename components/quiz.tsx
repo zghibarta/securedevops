@@ -176,7 +176,7 @@ export function Quiz({ quizData, quizTitle, onComplete, onCancel }: QuizProps) {
         </Button>
         <Button onClick={handleNext} disabled={!userAnswers[currentQuestion.id]}>
            {/* Verificăm indexul față de numărul de întrebări afișate */}
-          {currentQuestionIndex < QUESTIONS_PER_QUIZ - 1 ? "Următoarea Întrebare" : "Finalizează Testul"}
+          {currentQuestionIndex < QUESTIONS_PER_QUIZ - 1 ? "Următoarea întrebare" : "Finalizează Testul"}
         </Button>
       </CardFooter>
     </Card>

@@ -1,6 +1,6 @@
 // lib/scenarioData.ts
 
-// Interfața pentru Scenarii Practice
+// Interfața pentru Scenarii practice
 export interface Scenario {
   id: string;
   title: string;

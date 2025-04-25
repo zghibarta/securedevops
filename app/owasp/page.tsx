@@ -117,11 +117,11 @@ export default function OwaspPage() {
     <div className="flex flex-col">
       <main className="flex-1 mx-auto">
         <section className="w-full py-6 md:py-8 lg:py-10 bg-muted">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-4xl px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">OWASP Top 10: 2021</h1>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-4xl text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Open Web Application Security Project (OWASP)
                 </p>
               </div>
@@ -130,8 +130,8 @@ export default function OwaspPage() {
         </section>
 
         <section className="w-full py-3 md:py-6 lg:py-8">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="container max-w-4xl px-4 md:px-6">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
               {vulnerabilities.map((vulnerability) => (
                 <Card key={vulnerability.id} className="flex flex-col h-full">
                   <CardHeader>
