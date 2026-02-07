@@ -2,8 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Package, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
-import Image from "next/image"
+import { Lightbulb, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
 
 export default function A06Page() {
   return (
@@ -21,12 +20,12 @@ export default function A06Page() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <div className="rounded-full bg-primary/10 p-3">
-                <AlertTriangle className="h-8 w-8 text-primary" />
+              <div className="rounded-full bg-amber-500/10 p-3">
+                <Lightbulb className="h-8 w-8 text-amber-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tighter">A06:2021 – Componente vulnerabile și învechite</h1>
-                <p className="text-muted-foreground">Vulnerable and Outdated Components</p>
+                <h1 className="text-2xl font-bold tracking-tighter">A06:2025 – Proiectare Nesecurizată</h1>
+                <p className="text-muted-foreground">Insecure Design</p>
               </div>
             </div>
 
@@ -37,23 +36,26 @@ export default function A06Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Componente vulnerabile și învechite se referă la utilizarea de biblioteci, framework-uri și alte
-                  componente software care conțin vulnerabilități cunoscute sau care nu mai sunt menținute. Aceasta
-                  include componente client-side și server-side, precum și orice software utilizat în infrastructura
-                  aplicației.
+                  Proiectarea nesecurizată se referă la lipsa de controale de securitate sau controale insuficiente în faza de design a aplicației. Aceasta include vulnerabilități care nu pot fi remediate doar prin implementare corectă, ci necesită o reproiectare a componentelor.
                 </p>
                 <p>
-                  Această vulnerabilitate a urcat de pe poziția 9 (în 2017) pe poziția 6 în topul OWASP 2021, reflectând
-                  creșterea dependenței aplicațiilor moderne de componente terțe și riscurile asociate cu acestea.
+                  Principalele probleme de design nesigur includ:
                 </p>
-                <div className="flex justify-center my-6">
-                  <Image
-                    src="/images/A06.jpg"
-                    alt="A06"
-                    width={800}
-                    height={400}
-                    className="rounded-lg"
-                  />
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>Lipsa validării la nivel de logică de business (ex: limite de rate, limite de tranzacții)</li>
+                  <li>Arhitectură care nu implementează separarea responsabilităților</li>
+                  <li>Fluxuri de autorizare care nu verifică toate cazurile</li>
+                  <li>Lipsă de mecanisme de detecție a abuzului (rate limiting, anomaly detection)</li>
+                  <li>Arhitectură care expune servicii interne fără autentificare</li>
+                  <li>Lipsă de criptare la nivel de design pentru date sensibile</li>
+                </ul>
+                <p className="mt-2">
+                  A04:2021 a fost mutat la poziția A06:2025. Aceasta reflectă o evaluare a riscurilor și importanța relativă comparativ cu alte vulnerabilități.
+                </p>
+                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
+                  <p className="text-sm text-blue-900">
+                    <strong>Statistici OWASP 2025:</strong> Proiectarea nesecurizată apare în peste 40% din aplicațiile moderne și necesită intervenție din primele faze de proiectare.
+                  </p>
                 </div>
               </CardContent>
             </Card>

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { KeyRound, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
+import { Settings, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
 import Image from "next/image"
 
 export default function A02Page() {
@@ -22,11 +22,11 @@ export default function A02Page() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-primary/10 p-3">
-                <KeyRound className="h-8 w-8 text-primary" />
+                <Settings className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tighter">A02:2021 – Eșecuri Criptografice</h1>
-                <p className="text-muted-foreground">Cryptographic Failures</p>
+                <h1 className="text-2xl font-bold tracking-tighter">A02:2025 – Configurare inadecvată a securității</h1>
+                <p className="text-muted-foreground">Security Misconfiguration</p>
               </div>
             </div>
 
@@ -37,27 +37,20 @@ export default function A02Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Eșecurile criptografice se referă la implementarea incorectă sau insuficientă a mecanismelor de
-                  criptare pentru protejarea datelor sensibile. Această categorie se concentrează pe verificarea
-                  protecției datelor în tranzit și în repaus, inclusiv parole, informații de card de credit, date
-                  medicale, informații personale și secrete de afaceri.
+                  Configurare inadecvată a securității apare atunci când un sistem, o aplicație sau un serviciu cloud sunt configurate incorect din perspectiva securității, creând vulnerabilități. Se concentrează pe erorile de configurare din întreaga stivă a aplicației.
                 </p>
                 <p>
-                  Această vulnerabilitate a coborât de pe poziția 3 (în 2017) pe poziția 2 în topul OWASP 2021, fiind
-                  prezentă în aproximativ 29% din aplicațiile testate, cu o rată de incidență de peste 4,5%.
+                  <strong>A02:2025 a urcat de la poziția #5 în 2021 la #2 în 2025.</strong> 100% din aplicațiile testate aveau o formă de misconfigurare, cu o rată medie de incidență de 3,00%. Misconfigurațiile sunt mai frecvente în datele actuale, pe măsură ce ingineria software crește cantitatea de comportament al aplicației bazat pe configurații.
                 </p>
                 <div className="flex justify-center my-6">
                   <Image
                     src="/images/A02.jpg"
-                    alt="Eșecuri Criptografice - Diagram showing how a hacker can monitor network, steal cookies and hijack sessions"
+                    alt="Configurare inadecvată - Server misconfigurat cu erori în pagina de status care expun informații sensibile"
                     width={800}
                     height={400}
                     className="rounded-lg"
                   />
                 </div>
-                <p>
-                Exemplu în imagine: un site care nu aplică TLS poate permite unui atacator să fure cookie-ul de sesiune al utilizatorului, să îl modifice și să deturneze sesiunea autentificată, obținând acces la datele private ale utilizatorului.
-                </p>
               </CardContent>
             </Card>
 
@@ -75,41 +68,46 @@ export default function A02Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">1. Transmiterea datelor în text clar</h3>
+                      <h3 className="font-medium">1. Aplicații sample neomoloase</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Utilizarea protocolului HTTP în loc de HTTPS pentru transmiterea datelor sensibile, permițând
-                          atacatorilor să intercepteze și să citească informațiile transmise.
+                          Serverul de aplicații vine cu aplicații sample care nu sunt îndepărtate din producție. De exemplu, o consolă de administrare cu conturi implicite care nu au fost schimbate.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">2. Utilizarea algoritmilor criptografici slabi sau depreciați</h3>
+                      <h3 className="font-medium">2. Listarea directoarelor activată</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Folosirea algoritmilor precum MD5 sau SHA-1 pentru stocarea parolelor, care sunt vulnerabili
-                          la atacuri de forță brută sau de tip rainbow table.
+                          Serverul web permite listarea directoarele, permițând unui atacator să descopere și să descărce fișiere sensibile, să decompileze cod Java sau să reverse-engineer-eze aplicația.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">3. Stocarea necorespunzătoare a cheilor criptografice</h3>
+                      <h3 className="font-medium">3. Configurări de cloud nesigure</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Includerea cheilor de criptare direct în codul sursă sau în fișiere de configurare
-                          neprotejate, permițând accesul neautorizat la acestea.
+                          Bucket-uri S3, containere Azure sau alte servicii cloud configurate accidental cu permisiuni publice de citire/scriere, expunând date sensibile.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">4. Generarea aleatoare slabă</h3>
+                      <h3 className="font-medium">4. Mesaje de eroare care expun informații</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Utilizarea generatorilor de numere pseudo-aleatoare predictibile pentru crearea token-urilor
-                          de sesiune sau a valorilor criptografice.
+                          Mesajele de eroare conțin stack traces, informații despre versiuni software, căi de fișiere sau alte detalii care pot ajuta un atacator.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">5. Permisiuni incorecte la resursele critice</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Fișiere cu metadate sensibile (ex: .git, .env, copii de backup) sunt accesibile direct prin web root.
                         </p>
                       </div>
                     </div>
@@ -126,10 +124,9 @@ export default function A02Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Clasificați datele procesate, stocate sau transmise</h3>
+                        <h3 className="font-medium">Implementați un proces de hardening repetat</h3>
                         <p className="text-sm text-muted-foreground">
-                          Identificați ce date sunt sensibile conform legilor privind confidențialitatea, cerințelor de
-                          reglementare sau nevoilor de afaceri.
+                          Stabilițiun proces automatizat și repetat de hardening care permite implementarea rapidă a unui mediu securizat. Dezvoltare, QA și producție ar trebui configurate identic, cu credențiale diferite în fiecare mediu.
                         </p>
                       </div>
                     </div>
@@ -137,10 +134,9 @@ export default function A02Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Utilizați HTTPS pentru toate conexiunile</h3>
+                        <h3 className="font-medium">Plăți minimaliste</h3>
                         <p className="text-sm text-muted-foreground">
-                          Implementați HTTPS cu certificate valide pentru toate conexiunile, inclusiv pentru resurse
-                          externe. Utilizați HSTS pentru a forța conexiunile HTTPS.
+                          Instalați doar componentele necesare. Dezactivați caracteristicile nefolosite, framework-urile, documentația și exemplele. Eliminați sau nu instalați canalele nefolosite și caracteristicile.
                         </p>
                       </div>
                     </div>
@@ -148,10 +144,9 @@ export default function A02Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Stocați parolele folosind algoritmi puternici</h3>
+                        <h3 className="font-medium">Dezactivați listarea directoarelor</h3>
                         <p className="text-sm text-muted-foreground">
-                          Utilizați algoritmi adaptivi de hashing precum Argon2, PBKDF2, Bcrypt sau Scrypt, cu un factor
-                          de cost (work factor) adecvat și un salt aleatoriu.
+                          Asigurați-vă că listarea directoarelor nu este activată pe server. Acesta ar trebui să aplice permisiuni restrictive și să returneze erori pentru accesuri neautorizate.
                         </p>
                       </div>
                     </div>
@@ -159,10 +154,9 @@ export default function A02Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Utilizați algoritmi și protocoale criptografice puternice</h3>
+                        <h3 className="font-medium">Trimiteți directivele de securitate către clienți</h3>
                         <p className="text-sm text-muted-foreground">
-                          Folosiți algoritmi, chei și protocoale criptografice puternice, bazate pe standarde. Utilizați
-                          generatoare de numere aleatoare criptografic sigure.
+                          Trimiteți antetele de securitate către clienți, cum ar fi Security-Headers (CSP, HSTS, X-Frame-Options, etc.).
                         </p>
                       </div>
                     </div>
@@ -170,10 +164,19 @@ export default function A02Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Gestionați corespunzător cheile criptografice</h3>
+                        <h3 className="font-medium">Utilizați o arhitectură de aplicație segmentată</h3>
                         <p className="text-sm text-muted-foreground">
-                          Implementați o gestionare sigură a cheilor, inclusiv rotația și revocarea acestora. Utilizați
-                          module de securitate hardware (HSM) pentru stocarea cheilor critice.
+                          Segmentați efectiv aplicațiile și componentele, utilizând containerizare sau grupuri de securitate cloud.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Verificare automată a configurațiilor</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Implementați procese automate pentru a verifica eficacitatea configurațiilor și setărilor în toate mediile.
                         </p>
                       </div>
                     </div>
@@ -183,8 +186,7 @@ export default function A02Page() {
                       <div>
                         <h3 className="font-medium">Practici de evitat</h3>
                         <p className="text-sm text-muted-foreground">
-                          Nu utilizați algoritmi criptografici depreciați (MD5, SHA1, DES, etc.). Nu implementați
-                          propriile soluții criptografice. Nu stocați secrete în codul sursă.
+                          Nu lăsați aplicații sample în producție. Nu activați listarea directoarelor. Nu vă bazați pe compatibilitate inversă pentru securitate. Nu stocați secrete în fișiere de configurare.
                         </p>
                       </div>
                     </div>
@@ -199,36 +201,36 @@ export default function A02Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Scanare automată de cod</h3>
+                      <h3 className="font-medium">Scanare de configurație</h3>
                       <p className="text-sm">
-                        Integrați scanere de securitate în pipeline-ul CI/CD pentru a detecta probleme criptografice:
+                        Integrați scanere de configurație în pipeline-ul CI/CD:
                       </p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Utilizați instrumente SAST pentru a identifica utilizarea algoritmilor slabi</li>
-                        <li>Implementați scanere de secrete pentru a detecta chei hardcodate în cod</li>
-                        <li>Verificați dependențele pentru vulnerabilități criptografice cunoscute</li>
+                        <li>Utilizați instrumente precum Aqua Security, Trivy pentru a scana imagini Docker</li>
+                        <li>Implementați CloudFormation sau Terraform validators pentru a verifica IaC</li>
+                        <li>Scanați permisiuni de cloud storage și ACL-uri cu instrumente dedicate</li>
                       </ul>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Gestionarea secretelor</h3>
-                      <p className="text-sm">Implementați soluții de gestionare a secretelor în pipeline-ul DevOps:</p>
+                      <h3 className="font-medium">Testing de configurație</h3>
+                      <p className="text-sm">Testați configurații în pipeline-ul CI/CD:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Utilizați servicii precum HashiCorp Vault, AWS Secrets Manager sau Azure Key Vault</li>
-                        <li>Automatizați rotația cheilor și certificatelor</li>
-                        <li>Implementați politici de acces bazate pe principiul privilegiului minim</li>
+                        <li>Verificați că antetele de securitate sunt prezente și corecte</li>
+                        <li>Testați că serviciile nefolosite sunt dezactivate</li>
+                        <li>Validați permisiuni de fișiere și proprietăți în sistemul de fișiere</li>
                       </ul>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Testare de securitate</h3>
+                      <h3 className="font-medium">Gestionare automată a configurației</h3>
                       <p className="text-sm">
-                        Includeți teste specifice pentru verificarea implementărilor criptografice:
+                        Utilizați Infrastructure as Code și gestionare de configurație:
                       </p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Testați configurația TLS/SSL cu instrumente precum SSL Labs sau testssl.sh</li>
-                        <li>Verificați implementarea corectă a algoritmilor de hashing pentru parole</li>
-                        <li>Testați gestionarea cheilor și certificatelor în medii de pre-producție</li>
+                        <li>Terraform, CloudFormation pentru definirea resurselor cloud</li>
+                        <li>Ansible, Chef, Puppet pentru gestionarea configurației serverelor</li>
+                        <li>Versiunea configurații în Git cu control de acces</li>
                       </ul>
                     </div>
 
@@ -237,9 +239,7 @@ export default function A02Page() {
                       <div>
                         <h3 className="font-medium text-amber-800">Recomandare pentru DevOps</h3>
                         <p className="text-sm text-amber-700">
-                          Implementați un proces de revizuire a configurațiilor criptografice înainte de fiecare
-                          deployment major. Utilizați liste de verificare (checklists) pentru a vă asigura că toate
-                          aspectele criptografice sunt corect implementate și configurate.
+                          Implementați "configuration management as code" și automatizați verificările de hardening în fiecare deployment. Utilizați benchmarks-uri CIS (Center for Internet Security) pentru a valida mașinile și containerele.
                         </p>
                       </div>
                     </div>

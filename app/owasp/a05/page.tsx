@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Settings, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
+import { Code, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
 import Image from "next/image"
 
 export default function A05Page() {
@@ -21,12 +21,12 @@ export default function A05Page() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <div className="rounded-full bg-primary/10 p-3">
-                <Settings className="h-8 w-8 text-primary" />
+              <div className="rounded-full bg-red-500/10 p-3">
+                <Code className="h-8 w-8 text-red-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tighter">A05:2021 – Configurare inadecvată a securității</h1>
-                <p className="text-muted-foreground">Security Misconfiguration</p>
+                <h1 className="text-2xl font-bold tracking-tighter">A05:2025 – Injectare</h1>
+                <p className="text-muted-foreground">Injection</p>
               </div>
             </div>
 
@@ -37,23 +37,26 @@ export default function A05Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Configurarea inadecvată de securitate apare atunci când sistemele, framework-urile, aplicațiile sau
-                  infrastructura nu sunt configurate corespunzător din punct de vedere al securității. Aceasta include
-                  utilizarea configurărilor implicite nesigure, configurări incomplete, stocarea în cloud deschisă,
-                  mesaje de eroare care conțin informații sensibile și lipsa patch-urilor de securitate.
+                  Injectarea apare atunci când datele furnizate de utilizator nu sunt validate, filtrate sau sanitizate corespunzător. Atacatorii pot trimite date ostile ca parte a unei comenzi sau interogări, permițând executarea de cod neautorizat.
                 </p>
                 <p>
-                  Această vulnerabilitate a urcat de pe poziția 6 (în 2017) pe poziția 5 în topul OWASP 2021, fiind
-                  prezentă în aproximativ 90% din aplicațiile testate, cu o rată de incidență de peste 4%.
+                  Principalele tipuri de injectare includ:
                 </p>
-                <div className="flex justify-center my-6">
-                  <Image
-                    src="/images/A05.jpg"
-                    alt="Configurare Greșită de Securitate - Diagram showing security misconfiguration with default credentials"
-                    width={800}
-                    height={400}
-                    className="rounded-lg"
-                  />
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>SQL Injection - inserare de comenzi SQL în câmpuri de intrare</li>
+                  <li>OS Command Injection - executare de comenzi de sistem</li>
+                  <li>LDAP Injection - manipularea interogărilor LDAP</li>
+                  <li>XML/XPath Injection - injectare în documente XML</li>
+                  <li>NoSQL Injection - atacuri asupra bazelor NoSQL</li>
+                  <li>Template Injection - injectare în motoare de template</li>
+                </ul>
+                <p className="mt-2">
+                  A descinde din poziția A03:2021 la A05:2025, dar rămâne o vulnerabilitate critică prezentă în aproximativ 94% din aplicațiile testate cu o rată medie de incidență de 3.24%.
+                </p>
+                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
+                  <p className="text-sm text-blue-900">
+                    <strong>Statistici OWASP 2025:</strong> Injectarea afectează practic toate aplicațiile web și rămâne una din cele mai frequente și periculoase vulnerabilități.
+                  </p>
                 </div>
               </CardContent>
             </Card>

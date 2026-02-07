@@ -26,9 +26,9 @@ export default function A07Page() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold tracking-tighter">
-                  A07:2021 – Eșecuri de Identificare și Autentificare
+                  A07:2025 – Eșecuri de Autentificare
                 </h1>
-                <p className="text-muted-foreground">Identification and Authentication Failures</p>
+                <p className="text-muted-foreground">Authentication Failures</p>
               </div>
             </div>
 

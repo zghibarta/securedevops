@@ -30,149 +30,148 @@ export function shuffleArray<T>(array: T[]): T[] {
 }
 
 
-// --- OWASP Top 10 2021 Quiz Data (Expanded to 20) ---
+// --- OWASP Top 10 2025 Quiz Data (Ediția a 8-a) ---
 export const owaspQuizData: Question[] = [
-  // Existing 10 questions...
+  // OWASP 2025 questions...
   {
-    id: 'owasp1_upd',
-    question: 'Un utilizator poate modifica ID-ul unui obiect într-un URL (ex: /api/orders/123 -> /api/orders/456) și poate vizualiza comanda altui client. Ce vulnerabilitate OWASP este cel mai probabil exploatată?',
-    options: ['A01: Broken Access Control', 'A03: Injection', 'A05: Security Misconfiguration', 'A10: Server-Side Request Forgery (SSRF)'],
+    id: 'owasp1_2025',
+    question: 'Un utilizator poate modifica ID-ul unui obiect într-un URL (ex: /api/orders/123 -> /api/orders/456) și poate vizualiza comanda altui client. Ce vulnerabilitate OWASP 2025 este cel mai probabil exploatată?',
+    options: ['A01: Broken Access Control', 'A05: Injection', 'A02: Security Misconfiguration', 'A06: Insecure Design'],
     correctAnswer: 'A01: Broken Access Control',
-    explanation: 'Acesta este un exemplu clasic de Insecure Direct Object References (IDOR), o subcategorie a Broken Access Control.'
+    explanation: 'Acesta este un exemplu clasic de Insecure Direct Object References (IDOR), o subcategorie a Broken Access Control. A01:2025 rămâne pe poziția #1.'
   },
   {
-    id: 'owasp2_upd',
-    question: 'O aplicație stochează token-urile de sesiune în localStorage, fără flag-ul HttpOnly. Ce atac devine semnificativ mai ușor de realizat?',
-    options: ['SQL Injection (A03)', 'Cross-Site Scripting (XSS) pentru furtul sesiunii (parte din A07)', 'XML External Entity (XXE) (parte din A05)', 'Server-Side Request Forgery (SSRF) (A10)'],
-    correctAnswer: 'Cross-Site Scripting (XSS) pentru furtul sesiunii (parte din A07)',
-    explanation: 'Stocarea token-urilor în localStorage le face accesibile scripturilor JavaScript via XSS, permițând furtul sesiunii (A07).'
+    id: 'owasp2_2025',
+    question: 'O bibliotecă popular pe npm a fost compromisă și versiunea nouă conține cod malware. Ce categorie OWASP 2025 este implicată?',
+    options: ['A02: Security Misconfiguration', 'A03: Software Supply Chain Failures', 'A05: Injection', 'A06: Insecure Design'],
+    correctAnswer: 'A03: Software Supply Chain Failures',
+    explanation: 'A03:2025 este o categorie nouă care acoperi compromiterea componentelor, proceselor de build și infrastructurii de distribuție.'
   },
   {
-    id: 'owasp3_upd',
-    question: 'Ce tehnică de apărare este cea mai eficientă pentru a preveni majoritatea vulnerabilităților de tip Injection (A03), cum ar fi SQL Injection?',
+    id: 'owasp3_2025',
+    question: 'Un bucket S3 este configurat accidental cu permisiuni publice de scriere. Ce categorie OWASP 2025 este cel mai direct implicată?',
+    options: ['A02: Security Misconfiguration', 'A04: Cryptographic Failures', 'A07: Authentication Failures', 'A08: Software or Data Integrity Failures'],
+    correctAnswer: 'A02: Security Misconfiguration',
+    explanation: 'Configurarea incorectă a resurselor cloud este un exemplu direct de A02:2025, care a urcat de la poziția #5 în 2021 la #2 în 2025.'
+  },
+  {
+    id: 'owasp4_2025',
+    question: 'Ce tehnică de apărare este cea mai eficientă pentru a preveni majoritatea vulnerabilităților de tip Injection (A05), cum ar fi SQL Injection?',
     options: ['Validarea inputului pe client', 'Utilizarea Web Application Firewalls (WAF)', 'Folosirea interogărilor parametrizate (prepared statements)', 'Codificarea datelor la afișare'],
     correctAnswer: 'Folosirea interogărilor parametrizate (prepared statements)',
-    explanation: 'Interogările parametrizate separă codul SQL de date, prevenind interpretarea datelor ca instrucțiuni.'
-  },
-   {
-    id: 'owasp4_upd',
-    question: 'O funcționalitate nouă de export generează un raport complex pe server, fără limite impuse utilizatorului. Ce categorie OWASP (2021) reflectă cel mai bine acest risc?',
-    options: ['A04: Insecure Design', 'A09: Security Logging and Monitoring Failures', 'A05: Security Misconfiguration', 'A01: Broken Access Control'],
-    correctAnswer: 'A04: Insecure Design',
-    explanation: 'Lipsa limitării resurselor este o problemă de proiectare (Insecure Design) ce poate duce la Denial of Service.'
+    explanation: 'Interogările parametrizate separă codul SQL de date. A05:2025 (Injection) rămâne o amenințare critică, coborând de la #3 în 2021 la #5 în 2025.'
   },
   {
-    id: 'owasp5_upd',
-    question: 'Un bucket S3 este configurat accidental cu permisiuni publice de scriere. Ce categorie OWASP este cel mai direct implicată?',
-    options: ['A02: Cryptographic Failures', 'A05: Security Misconfiguration', 'A07: Identification and Authentication Failures', 'A08: Software and Data Integrity Failures'],
-    correctAnswer: 'A05: Security Misconfiguration',
-    explanation: 'Configurarea incorectă a permisiunilor pentru resursele cloud este un exemplu tipic de Security Misconfiguration.'
+    id: 'owasp5_2025',
+    question: 'Aplicația transmite date sensibile prin HTTP în loc de HTTPS. Ce categorie OWASP 2025 este cea mai relevantă?',
+    options: ['A02: Security Misconfiguration', 'A04: Cryptographic Failures', 'A06: Insecure Design', 'A07: Authentication Failures'],
+    correctAnswer: 'A04: Cryptographic Failures',
+    explanation: 'Transmiterea datelor sensibile în text clar este o eșec criptografic (A04:2025).'
   },
   {
-    id: 'owasp6_upd',
-    question: 'Folosirea unei biblioteci de procesare a imaginilor care nu a mai fost actualizată de 2 ani, cu un CVE critic cunoscut. Ce categorie OWASP este relevantă?',
-    options: ['A03: Injection', 'A06: Vulnerable and Outdated Components', 'A08: Software and Data Integrity Failures', 'A09: Security Logging and Monitoring Failures'],
-    correctAnswer: 'A06: Vulnerable and Outdated Components',
-    explanation: 'Utilizarea componentelor cu vulnerabilități cunoscute este exact ceea ce descrie categoria A06.'
+    id: 'owasp6_2025',
+    question: 'Folosirea unei biblioteci de procesare a imaginilor care nu a mai fost actualizată, cu un CVE critic cunoscut. Ce categorie OWASP 2025 este implicată?',
+    options: ['A03: Software Supply Chain Failures', 'A06: Insecure Design', 'A08: Software or Data Integrity Failures', 'A09: Security Logging & Alerting Failures'],
+    correctAnswer: 'A03: Software Supply Chain Failures',
+    explanation: 'A03:2025 cuprinde componentele vulnerabile și compromise din lanțul de aprovizionare.'
   },
-   {
-    id: 'owasp7_upd',
-    question: 'O aplicație permite resetarea parolei doar pe baza adresei de email, fără un token unic și cu durată limitată. Ce risc principal apare?',
-    options: ['Cross-Site Scripting (XSS)', 'Server-Side Request Forgery (SSRF)', 'Account takeover (A07)', 'Security Misconfiguration (A05)'],
+  {
+    id: 'owasp7_2025',
+    question: 'O aplicație permite resetarea parolei doar pe baza adresei de email, fără token unic și durată limitată. Ce risc apare?',
+    options: ['Cross-Site Scripting (XSS)', 'Server-Side Request Forgery', 'Account takeover (A07)', 'Security Misconfiguration'],
     correctAnswer: 'Account takeover (A07)',
-    explanation: 'Lipsa unui mecanism sigur de verificare facilitează preluarea neautorizată a conturilor (A07: Identification and Authentication Failures).'
-  },
-   {
-    id: 'owasp8_upd',
-    question: 'Un pipeline CI/CD descarcă dependențe folosind HTTP și nu verifică semnăturile digitale. Ce categorie OWASP (2021) este cel mai probabil afectată?',
-    options: ['A08: Software and Data Integrity Failures', 'A04: Insecure Design', 'A06: Vulnerable and Outdated Components', 'A05: Security Misconfiguration'],
-    correctAnswer: 'A08: Software and Data Integrity Failures',
-    explanation: 'Descărcarea nesecurizată și lipsa verificării integrității pot permite injectarea de cod malițios în build (A08).'
+    explanation: 'Mecanismul de resetare nesigur facilitează preluarea neautorizată a conturilor (A07:2025).'
   },
   {
-    id: 'owasp9_upd',
-    question: 'După un incident, se constată că log-urile nu conțin adresele IP ale utilizatorilor care au efectuat acțiuni critice. Ce categorie OWASP a contribuit?',
-    options: ['A01: Broken Access Control', 'A07: Identification and Authentication Failures', 'A09: Security Logging and Monitoring Failures', 'A05: Security Misconfiguration'],
-    correctAnswer: 'A09: Security Logging and Monitoring Failures',
-    explanation: 'Lipsa jurnalizării informațiilor relevante (A09) face dificilă detectarea și investigarea incidentelor.'
+    id: 'owasp8_2025',
+    question: 'Un pipeline CI/CD descarcă dependențe fără verificarea semnăturilor digitale. Ce categoria OWASP este afectată?',
+    options: ['A08: Software or Data Integrity Failures', 'A06: Insecure Design', 'A03: Software Supply Chain Failures', 'A02: Security Misconfiguration'],
+    correctAnswer: 'A03: Software Supply Chain Failures',
+    explanation: 'A03:2025 cuprinde securi în lanțul de construcție și distribuție.'
   },
-   {
-    id: 'owasp10_upd',
-    question: 'O funcționalitate permite specificarea unui URL pentru avatar, iar un atacator introduce `http://169.254.169.254/latest/meta-data/`. Ce vulnerabilitate este exploatată?',
-    options: ['A03: Injection', 'A10: Server-Side Request Forgery (SSRF)', 'A01: Broken Access Control', 'A06: Vulnerable and Outdated Components'],
-    correctAnswer: 'A10: Server-Side Request Forgery (SSRF)',
-    explanation: 'Aplicația este forțată să facă o cerere către o resursă internă (metadata service), un atac clasic SSRF (A10).'
-  },
-  // New 10 questions for OWASP
   {
-    id: 'owasp11',
-    question: 'Ce tip de header HTTP ajută la prevenirea atacurilor de tip Clickjacking, instruind browserul să nu randeze pagina într-un frame?',
+    id: 'owasp9_2025',
+    question: 'După un incident, se constată că log-urile nu conțin metadata relevantă. Ce categorie OWASP trebuie aplicată?',
+    options: ['A01: Broken Access Control', 'A07: Authentication Failures', 'A09: Security Logging & Alerting Failures', 'A02: Security Misconfiguration'],
+    correctAnswer: 'A09: Security Logging & Alerting Failures',
+    explanation: 'A09:2025 se concentrează pe eșecurile de jurnalizare și alertare a securității.'
+  },
+  {
+    id: 'owasp10_2025',
+    question: 'O aplicație nu validează mesajele de eroare și permit overflow de memorie. Ce categorie OWASP 2025 acoperă acest tip de defect?',
+    options: ['A06: Insecure Design', 'A10: Mishandling of Exceptional Conditions', 'A05: Injection', 'A04: Cryptographic Failures'],
+    correctAnswer: 'A10: Mishandling of Exceptional Conditions',
+    explanation: 'A10:2025 este categoria nouă care acoperi gestionarea defectuoasă a condițiilor excepționale.'
+  },
+  {
+    id: 'owasp11_2025',
+    question: 'Ce header HTTP previne Clickjacking-ul?',
     options: ['Content-Security-Policy', 'X-Content-Type-Options', 'X-Frame-Options', 'Strict-Transport-Security'],
     correctAnswer: 'X-Frame-Options',
-    explanation: 'X-Frame-Options (cu valorile DENY sau SAMEORIGIN) este principalul header pentru prevenirea Clickjacking-ului (menționat în contextul A05).'
+    explanation: 'X-Frame-Options instruiește browserul să nu randeze pagina în frame-uri de pe alte site-uri.'
   },
   {
-    id: 'owasp12',
-    question: 'O aplicație folosește `eval()` pentru a parsa date JSON primite de la utilizator. Ce vulnerabilitate principală introduce această practică?',
-    options: ['A01: Broken Access Control', 'A03: Injection (specific Code Injection)', 'A02: Cryptographic Failures', 'A10: Server-Side Request Forgery (SSRF)'],
-    correctAnswer: 'A03: Injection (specific Code Injection)',
-    explanation: 'Folosirea `eval()` pe date nevalidate provenite de la utilizator permite injectarea și execuția de cod JavaScript arbitrar (Code Injection), o formă de A03.'
+    id: 'owasp12_2025',
+    question: 'Folosirea `eval()` pe date nevalidate permite execuția de cod neautorizat. Ce categorie OWASP este afectată?',
+    options: ['A01: Broken Access Control', 'A05: Injection', 'A02: Security Misconfiguration', 'A04: Cryptographic Failures'],
+    correctAnswer: 'A05: Injection',
+    explanation: 'A05:2025 (Injection) cuprinde injecția de cod și alte forme de injectare de date.'
   },
   {
-    id: 'owasp13',
-    question: 'Ce consecință majoră poate avea lipsa validării tipului și lungimii fișierelor încărcate de utilizatori (File Upload)?',
-    options: ['Denial of Service (DoS)', 'Execuția de cod pe server (Remote Code Execution - RCE)', 'Cross-Site Scripting (XSS) stocat', 'Toate cele de mai sus'],
-    correctAnswer: 'Toate cele de mai sus',
-    explanation: 'Lipsa validării la upload poate permite încărcarea de fișiere foarte mari (DoS), fișiere executabile (RCE) sau fișiere HTML/JS malițioase (XSS Stocat) - probleme legate de A03, A05, A08.'
+    id: 'owasp13_2025',
+    question: 'Lipsa validării fișierelor încărcate poate permite ce tipuri de atacuri?',
+    options: ['SQL Injection', 'Denial of Service și Remote Code Execution', 'Only XSS', 'Credential stuffing'],
+    correctAnswer: 'Denial of Service și Remote Code Execution',
+    explanation: 'Fişierele nevalidate pot fi mari (DoS) sau executabile (RCE).'
   },
   {
-    id: 'owasp14',
-    question: 'Ce înseamnă "Salt" în contextul stocării parolelor (A02: Cryptographic Failures)?',
-    options: ['Un algoritm de hashing lent.', 'O valoare unică, aleatorie, adăugată la parolă înainte de hashing.', 'Cheia secretă folosită pentru criptarea parolelor.', 'O metodă de a limita numărul de încercări de login.'],
-    correctAnswer: 'O valoare unică, aleatorie, adăugată la parolă înainte de hashing.',
-    explanation: 'Salt-ul previne atacurile de tip rainbow table, asigurând că parole identice vor avea hash-uri diferite.'
+    id: 'owasp14_2025',
+    question: 'Cum trebuie stocate parolele pentru a preveni rainbow table attacks (A04)?',
+    options: ['În text clar', 'Cu salt unic și algoritm lent', 'Criptate cu o singură cheie', 'Cu MD5'],
+    correctAnswer: 'Cu salt unic și algoritm lent',
+    explanation: 'Salt-ul și algoritmi lenti (bcrypt, scrypt) sunt esențiali pentru A04:2025.'
   },
   {
-    id: 'owasp15',
-    question: 'O aplicație web afișează mesaje de eroare detaliate, inclusiv stack trace-uri, direct utilizatorului final. Ce categorie OWASP este afectată?',
-    options: ['A05: Security Misconfiguration', 'A09: Security Logging and Monitoring Failures', 'A02: Cryptographic Failures', 'A04: Insecure Design'],
-    correctAnswer: 'A05: Security Misconfiguration',
-    explanation: 'Expunerea informațiilor tehnice detaliate în mesajele de eroare este o configurare nesigură (A05) care poate oferi informații utile unui atacator.'
+    id: 'owasp15_2025',
+    question: 'Expunerea detaliilor de sistem în mesajele de eroare permite ce fel de atac?',
+    options: ['Buffer overflow', 'Information disclosure (A02)', 'CSRF', 'Clickjacking'],
+    correctAnswer: 'Information disclosure (A02)',
+    explanation: 'Mesajele de eroare detaliate sunt parte a A02:2025 (Security Misconfiguration).'
   },
   {
-    id: 'owasp16',
-    question: 'Ce este un atac de tip "Credential Stuffing" (relevant pentru A07)?',
-    options: ['Ghicirea parolelor folosind dicționare.', 'Folosirea listelor de credențiale (email/parolă) compromise în alte breșe pentru a încerca autentificarea pe site-ul tău.', 'Injectarea de credențiale false în baza de date.', 'Furtul cookie-urilor de sesiune.'],
-    correctAnswer: 'Folosirea listelor de credențiale (email/parolă) compromise în alte breșe pentru a încerca autentificarea pe site-ul tău.',
-    explanation: 'Atacatorii automatizează testarea credențialelor furate pe multiple site-uri, profitând de reutilizarea parolelor de către utilizatori.'
+    id: 'owasp16_2025',
+    question: 'Ce este Credential Stuffing?',
+    options: ['Ghicire de parole', 'Refolosirea credențialelor compromise pe alte site-uri', 'Injectarea de parole false', 'Furt de sesiuni'],
+    correctAnswer: 'Refolosirea credențialelor compromise pe alte site-uri',
+    explanation: 'Atacatorii testează automat credențiale furate pe multiple aplicații (A07:2025).'
   },
   {
-    id: 'owasp17',
-    question: 'Un API nu implementează limitarea numărului de cereri (rate limiting). Ce vulnerabilitate OWASP API Top 10 este cel mai probabil expusă?',
-    options: ['API1: Broken Object Level Authorization', 'API3: Excessive Data Exposure', 'API4: Lack of Resources & Rate Limiting', 'API5: Broken Function Level Authorization'],
-    correctAnswer: 'API4: Lack of Resources & Rate Limiting',
-    explanation: 'Lipsa rate limiting-ului poate duce la atacuri de tip Denial of Service sau la abuzul funcționalităților API.'
+    id: 'owasp17_2025',
+    question: 'Cum poate o aplicație să verifice că o cerere vine din același site și nu de pe un site extern?',
+    options: ['HTTPS', 'Authorization header', 'CSRF token și SameSite cookie', 'Cookies'],
+    correctAnswer: 'CSRF token și SameSite cookie',
+    explanation: 'Acestea previn atacurile CSRF (Cross-Site Request Forgery) legate de A01.'
   },
   {
-    id: 'owasp18',
-    question: 'Ce rol joacă Content Security Policy (CSP) în prevenirea atacurilor XSS (A03)?',
-    options: ['Validează input-ul utilizatorului pe server.', 'Criptează datele sensibile în tranzit.', 'Definește sursele valide de unde browserul poate încărca și executa scripturi.', 'Scanează codul sursă pentru vulnerabilități.'],
-    correctAnswer: 'Definește sursele valide de unde browserul poate încărca și executa scripturi.',
-    explanation: 'CSP instruiește browserul să blocheze scripturile provenite din surse neaprobate sau scripturile inline nesigure, mitigând impactul XSS.'
+    id: 'owasp18_2025',
+    question: 'Ce rol joacă CSP în prevenirea XSS (A05)?',
+    options: ['Validare server-side', 'Restricționează sursele de script browserul może executa', 'Criptare date', 'Logging'],
+    correctAnswer: 'Restricționează sursele de script browserul poate executa',
+    explanation: 'CSP mitigează XSS prin controlul scripturilor care pot rula.'
   },
   {
-    id: 'owasp19',
-    question: 'Ce mecanism HTTP previne trimiterea cookie-urilor de sesiune în cererile cross-site, ajutând la prevenirea CSRF (relevant pentru A01)?',
-    options: ['Flag-ul HttpOnly pe cookie', 'Flag-ul Secure pe cookie', 'Atributul SameSite pe cookie (setat la Lax sau Strict)', 'Header-ul Access-Control-Allow-Origin'],
-    correctAnswer: 'Atributul SameSite pe cookie (setat la Lax sau Strict)',
-    explanation: 'Atributul SameSite instruiește browserul să nu trimită cookie-ul în cereri inițiate de pe alte site-uri, prevenind astfel atacurile CSRF.'
+    id: 'owasp19_2025',
+    question: 'Ce previne flag-ul HttpOnly pe cookies?',
+    options: ['XSS', 'Accesul JavaScript din XSS la cookies', 'CSRF', 'SQL Injection'],
+    correctAnswer: 'Accesul JavaScript din XSS la cookies',
+    explanation: 'HttpOnly face cookie-uri inaccesibile din JavaScript, reducând damage în cazul XSS.'
   },
   {
-    id: 'owasp20',
-    question: 'Deserializarea datelor nesigure primite dintr-o sursă externă poate duce la ce tip de atacuri (A08)?',
-    options: ['SQL Injection', 'Remote Code Execution (RCE)', 'Cross-Site Scripting (XSS)', 'Server-Side Request Forgery (SSRF)'],
+    id: 'owasp20_2025',
+    question: 'Deserializarea nesigură a datelor permite ce atac?',
+    options: ['SQL Injection', 'Remote Code Execution (RCE)', 'XSS', 'SSRF'],
     correctAnswer: 'Remote Code Execution (RCE)',
-    explanation: 'Dacă datele serializate conțin obiecte malițioase, procesul de deserializare le poate instanția și executa cod arbitrar pe server.'
+    explanation: 'Datele serializate malițioase pot executa cod arbitrarydar (legat de A08:2025).'
   },
 ];
 

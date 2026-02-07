@@ -26,9 +26,9 @@ export default function A08Page() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold tracking-tighter">
-                  A08:2021 – Eșecuri de Integritate a Software-ului și Datelor
+                  A08:2025 – Eșecuri de Integritate a Software-ului sau Datelor
                 </h1>
-                <p className="text-muted-foreground">Software and Data Integrity Failures</p>
+                <p className="text-muted-foreground">Software or Data Integrity Failures</p>
               </div>
             </div>
 

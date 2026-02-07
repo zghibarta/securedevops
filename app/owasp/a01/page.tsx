@@ -25,7 +25,7 @@ export default function A01Page() {
                 <Lock className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tighter">A01:2021 – Control defectuos al accesului</h1>
+                <h1 className="text-2xl font-bold tracking-tighter">A01:2025 – Control defectuos al accesului</h1>
                 <p className="text-muted-foreground">Broken Access Control</p>
               </div>
             </div>
@@ -37,14 +37,10 @@ export default function A01Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Controlul defectuos al accesului se referă la situațiile în care restricțiile privind acțiunile
-                  utilizatorilor autentificați nu sunt aplicate corespunzător. Atacatorii pot exploata aceste defecte
-                  pentru a accesa neautorizat funcționalități și/sau date, conturi de utilizatori, fișiere sensibile,
-                  pentru a modifica drepturile de acces ale utilizatorilor, etc.
+                  Controlul defectuos al accesului rămâne pe poziția #1 în OWASP 2025. Se referă la situațiile în care restricțiile privind acțiunile utilizatorilor nu sunt aplicate corespunzător. Atacatorii pot exploata aceste defecte pentru a accesa neautorizat funcționalități și date, conturi de utilizatori, fișiere sensibile, sau pentru a modifica drepturile de acces ale utilizatorilor.
                 </p>
                 <p>
-                  Această vulnerabilitate a urcat pe prima poziție în topul OWASP 2021, fiind prezentă în aproximativ
-                  94% din aplicațiile testate, cu o rată de incidență de peste 3,8%.
+                  <strong>100% din aplicațiile testate aveau o formă de control defectuos al accesului.</strong> O rată medie de incidență de 3,73% este înregistrată în testarea realității. Categoriile CWE-relationate notable includ: CWE-200, CWE-201, CWE-918 (SSRF), și CWE-352 (CSRF).
                 </p>
                 <div className="flex justify-center my-6">
                   <Image

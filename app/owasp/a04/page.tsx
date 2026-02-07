@@ -21,12 +21,12 @@ export default function A04Page() {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <div className="rounded-full bg-primary/10 p-3">
-                <Lightbulb className="h-8 w-8 text-primary" />
+              <div className="rounded-full bg-yellow-500/10 p-3">
+                <Lightbulb className="h-8 w-8 text-yellow-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tighter">A04:2021 – Proiectare nesecurizată</h1>
-                <p className="text-muted-foreground">Insecure Design</p>
+                <h1 className="text-2xl font-bold tracking-tighter">A04:2025 – Eșecuri Criptografice</h1>
+                <p className="text-muted-foreground">Cryptographic Failures</p>
               </div>
             </div>
 
@@ -37,27 +37,24 @@ export default function A04Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Design-ul nesecurizat se referă la defecte de securitate la nivel de proiect de arhitectură, care nu pot fi
-                  remediate doar prin implementare corectă. Această categorie se concentrează pe lipsa sau insuficiența
-                  controalelor de securitate necesare, precum și pe deciziile de design care introduc vulnerabilități
-                  inerente în aplicație.
+                  Eșecurile criptografice se referă la implementarea incorectă a mecanismelor de criptare pentru protejarea datelor sensibile. Includeți algoritmi slabi, chei compromise, gestionare inadecvată a parolelor și implementări deficiente ale criptografiei.
                 </p>
                 <p>
-                  Această vulnerabilitate este o categorie nouă în topul OWASP 2021, ocupând poziția 4, reflectând
-                  importanța crescută acordată securității încă din faza de design a aplicațiilor.
+                  Această categorie cuprinde vulnerabilități legate de:
                 </p>
-                <div className="flex justify-center my-6">
-                  <Image
-                    src="/images/A04.jpg"
-                    alt="Design Nesigur - Diagram showing insecure design in a booking portal"
-                    width={800}
-                    height={400}
-                    className="rounded-lg"
-                  />
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>Transmisie de date sensibile în text clar (HTTP în loc de HTTPS)</li>
+                  <li>Utilizare de algoritmi criptgrafici slabi sau învechiti (MD5, RC4)</li>
+                  <li>Utilizare de chei de criptare codemate în aplicație</li>
+                  <li>Gestionare incorectă a login-urilor și sesiunilor</li>
+                  <li>Hashing inadecvat al parolelor (plaintext sau algoritmi rapizi)</li>
+                  <li>Lipsă de salturi în hashuri sau refolosire de salturi</li>
+                </ul>
+                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
+                  <p className="text-sm text-blue-900">
+                    <strong>Statistici OWASP 2025:</strong> A04 coboară din poziția A02:2021 la A04:2025. Cu toate acestea, rămâne o vulnerabilitate critică cu impact înalt.
+                  </p>
                 </div>
-                <p>
-                Exemplu în imagine: un atacator poate rezerva 600 de bilete de film pentru o anumită perioadă, împiedicând cumpărătorii reali să le rezerve. Aceasta putea fi evitată printr-un design care să limiteze rezervările la maxim 15 bilete.
-                </p>
               </CardContent>
             </Card>
 

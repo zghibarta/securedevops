@@ -2,8 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Zap, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
-import Image from "next/image"
+import { AlertTriangle, ArrowLeft, Shield, CheckCircle, XCircle } from "lucide-react"
 
 export default function A10Page() {
   return (
@@ -22,13 +21,13 @@ export default function A10Page() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-primary/10 p-3">
-                <Zap className="h-8 w-8 text-primary" />
+                <AlertTriangle className="h-8 w-8 text-primary" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold tracking-tighter">
-                  A10:2021 – Falsificarea Cererilor pe Partea Serverului
+                  A10:2025 – Gestionarea Defectuoasă a Condițiilor Excepționale
                 </h1>
-                <p className="text-muted-foreground">Server-Side Request Forgery (SSRF)</p>
+                <p className="text-muted-foreground">Mishandling of Exceptional Conditions</p>
               </div>
             </div>
 
@@ -39,29 +38,12 @@ export default function A10Page() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p>
-                  Falsificarea Cererilor pe Partea Serverului (SSRF) apare atunci când o aplicație web preia o resursă
-                  de la distanță fără a valida suficient URL-ul furnizat de utilizator. Aceasta permite atacatorilor să
-                  forțeze aplicația să trimită cereri modificate către un domeniu neașteptat, care poate fi accesibil
-                  doar intern sau extern.
+                  Gestionarea defectuoasă a condițiilor excepționale se referă la erorile de manipulare a situațiilor neașteptate și condiții logice în cod. Include manipularea inadecvată a erorilor, condiții care cad într-un mod nesigur și tratarea incorectă a cazurilor extreme.
                 </p>
                 <p>
-                  Această vulnerabilitate este nouă în topul OWASP 2021, ocupând poziția 10, reflectând creșterea
-                  prevalenței și impactului atacurilor SSRF, în special în contextul arhitecturilor bazate pe
-                  microservicii și cloud.
+                  <strong>A10:2025 este o categorie nouă în OWASP 2025</strong>, care conține 24 CWE-uri axate pe gesionarea incorectă a erorilor, erorile logice, fail-open scenarios și alte scenarii conexe care rezultă din condiții anormale pe care sistemele le pot întâmpina.
                 </p>
-                <div className="flex justify-center my-6">
-                  <Image
-                    src="/images/A10.jpg"
-                    alt="A10"
-                    width={800}
-                    height={400}
-                    className="rounded-lg"
-                  />
-                </div>
-                <p>
-                Exemplu în imagine: un atacator poate determina serverul să se conecteze la servicii interne (protejate de firewall și inaccesibile din exterior) și să sustragă date.
-                </p>
-             </CardContent>
+              </CardContent>
             </Card>
 
             <Tabs defaultValue="exemple">
@@ -78,57 +60,37 @@ export default function A10Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">1. Accesarea serviciilor interne</h3>
+                      <h3 className="font-medium">1. Mesaje de Eroare care Expun Informații Sensibile</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Un atacator poate modifica URL-ul unei cereri pentru a accesa servicii interne care nu ar
-                          trebui să fie accesibile din exterior. De exemplu, modificarea unui URL de la
-                          "https://api.example.com/data" la "http://internal-service.local/admin" pentru a accesa un
-                          panou de administrare intern.
+                          O eroare de bază de date expune stack trace-ul și detalii despre structura bazei de date, ajutând un atacator să identifice vectorii de atac.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">2. Scanarea porturilor și rețelelor interne</h3>
+                      <h3 className="font-medium">2. Eșec Deschis (Fail-Open)</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Atacatorii pot utiliza SSRF pentru a scana porturi și rețele interne, identificând servicii și
-                          sisteme care nu sunt expuse direct pe internet. Aceasta poate fi utilizată pentru a
-                          cartografia infrastructura internă și a identifica ținte potențiale pentru atacuri ulterioare.
+                          Când o verificare de securitate eșuează (ex: autentificare), sistemul permite accesul în loc să refuze și să înregistreze tentativa.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">3. Accesarea metadatelor cloud</h3>
+                      <h3 className="font-medium">3. Erori Logice în Fluxul de Aplicație</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          În mediile cloud, atacatorii pot utiliza SSRF pentru a accesa endpoint-uri de metadate, cum ar
-                          fi "http://169.254.169.254" în AWS, pentru a obține informații sensibile precum credențiale
-                          temporare, chei de acces sau alte date de configurare.
+                          Logica condiționilor nu este corect implementată, permițând bypass-ul fluxuri importante. De ex., o comandă care ar trebui executată la end rămâne incompletă.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">4. Bypass-ul filtrelor de URL</h3>
+                      <h3 className="font-medium">4. Tratament Incorect al Stării Nule</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Atacatorii pot utiliza diverse tehnici pentru a ocoli filtrele de URL, cum ar fi utilizarea de
-                          scheme URL alternative (file://, dict://, gopher://), redirectări, codificări URL sau DNS
-                          rebinding pentru a accesa resurse restricționate.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">5. Exploatarea serviciilor locale</h3>
-                      <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Atacatorii pot utiliza SSRF pentru a interacționa cu servicii locale care rulează pe server,
-                          cum ar fi Redis, Memcached sau Elasticsearch, care pot fi configurate să accepte conexiuni
-                          doar de pe localhost și nu au autentificare puternică.
+                          Codul nu verifică dacă un obiect este null înainte de a-l accesa, ceea ce duce la excepții nehandlate sau comportament nedefinit.
                         </p>
                       </div>
                     </div>
@@ -145,10 +107,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Implementați liste albe pentru URL-uri</h3>
+                        <h3 className="font-medium">Gestionare Corectă a Excepțiilor</h3>
                         <p className="text-sm text-muted-foreground">
-                          Utilizați liste albe pentru a permite doar domenii și scheme URL specifice și de încredere.
-                          Evitați utilizarea listelor negre, care pot fi ocolite prin diverse tehnici.
+                          Implementați try-catch-finally cu handlers specifici pentru diferite tipuri de excepții. Nu ascundeți erorile, dar nici nu le expuneți pe clientul.
                         </p>
                       </div>
                     </div>
@@ -156,10 +117,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Validați și sanitizați datele de intrare</h3>
+                        <h3 className="font-medium">Mesaje de Eroare Generice</h3>
                         <p className="text-sm text-muted-foreground">
-                          Validați și sanitizați toate datele de intrare, în special URL-urile furnizate de utilizator.
-                          Verificați schema, domeniul, portul și calea URL-ului înainte de a efectua cereri.
+                          Afișați mesaje de eroare generice utilizatorilor. Jurnalizați detalii complete pe server pentru debugging.
                         </p>
                       </div>
                     </div>
@@ -167,11 +127,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Utilizați rețele segmentate</h3>
+                        <h3 className="font-medium">Validare Completă a Intrării</h3>
                         <p className="text-sm text-muted-foreground">
-                          Segmentați rețelele și utilizați firewall-uri pentru a izola componentele critice.
-                          Implementați politici de acces la rețea care restricționează comunicarea între servicii la
-                          minimul necesar.
+                          Verificați toate intrările, inclusiv cazurile extreme și valori null. Implementați defensive programming.
                         </p>
                       </div>
                     </div>
@@ -179,11 +137,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Blocați traficul către adrese IP private</h3>
+                        <h3 className="font-medium">Testare Exhaustivă</h3>
                         <p className="text-sm text-muted-foreground">
-                          Configurați firewall-uri pentru a bloca traficul către adrese IP private și loopback din
-                          serviciile publice. Aceasta include adresele din intervalele 127.0.0.0/8, 169.254.0.0/16,
-                          172.16.0.0/12, 192.168.0.0/16 și altele.
+                          Testați cazuri extreme, valori nule, date invalide și condiții de eroare. Inclusive ce se întîmplă când resursele (memorie, conexiuni) se epuizează.
                         </p>
                       </div>
                     </div>
@@ -191,35 +147,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Utilizați HTTP client-uri restrictive</h3>
+                        <h3 className="font-medium">Logging și Monitorizare</h3>
                         <p className="text-sm text-muted-foreground">
-                          Configurați client-urile HTTP pentru a respinge redirectările, a limita schemele URL permise
-                          și a impune timeout-uri stricte. Utilizați biblioteci care permit configurarea detaliată a
-                          comportamentului client-ului.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <div>
-                        <h3 className="font-medium">Implementați autentificare pentru serviciile interne</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Asigurați-vă că toate serviciile interne necesită autentificare, chiar dacă sunt accesibile
-                          doar din rețeaua internă. Aceasta adaugă un nivel suplimentar de protecție în cazul în care un
-                          atacator reușește să ocolească alte controale.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-2">
-                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
-                      <div>
-                        <h3 className="font-medium">Practici de evitat</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Nu vă bazați exclusiv pe validarea pe partea de client. Nu utilizați liste negre pentru
-                          filtrarea URL-urilor. Nu permiteți cereri către adrese IP sau localhost direct. Nu expuneți
-                          mesaje de eroare detaliate care ar putea ajuta atacatorii.
+                          Jurnalizați toate erorile și excepțiile. Implementați alerte pentru erorile critice.
                         </p>
                       </div>
                     </div>
@@ -234,45 +164,21 @@ export default function A10Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Securizarea infrastructurii Cloud</h3>
-                      <p className="text-sm">Implementați măsuri de securitate pentru infrastructura cloud:</p>
+                      <h3 className="font-medium">Testing și Code Analysis</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Utilizați servicii de metadate IMDSv2 în AWS, care sunt mai rezistente la SSRF</li>
-                        <li>Implementați politici IAM restrictive pentru a limita accesul la resurse</li>
-                        <li>Utilizați VPC-uri și subnet-uri pentru a izola componentele aplicației</li>
+                        <li>Testare de unitate pentru gestionarea erorilor</li>
+                        <li>Testare de integrare pentru fluxuri complete</li>
+                        <li>SAST pentru a detecta erori logice potențiale</li>
+                        <li>Fuzzing pentru a testa comportament cu intrări neașteptate</li>
                       </ul>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Testarea de securitate</h3>
-                      <p className="text-sm">Implementați Testare de securitate pentru SSRF:</p>
+                      <h3 className="font-medium">Logging și Monitoring</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Includeți teste specifice pentru SSRF în testele de penetrare</li>
-                        <li>Utilizați instrumente de scanare de securitate care pot detecta vulnerabilități SSRF</li>
-                        <li>Implementați teste automate pentru a verifica eficacitatea controalelor SSRF</li>
-                      </ul>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Monitorizare și detectare</h3>
-                      <p className="text-sm">Implementați monitorizare pentru detectarea atacurilor SSRF:</p>
-                      <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Monitorizați și alertați pentru cereri neobișnuite către servicii interne</li>
-                        <li>
-                          Implementați sisteme de detectare a intruziunilor pentru a identifica modele de trafic
-                          suspecte
-                        </li>
-                        <li>Jurnalizați și analizați toate cererile HTTP efectuate de aplicații</li>
-                      </ul>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Configurarea Proxy-urilor</h3>
-                      <p className="text-sm">Utilizați proxy-uri pentru a controla cererile externe:</p>
-                      <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Implementați proxy-uri de ieșire pentru toate cererile externe</li>
-                        <li>Configurați proxy-urile pentru a permite doar domenii și IP-uri aprobate</li>
-                        <li>Utilizați proxy-uri care pot inspecta și filtra conținutul cererilor</li>
+                        <li>Configurare centralizată a logging-ului</li>
+                        <li>Alerte automate pentru rate-uri ridicate de eroare</li>
+                        <li>Dashboards pentru monitorizare a stării aplicației</li>
                       </ul>
                     </div>
 
@@ -281,9 +187,7 @@ export default function A10Page() {
                       <div>
                         <h3 className="font-medium text-amber-800">Recomandare pentru DevOps</h3>
                         <p className="text-sm text-amber-700">
-                          Implementați o arhitectură de "zero trust" în care niciun serviciu nu este de încredere
-                          implicit. Utilizați autentificare mutuală TLS (mTLS) între servicii pentru a asigura că doar
-                          serviciile autorizate pot comunica între ele, reducând astfel riscul de atacuri SSRF.
+                          Implementați policy-uri de handling al erorilor în aplicație. Utilizați framework-uri și librării care au built-in error handling robust. Faceți chaos engineering pentru a testa resiiliență în cazul erorilor neprevăzute.
                         </p>
                       </div>
                     </div>

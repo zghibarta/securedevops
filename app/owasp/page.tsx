@@ -23,92 +23,92 @@ export default function OwaspPage() {
   const vulnerabilities = [
     {
       id: "a01",
-      title: "A01:2021 – Broken Access Control",
-      titleRo: "A01 – Controlul defectuos al accesului",
+      title: "A01:2025 – Broken Access Control",
+      titleRo: "A01 – Control defectuos al accesului",
       icon: <Lock className="h-6 w-6" />,
       description:
-        "Restricțiile privind acțiunile utilizatorilor autentificați nu sunt aplicate corespunzător. Atacatorii pot exploata aceste defecte pentru a accesa neautorizat funcționalități și/sau date.",
+        "Restricțiile privind acțiunile utilizatorilor nu sunt aplicate corespunzător. Atacatorii pot exploata aceste defecte pentru a accesa neautorizat funcționalități, date, conturi sau pentru a modifica drepturile de acces.",
       link: "/owasp/a01#top",
     },
     {
       id: "a02",
-      title: "A02:2021 – Cryptographic Failures",
-      titleRo: "A02 – Eșecuri criptografice",
-      icon: <KeyRound className="h-6 w-6" />,
+      title: "A02:2025 – Security Misconfiguration",
+      titleRo: "A02 – Configurare inadecvată a securității",
+      icon: <Settings className="h-6 w-6" />,
       description:
-        "Eșecuri legate de criptografie care duc la expunerea datelor sensibile. Aceste vulnerabilități apar când datele sensibile nu sunt protejate adecvat.",
+        "Configurări implicite nesigure, configurări incomplete, stocarea în cloud deschisă, mesaje de eroare că expun informații și lipsa patch-urilor de securitate. 100% din aplicațiile testate aveau o formă de misconfigurare.",
       link: "/owasp/a02#top",
     },
     {
       id: "a03",
-      title: "A03:2021 – Injection",
-      titleRo: "A03 – Injectare",
-      icon: <Code className="h-6 w-6" />,
+      title: "A03:2025 – Software Supply Chain Failures",
+      titleRo: "A03 – Eșecuri în lanțul de aprovizionare cu software",
+      icon: <AlertTriangle className="h-6 w-6" />,
       description:
-        "Datele ostile sunt trimise către un interpretor ca parte a unei comenzi sau interogări. Atacatorul poate executa comenzi neintenționate sau accesa date fără autorizație.",
+        "Compromiterea componentelor, a proceselor de build, a surselor de distribuție și a infrastructurii dependențelor. Include vulnerabilități în biblioteci și componente neactualizate.",
       link: "/owasp/a03#top",
     },
     {
       id: "a04",
-      title: "A04:2021 – Insecure Design",
-      titleRo: "A04 – Proiectare nesecurizată",
-      icon: <Lightbulb className="h-6 w-6" />,
+      title: "A04:2025 – Cryptographic Failures",
+      titleRo: "A04 – Eșecuri criptografice",
+      icon: <KeyRound className="h-6 w-6" />,
       description:
-        "O nouă categorie care se concentrează pe riscurile legate de defecte de design/proiectare. Securitatea adecvată la nivel de proiectare poate reduce semnificativ severitatea multor vulnerabilități.",
+        "Eșecuri legate de criptografie care duc la expunerea datelor sensibile. Include algoritmi slabi, chei compromise și implementări deficiente ale criptografiei.",
       link: "/owasp/a04#top",
     },
     {
       id: "a05",
-      title: "A05:2021 – Security Misconfiguration",
-      titleRo: "A05 – Configurare inadecvată a securității",
-      icon: <Settings className="h-6 w-6" />,
+      title: "A05:2025 – Injection",
+      titleRo: "A05 – Injectare",
+      icon: <Code className="h-6 w-6" />,
       description:
-        "Configurări implicite nesigure, configurări incomplete, stocarea în cloud deschisă, mesaje de eroare care conțin informații sensibile și lipsa patch-urilor de securitate.",
+        "Datele ostile sunt trimise către un interpretor ca parte a unei comenzi sau interogări. Include SQL Injection, Command Injection, XSS și alte vulnerabilități de injectare.",
       link: "/owasp/a05#top",
     },
     {
       id: "a06",
-      title: "A06:2021 – Vulnerable and Outdated Components",
-      titleRo: "A06 – Componente vulnerabile și învechite",
-      icon: <AlertTriangle className="h-6 w-6" />,
+      title: "A06:2025 – Insecure Design",
+      titleRo: "A06 – Proiectare nesecurizată",
+      icon: <Lightbulb className="h-6 w-6" />,
       description:
-        "Utilizarea de componente care nu sunt menținute sau sunt depășite. Acest lucru include sistemul de operare, serverul web/aplicație, baza de date, bibliotecile și framework-urile.",
+        "Defecte de design la nivel strategic. Se concentrează pe riscurile legate de lipsa modelării amenințelor, a modelării securității și a implementării controalelor de securitate.",
       link: "/owasp/a06#top",
     },
     {
       id: "a07",
-      title: "A07:2021 – Identification and Authentication Failures",
-      titleRo: "A07 – Eșecuri de identificare și autentificare",
+      title: "A07:2025 – Authentication Failures",
+      titleRo: "A07 – Eșecuri de autentificare",
       icon: <UserX className="h-6 w-6" />,
       description:
-        "Confirmarea incorectă a identității utilizatorului, permițând atacatorilor să compromită parole, chei sau token-uri de sesiune, sau să exploateze alte defecte de implementare.",
+        "Confirmarea incorectă a identității utilizatorului. Permite atacatorilor să compromită parole, chei, token-uri de sesiune sau să exploateze alte defecte de autentificare.",
       link: "/owasp/a07#top",
     },
     {
       id: "a08",
-      title: "A08:2021 – Software and Data Integrity Failures",
-      titleRo: "A08 – Eșecuri de integritate a software-ului și datelor",
+      title: "A08:2025 – Software or Data Integrity Failures",
+      titleRo: "A08 – Eșecuri de integritate a software-ului sau datelor",
       icon: <FileWarning className="h-6 w-6" />,
       description:
-        "Aplicațiile și infrastructura care nu protejează împotriva încălcărilor integrității. Aceasta include actualizări nesemnate și injecții de cod pe partea clientului.",
+        "Aplicațiile nu protejează integritatea software-ului și a datelor. Include actualizări nesemnate, injecții de cod și manipularea metadatelor de acces.",
       link: "/owasp/a08#top",
     },
     {
       id: "a09",
-      title: "A09:2021 – Security Logging and Monitoring Failures",
-      titleRo: "A09 – Eșecuri de jurnalizare și monitorizare a securității",
+      title: "A09:2025 – Security Logging & Alerting Failures",
+      titleRo: "A09 – Eșecuri de jurnalizare și alertare a securității",
       icon: <Search className="h-6 w-6" />,
       description:
-        "Jurnalizarea și monitorizarea insuficiente, împreună cu integrarea lipsă sau ineficientă cu răspunsul la incidente, permit atacatorilor să atace sistemele.",
+        "Jurnalizarea și monitorizarea insuficiente, fără alertare efectivă. Permite atacatorilor să rămână nedetectați. Acum se pune accent și pe alertare, nu doar pe înregistrare.",
       link: "/owasp/a09#top",
     },
     {
       id: "a10",
-      title: "A10:2021 – Server-Side Request Forgery",
-      titleRo: "A10 – Falsificarea cererilor pe partea serverului",
+      title: "A10:2025 – Mishandling of Exceptional Conditions",
+      titleRo: "A10 – Gestionarea defectuoasă a condițiilor excepționale",
       icon: <Zap className="h-6 w-6" />,
       description:
-        "Apare când o aplicație web preia o resursă de la distanță fără a valida URL-ul furnizat de utilizator. Permite atacatorilor să forțeze aplicația să trimită cereri la un domeniu neașteptat.",
+        "Gesionarea inadecvată a erorilor, condiții logice neașteptate și fallback-uri nesecurizate. Include fail-open scenarios și manipularea inadecvată a cazurilor extreme.",
       link: "/owasp/a10#top",
     },
   ]
@@ -120,9 +120,9 @@ export default function OwaspPage() {
           <div className="container max-w-4xl px-2 md:px-3">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">OWASP Top 10: 2021</h1>
+                <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">OWASP Top 10: 2025</h1>
                 <p className="max-w-4xl text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Open Web Application Security Project (OWASP)
+                  Zece riscuri de securitate critice pentru aplicațiile web (Ediția a 8-a)
                 </p>
               </div>
             </div>
