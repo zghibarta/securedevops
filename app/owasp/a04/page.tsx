@@ -227,18 +227,6 @@ export default function A04Page() {
                     </div>
                   </CardContent>
                 </Card>
-                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
-                      <div>
-                        <h3 className="font-medium">Practici de evitat</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Nu considerați securitatea ca o caracteristică adăugată ulterior. Nu vă bazați exclusiv pe
-                          testele de securitate pentru a identifica probleme de design. Nu ignorați feedback-ul
-                          utilizatorilor și rapoartele de securitate.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
               </TabsContent>
 
               <TabsContent value="devops" className="space-y-2 pt-2">

@@ -107,15 +107,12 @@ export default function A10Page() {
                     <div className="space-y-1">
                       <h3 className="font-medium">6. Integer Overflow / Buffer Overflow</h3>
                       <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm font-mono">int size = user_input;  // Nu se verifică dacă size > MAX_INT</p>
+                        <p className="text-sm font-mono">int size = user_input;  // Nu se verifică dacă size &gt; MAX_INT</p>
                         <p className="mt-2 text-sm">
                           Integer overflow duce la comportament neprezis, buffer overflow și potențial RCE (în C/C++).
                         </p>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
                   </CardContent>
                 </Card>
               </TabsContent>

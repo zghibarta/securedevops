@@ -85,8 +85,6 @@ export default function A08Page() {
                         </p>
                       </div>
                     </div>
-                      </div>
-                    </div>
 
                     <div className="space-y-1">
                       <h3 className="font-medium">2. Utilizarea de dependențe netrustate</h3>

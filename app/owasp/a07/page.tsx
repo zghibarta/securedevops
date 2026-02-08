@@ -84,8 +84,6 @@ export default function A07Page() {
                         </p>
                       </div>
                     </div>
-                      </div>
-                    </div>
 
                     <div className="space-y-1">
                       <h3 className="font-medium">2. Permiterea parolelor slabe</h3>
