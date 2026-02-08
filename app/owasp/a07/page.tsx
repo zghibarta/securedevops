@@ -68,15 +68,6 @@ export default function A07Page() {
                 <TabsTrigger value="devops">DevOps</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="exemple" className="space-y-2 pt-2">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Exemple de Vulnerabilități</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="space-y-1">
-                      <h3 className="font-medium">1. Permiterea atacurilor de forță brută</h3>
-                      <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Aplicații care nu implementează mecanisme de protecție împotriva atacurilor de forță brută,
                           cum ar fi blocarea contului după un număr de încercări eșuate sau implementarea de întârzieri
@@ -125,6 +116,25 @@ export default function A07Page() {
                           Stocarea parolelor în text clar sau utilizarea de algoritmi de hashing slabi (MD5, SHA1) fără
                           salt. Aceasta permite atacatorilor să recupereze parolele originale în cazul unei breșe de
                           date.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. Credential Stuffing</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Un atacator utilizează perechi de username/password din breșe de date cunoscute și încearcă să le reutilizeze pe mai 
+                          multe site-uri. Fără rate limiting și monitoring, atacatorul poate compromite mii de conturi.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">7. Session Fixation / Session Hijacking</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Un atacator forțează utilizatorul să utilizeze un ID de sesiune cunoscut, sau interceptează ID-ul de sesiune din memorie / transport fără TLS. Apoi atacatorul accesează contul victimei.
                         </p>
                       </div>
                     </div>
@@ -198,8 +208,27 @@ export default function A07Page() {
                       <div>
                         <h3 className="font-medium">Implementați procese sigure de recuperare a parolelor</h3>
                         <p className="text-sm text-muted-foreground">
-                          Utilizați procese sigure pentru recuperarea parolelor, cum ar fi token-uri de unică folosință
-                          cu termen de expirare limitat, trimise prin canale secundare verificate.
+                          Utilizați token-uri de unică folosință cu termen de expirare limitat, trimise prin canale secundare verificate. Nu trimiteți parole prin email.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați protecții împotriva Credential Stuffing</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Rate limiting pe login endpoint-uri, blocarea temporară după eșecuri, CAPTCHA. Integrare cu Have I Been Pwned API.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Monitorizare și Detectare Anomalii</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Monitorizați locații geografice neobișnuite, ore neobișnuite, device fingerprinting. Implementați adaptive authentication.
                         </p>
                       </div>
                     </div>
@@ -209,9 +238,7 @@ export default function A07Page() {
                       <div>
                         <h3 className="font-medium">Practici de evitat</h3>
                         <p className="text-sm text-muted-foreground">
-                          Nu utilizați întrebări de securitate cu răspunsuri ușor de ghicit. Nu stocați parole în text
-                          clar sau utilizând algoritmi de hashing slabi. Nu expuneți ID-uri de sesiune în URL sau în
-                          jurnale.
+                          Nu utilizați întrebări de securitate ușor de ghicit. Nu stocați parole în text clar. Nu expuneți ID-uri de sesiune în URL.
                         </p>
                       </div>
                     </div>

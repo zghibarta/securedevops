@@ -44,20 +44,6 @@ export default function A09Page() {
                   Această vulnerabilitate permite atacatorilor să persiste în sistem, să pivoteze către alte sisteme și
                   să manipuleze, extragă sau distrugă date fără a fi detectați.
                 </p>
-                <p>
-                  Această vulnerabilitate a urcat de pe poziția 10 (în 2017, când era numită "Insufficient Logging &
-                  Monitoring") pe poziția 9 în topul OWASP 2021, reflectând importanța crescută a jurnalizării și
-                  monitorizării în detectarea și răspunsul la incidente de securitate.
-                </p>
-                <div className="flex justify-center my-6">
-                  <Image
-                    src="/images/A09.jpg"
-                    alt="A09"
-                    width={800}
-                    height={400}
-                    className="rounded-lg"
-                  />
-                </div>
               </CardContent>
             </Card>
 
@@ -129,6 +115,25 @@ export default function A09Page() {
                         </p>
                       </div>
                     </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. Jurnale Nesincronizate pe Ceas</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Serverele au ore diferite și jurnalele au timestamp-uri inconsecvente, dificultând correlarea evenimentelor. Atacatorii pot exploata aceasta pentru a ascunde activitatea lor.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">7. Jurnale Șterse sau Modificate</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">rm -rf /var/log/auth.log  # Stergere track-ului de intruziune</p>
+                        <p className="mt-2 text-sm">
+                          Un atacator cu acces filesystem stochează local jurnalele sau le modifică pentru a ascunde urmele. Jurnalele nu sunt protejate și sunt ușor de manipulat.
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -158,6 +163,76 @@ export default function A09Page() {
                         <p className="text-sm text-muted-foreground">
                           Protejați jurnalele împotriva modificărilor neautorizate. Stocați jurnalele pe sisteme
                           separate, utilizați mecanisme de append-only și implementați verificări de integritate pentru
+                          a detecta manipularea jurnalelor.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Protejați datele sensibile în jurnale</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Mascați sau criptați datele sensibile în jurnale, cum ar fi parole, token-uri de sesiune, date
+                          personale. Implementați politici de retenție pentru a limita expunerea.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați monitorizare activă și alertare</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Monitorizați activ jurnalele pentru a detecta activități suspecte. Configurați alerte pentru
+                          evenimente anormale cu rate limitate pentru a evita alert fatigue.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Sincronizare a Timpului și Korelație</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Utilizați NTP pentru a sincroniza orele pe toate sistemele. Implementați log aggregation (ELK,
+                          Splunk, CloudWatch) pentru a corela evenimentele din diferite surse.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Dezvoltați un plan de răspuns la incidente</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Definiți roluri și responsabilități pentru răspuns. Implementați playbook-uri pentru scenarii
+                          comune. Testați planul regulat cu exerciții și simulări.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">SIEM Implementation</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Utilizați Splunk, ELK Stack, Datadog, New Relic pentru centralizare și analiză. Implementați
+                          alerting rules pentru comportamente anomale și intelligence feeds.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu jurnalizați date sensibile. Nu stocați jurnalele doar local. Nu ignorați alerte sau nu le
+                          tratați ca prioritate scăzută. Nu păstrați jurnale doar pentru zile - implementați retenție lungă.
+                        </p>
+                      </div>
+                    </div>
                           a detecta manipularea jurnalelor.
                         </p>
                       </div>

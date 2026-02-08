@@ -93,6 +93,24 @@ export default function A03Page() {
                         </p>
                       </div>
                     </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">5. Compromisiune a Tokenelor Accesului Pipeline CI/CD</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Un token de acces GitHub/GitLab lăsat în log-urile de build public permite unui atacator să injecteze cod malewise direct în repo și să compromită software-ul pe zeci de mii de mașini.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. Container Image Poisoning</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          O imagine Docker publică a unui tool popular este compromisă și reuploaded pe Docker Hub. Oricine trage această imagine primește malware.
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -118,7 +136,47 @@ export default function A03Page() {
                       <div>
                         <h3 className="font-medium">Verificați semnăturile și integritatea</h3>
                         <p className="text-sm text-muted-foreground">
-                          Verificați semnăturile criptografice ale pachetelor și utilizați checksums pentru a asigura integritatea.
+                          Verificați semnăturile criptografice ale pachetelor și utilizați checksums pentru a asigura integritatea. Implementați verificări în CI/CD cu cosign sau similar.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Securizați pipeline-ul CI/CD</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Implementați autentificarea multi-factor pe GitHub/GitLab, semnarea artefactelor și auditarea modificărilor în CI/CD. Rotați token-urile de acces regulat.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Utilizați lockfiles și versionare precisă</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Păstrați lockfiles în Git și nu permiteți versiuni floating. Utilizați versiuni minor.patch fixe, nu wildcard-uri. Auditați regulat dependențele cu Snyk, OWASP Dependency-Check.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Utilizați Repository Privat pentru Artefacte</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Utilizați Artifactory, Nexus, ECR Private pentru a controla și verifica dependențele înainte de utilizare. Nu depindeți de repository-uri publice neverificate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu lăsați token-uri în log-urile de build. Nu utilizați dependențe necunoscute sau neveificate. Nu actualizați automat la cea mai nouă versiune fără testare.
                         </p>
                       </div>
                     </div>
@@ -169,12 +227,23 @@ export default function A03Page() {
                       </ul>
                     </div>
 
+                    <div className="space-y-1">
+                      <h3 className="font-medium">Contracte și Acorduri de Securitate</h3>
+                      <p className="text-sm">Implementați mecanisme de contracte cu furnizori:</p>
+                      <ul className="list-disc pl-6 text-sm space-y-1">
+                        <li>Cerințe de securitate în acordurile de procurement</li>
+                        <li>Notificarea vulnerabilităților și răspunsul în SLA</li>
+                        <li>Auditarea siguranței lanțului de aprovizionare</li>
+                        <li>Evaluarea regulată a furnizorilor de componente critice</li>
+                      </ul>
+                    </div>
+
                     <div className="rounded-md bg-amber-50 border border-amber-200 p-4 flex items-start gap-2">
                       <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium text-amber-800">Recomandare pentru DevOps</h3>
-                        <p className="text-sm text-amber-700">
-                          Creați și păstrați o Software Bill of Materials (SBOM) pentru fiecare deployment. Aceasta vă ajută să răspundeți rapid atunci când se descoperă vulnerabilități în dependențe.
+                        <h3 className="font-medium text-amber-800\">Recomandare pentru DevOps</h3>
+                        <p className="text-sm text-amber-700\">
+                          Creați și mențineți Software Bill of Materials (SBOM) pentru fiecare build. Utilizați Sigstore pentru semnarea și verificarea artefactelor. Implementați Dependabot sau Snyk cu triage automat de vulnerabilități și PR automate cu updaturi de securitate.
                         </p>
                       </div>
                     </div>

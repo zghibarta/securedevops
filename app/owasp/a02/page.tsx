@@ -111,6 +111,26 @@ export default function A02Page() {
                         </p>
                       </div>
                     </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. S3 Bucket Public Exposure</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">S3 Bucket: my-app-backups (ACL: PublicRead)</p>
+                        <p className="mt-2 text-sm">
+                          Bucket-ul AWS S3 cu backup-uri de baze de date și fișiere sensibile este configurat cu permisiuni publice. Oricine poate descărca nenecesar date de produc
+ție.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">7. Certificate și Credențiale Expirate</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Certificate SSL/TLS expirate, API keys hardcoded în configurări, sau credențiale din medii vechi lăsate în producție.
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -176,7 +196,17 @@ export default function A02Page() {
                       <div>
                         <h3 className="font-medium">Verificare automată a configurațiilor</h3>
                         <p className="text-sm text-muted-foreground">
-                          Implementați procese automate pentru a verifica eficacitatea configurațiilor și setărilor în toate mediile.
+                          Implementați procese automate pentru a verifica eficacitatea configurațiilor și setărilor în toate mediile. Utilizați CloudSploit, Prowler pentru scanarea continuă.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Gestionare de Credențiale și Secrete</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu stocați API keys, parole sau credențiale în fișiere de configurare. Utilizați AWS Secrets Manager, Azure Key Vault, sau similare.
                         </p>
                       </div>
                     </div>
@@ -186,7 +216,7 @@ export default function A02Page() {
                       <div>
                         <h3 className="font-medium">Practici de evitat</h3>
                         <p className="text-sm text-muted-foreground">
-                          Nu lăsați aplicații sample în producție. Nu activați listarea directoarelor. Nu vă bazați pe compatibilitate inversă pentru securitate. Nu stocați secrete în fișiere de configurare.
+                          Nu lăsați aplicații sample în producție. Nu activați listarea directoarelor. Nu stocați secrete în fișiere de configurare sau în Git.
                         </p>
                       </div>
                     </div>
@@ -234,12 +264,23 @@ export default function A02Page() {
                       </ul>
                     </div>
 
+                    <div className="space-y-1">
+                      <h3 className="font-medium">Verificare în Producție</h3>
+                      <p className="text-sm">Implementați verificări periodice de configurație:</p>
+                      <ul className="list-disc pl-6 text-sm space-y-1">
+                        <li>Scanarea cu Benchmark CIS și OpenScap</li>
+                        <li>Validarea antetelor de securitate HTTP</li>
+                        <li>Auditarea permisiunilor și accesului la resurse</li>
+                        <li>Verificarea dezactivării serviciilor nefolosite</li>
+                      </ul>
+                    </div>
+
                     <div className="rounded-md bg-amber-50 border border-amber-200 p-4 flex items-start gap-2">
                       <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5" />
                       <div>
                         <h3 className="font-medium text-amber-800">Recomandare pentru DevOps</h3>
                         <p className="text-sm text-amber-700">
-                          Implementați "configuration management as code" și automatizați verificările de hardening în fiecare deployment. Utilizați benchmarks-uri CIS (Center for Internet Security) pentru a valida mașinile și containerele.
+                          Implementați IaC (Terraform, CloudFormation) cu policy enforcement. Creați golden images cu configurații securizate pre-aplicate. Utilizați CIS benchmarks și compliance tools (Prowler, CloudMapper) pentru validare continuă.
                         </p>
                       </div>
                     </div>

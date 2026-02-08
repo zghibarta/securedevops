@@ -68,15 +68,6 @@ export default function A08Page() {
                 <TabsTrigger value="devops">DevOps</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="exemple" className="space-y-2 pt-2">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Exemple de Vulnerabilități</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="space-y-1">
-                      <h3 className="font-medium">1. Atacuri asupra lanțului de aprovizionare</h3>
-                      <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Atacuri în care un adversar compromite un pachet sau o bibliotecă utilizată de multe
                           aplicații. De exemplu, atacul SolarWinds din 2020, în care atacatorii au inserat cod malițios
@@ -129,6 +120,24 @@ export default function A08Page() {
                         </p>
                       </div>
                     </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. Compromise de Certificat de Semnare</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Cheia privată de semnare a certificatelor pentru actualizări este compromisă. Atacatorul poate semna actualizări malware cu certificat legitim, fiind imposibil să le distingă.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">7. Compromise a Containerului Base Image</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Imaginea base Ubuntu:latest utilizată de aplicații este compromisă în Docker Hub cu backdoor. Orice nou container pornit moștenește malware.
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -158,6 +167,73 @@ export default function A08Page() {
                         <p className="text-sm text-muted-foreground">
                           Utilizați instrumente pentru a verifica integritatea dependențelor și pentru a detecta pachete
                           malițioase sau modificate. Implementați verificări de integritate în pipeline-urile CI/CD.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Utilizați surse de încredere</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Obțineți dependențele și actualizările doar din surse oficiale și de încredere. Utilizați
+                          depozite private de artefacte pentru a controla și verifica dependențele utilizate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați verificări de integritate</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Implementați verificări de integritate pentru datele critice, cum ar fi configurațiile,
+                          fișierele de cod și datele utilizatorilor. Utilizați hash-uri sau semnături pentru a detecta
+                          modificările neautorizate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați deserializare sigură</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Implementați deserializare sigură pentru datele din surse externe. Utilizați formate de
+                          serializare mai sigure, cum ar fi JSON sau Protocol Buffers, și implementați verificări
+                          stricte pentru datele deserializate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Utilizați Subresource Integrity (SRI)</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Pentru resurse externe (CDN-uri, librării JavaScript), utilizați SRI hash-uri pentru a verifica
+                          integritatea. Aceasta previne modificarea în tranzit.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Securizare Container Images și Artifacts</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Scanați image-uri Docker cu Trivy / Grype. Semnați image-uri cu Cosign. Utilizați registrele private pentru control și audit.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu utilizați dependențe din surse netrustate. Nu dezactivați verificările de integritate.
+                          Nu utilizați image-uri din registre publice fără verificare. Nu deserializați date din surse netrustate.
                         </p>
                       </div>
                     </div>

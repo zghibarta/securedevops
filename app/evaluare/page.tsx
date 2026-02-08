@@ -42,7 +42,7 @@ export default function EvaluarePage() {
   // Datele pentru cardurile de quiz, corectate pentru testul general
   const quizzes: QuizMeta[] = [
     // Preluăm definițiile din fișierul tău, dar corectăm numărul de întrebări și datele
-    { id: "owasp", title: "Test OWASP Top Ten 2021", description: "Testează-ți cunoștințele despre cele mai critice vulnerabilități web conform OWASP.", questions: owaspQuizData.length, time: 10, data: owaspQuizData }, // Folosim lungimea reală
+    { id: "owasp", title: "Test OWASP Top Ten 2025", description: "Testează-ți cunoștințele despre cele mai critice vulnerabilități web conform OWASP 2025.", questions: owaspQuizData.length, time: 10, data: owaspQuizData }, // Folosim lungimea reală
     { id: "ssdlc", title: "Test SSDLC", description: "Verifică-ți înțelegerea Ciclului de Viață pentru Dezvoltarea Securizată a Software-ului.", questions: ssdlcQuizData.length, time: 10, data: ssdlcQuizData }, // Folosim lungimea reală
     { id: "devsecops", title: "Test DevSecOps", description: "Evaluează-ți cunoștințele despre integrarea securității în DevOps.", questions: devsecopsQuizData.length, time: 10, data: devsecopsQuizData }, // Folosim lungimea reală
     // Corectăm definiția pentru testul general

@@ -74,56 +74,46 @@ export default function A06Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">1. Utilizarea de biblioteci cu vulnerabilități cunoscute</h3>
+                      <h3 className="font-medium">1. Lipsa validării logicii de business</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Aplicații care utilizează biblioteci sau framework-uri cu vulnerabilități cunoscute și
-                          documentate public. De exemplu, utilizarea unei versiuni vechi de Spring Framework care
-                          conține vulnerabilități de tip RCE (Remote Code Execution) sau utilizarea unei versiuni
-                          vulnerabile de jQuery care permite atacuri XSS.
+                          Un sistem bancar care permite transferuri negative, sau o platformă de ticketing care permite comandrii unui număr nelimitat de bilete. Sistemul nu validează plafoane, limite minime/maxime la nivel de design.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">2. Componente care nu mai sunt menținute</h3>
+                      <h3 className="font-medium">2. Lipsă de rate limiting și detecție a abuzului</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Utilizarea de biblioteci sau framework-uri care nu mai sunt menținute sau actualizate. Aceste
-                          componente nu primesc patch-uri de securitate pentru vulnerabilitățile nou descoperite, lăsând
-                          aplicația expusă la riscuri.
+                          O aplicație care nu limitează încercărilor de login, permitând brute-force attacks. Sau un API care permite unui client să facă o mie de cereri per secundă fără restricții.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">3. Sisteme de operare și servere neactualizate</h3>
+                      <h3 className="font-medium">3. Fluxuri de autentificare deficiente</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Utilizarea de sisteme de operare, servere web sau servere de aplicații care nu au aplicate
-                          cele mai recente patch-uri de securitate. Aceasta include și utilizarea de versiuni care nu
-                          mai sunt suportate de producători.
+                          Un sistem care resetează parolele fără verificare puternică, sau permiteautentificare cu email singur. Sau sesiunile care nu expira niciodată.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">4. Lipsa scanării și monitorizării dependențelor</h3>
+                      <h3 className="font-medium">4. Arhitectură care expune servicii interne</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Organizații care nu scanează sau monitorizează regulat dependențele pentru vulnerabilități și
-                          nu au un proces pentru actualizarea promptă a componentelor vulnerabile.
+                          Serviciile interne sunt accesibile direct din internet fără autentificare. De exemplu, un endpoint administrativ nu necesită token de autorizare, doar o cerere POST.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">5. Incompatibilitate între componente</h3>
+                      <h3 className="font-medium">5. Lipsă de criptare la nivel de design</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Actualizarea unei componente fără a verifica compatibilitatea cu alte componente ale
-                          aplicației, ceea ce poate duce la probleme de funcționalitate sau la introducerea de noi
-                          vulnerabilități.
+                          Sistemul stochează parole în plaintext în baza de date din proiectare. Sau datele sensibile sunt transmise prin HTTP deja din design-ul arhitecturii.
                         </p>
                       </div>
                     </div>
@@ -140,10 +130,59 @@ export default function A06Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Eliminați dependențele neutilizate</h3>
+                        <h3 className="font-medium">Modelarea amenințărilor (Threat Modeling)</h3>
                         <p className="text-sm text-muted-foreground">
-                          Eliminați dependențele, funcționalitățile, componentele, fișierele și documentația neutilizată
-                          pentru a reduce suprafața de atac a aplicației.
+                          Executați threat modeling în faza de design pentru a identifica și adresa riscurile înainte de implementare. Documentați presupunerile de securitate și validați-le.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Validarea logicii de business</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Implementați validări pentru toate regulile de business: plafoane de transfer, limite de rate, verificări de stoc. Nu presupuneți că utilizatorii vor folosi aplicația corect.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați rate limiting și detecție de abuz</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Limitați numărul de cereri per utilizator, per IP. Detectați și blocați comportamentele anomale. Implementați CAPTCHA pentru acțiuni sensibile.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Utilizați principiul segregării serviciilor</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Serviceile interne trebuie să necesite autentificare și autorizare. Nu expuneți endpoints administrative direct. Implementați zero-trust architecture.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Design cu criptare din start</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Planificați criptarea datelor sensibile în faza de design. Nu adăugați criptare post-facto. Stocați parolele cu hash puternic din început.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu presupuneți că inputul utilizatorului va fi corect. Nu lăsați serviciile exponente fără protecție. Nu ignora scenariile edge case. Nu proiectați fără a lua în considerare securitatea.
                         </p>
                       </div>
                     </div>

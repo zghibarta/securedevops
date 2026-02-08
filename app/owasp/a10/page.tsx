@@ -94,6 +94,28 @@ export default function A10Page() {
                         </p>
                       </div>
                     </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">5. Resource Leaks (Memory, Database Connections)</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">
+                          Conexiuni la baze de date sau fișiere deschise nu sunt inchise corect în caz de excepție. Un loop care nu eliberează resurse duce la memory leak și eventual DoS.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. Integer Overflow / Buffer Overflow</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">int size = user_input;  // Nu se verifică dacă size > MAX_INT</p>
+                        <p className="mt-2 text-sm">
+                          Integer overflow duce la comportament neprezis, buffer overflow și potențial RCE (în C/C++).
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -109,7 +131,7 @@ export default function A10Page() {
                       <div>
                         <h3 className="font-medium">Gestionare Corectă a Excepțiilor</h3>
                         <p className="text-sm text-muted-foreground">
-                          Implementați try-catch-finally cu handlers specifici pentru diferite tipuri de excepții. Nu ascundeți erorile, dar nici nu le expuneți pe clientul.
+                          Implementați try-catch-finally cu handlers specifici pentru diferite tipuri de excepții. Nu ascundeți erorile prin generic catches. Logați și rapurtați erorile corespunzător.
                         </p>
                       </div>
                     </div>
@@ -117,9 +139,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Mesaje de Eroare Generice</h3>
+                        <h3 className="font-medium">Mesaje de Eroare Generice și Logging Complet</h3>
                         <p className="text-sm text-muted-foreground">
-                          Afișați mesaje de eroare generice utilizatorilor. Jurnalizați detalii complete pe server pentru debugging.
+                          Afișați mesaje de eroare generice utilizatorilor. Jurnalizați detalii complete (stack trace, context) pe server pentru debugging. Separați ce vezi utilizatorul de ce se loghează.
                         </p>
                       </div>
                     </div>
@@ -127,9 +149,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Validare Completă a Intrării</h3>
+                        <h3 className="font-medium">Defence in Depth - Defensive Programming</h3>
                         <p className="text-sm text-muted-foreground">
-                          Verificați toate intrările, inclusiv cazurile extreme și valori null. Implementați defensive programming.
+                          Verificați toate intrările, inclusiv cazurile extreme, valori null, limite de memorie. Utilizați contract programming cu pre/post conditions. Fail-safe defaults.
                         </p>
                       </div>
                     </div>
@@ -137,9 +159,9 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Testare Exhaustivă</h3>
+                        <h3 className="font-medium">Verificare și Validare la Graniță</h3>
                         <p className="text-sm text-muted-foreground">
-                          Testați cazuri extreme, valori nule, date invalide și condiții de eroare. Inclusive ce se întîmplă când resursele (memorie, conexiuni) se epuizează.
+                          Verificați bounds pe array-uri, string-uri, integers. Utilizați librării de validare. Testați cu valori negative, zero și maxime.
                         </p>
                       </div>
                     </div>
@@ -147,9 +169,29 @@ export default function A10Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Logging și Monitorizare</h3>
+                        <h3 className="font-medium">Resource Management (Cleanup)</h3>
                         <p className="text-sm text-muted-foreground">
-                          Jurnalizați toate erorile și excepțiile. Implementați alerte pentru erorile critice.
+                          Utilizați try-with-resources în Java, context managers în Python, RAII în C++ pentru a asigura cleanup autometic.  Eliberați conexiuni, fișiere, memorie în fin finally blocks.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Utilizare Type Systems și Null Safety</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Utilizați TypeScript, Kotlin, Rust care au null-safety built-in. Evitați null pointers prin design. Utilizați Optional/Maybe types.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu ignora excepții cu bare catch exceptions. Nu expuneți stack traces utilizatorilor. Nu presupuneți că inputul va fi valida. Nu lăsați resurse nechise.
                         </p>
                       </div>
                     </div>
@@ -174,11 +216,23 @@ export default function A10Page() {
                     </div>
 
                     <div className="space-y-1">
+                      <h3 className="font-medium">Analiză Automată a Codului</h3>
+                      <p className="text-sm">Integrați analiză automată în pipeline-ul CI/CD:</p>
+                      <ul className="list-disc pl-6 text-sm space-y-1">
+                        <li>SonarQube pentru detectarea defectelor de logică</li>
+                        <li>Checkmarx, Coverity pentru analiză de securitate</li>
+                        <li>Tools statice pentru identificarea null pointer risks</li>
+                        <li>Linters și type-checkers pentru null-safety</li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-1">
                       <h3 className="font-medium">Logging și Monitoring</h3>
                       <ul className="list-disc pl-6 text-sm space-y-1">
                         <li>Configurare centralizată a logging-ului</li>
                         <li>Alerte automate pentru rate-uri ridicate de eroare</li>
                         <li>Dashboards pentru monitorizare a stării aplicației</li>
+                        <li>Tracking excepțiilor și anomaliilor în producție</li>
                       </ul>
                     </div>
 
@@ -187,7 +241,7 @@ export default function A10Page() {
                       <div>
                         <h3 className="font-medium text-amber-800">Recomandare pentru DevOps</h3>
                         <p className="text-sm text-amber-700">
-                          Implementați policy-uri de handling al erorilor în aplicație. Utilizați framework-uri și librării care au built-in error handling robust. Faceți chaos engineering pentru a testa resiiliență în cazul erorilor neprevăzute.
+                          Implementați policy-uri de handling al erorilor în aplicație. Utilizați framework-uri și librării cu built-in error handling robust. Faceți chaos engineering pentru a testa resilență în cazul erorilor neprevăzute. Implementați distributed tracing (OpenTelemetry) pentru a urmări erorile în sisteme distribuite și a identifica scenarii edge case.
                         </p>
                       </div>
                     </div>

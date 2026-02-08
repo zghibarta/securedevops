@@ -72,45 +72,57 @@ export default function A04Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">1. Lipsa validării la nivel de business</h3>
+                      <h3 className="font-medium">1. Transmisia datelor sensibile în HTTP (text clar)</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">GET /login?user=admin&pass=secret123 HTTP/1.1</p>
+                        <p className="mt-2 text-sm">Parolele și tokenele transmise prin HTTP pot fi interceptate ușor. Se cere HTTPS pentru orice transmisie de date sensibile.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">2. Algoritmi de criptare slabi sau învechiti</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">Utilizarea algoritmilor de criptare slabi cum ar fi DES, RC4 sau MD5 pentru hashing. Acești algoritmi sunt ușor de spargit cu tehnologia modernă. Se recomandă AES-256, SHA-256 sau bcrypt.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">3. Chei criptografice hardcoded</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">const SECRET_KEY = &quot;my_secret_key_1234&quot;;  // RĂU!</p>
+                        <p className="mt-2 text-sm">Cheile și parolele în cod sursă sunt ușor de descoperit în versiuni publicate sau în repositoriile Git.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">4. Hashing inadecvat al parolelor</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">Stocarea parolelor în plaintext, folosind MD5 fără salt, sau folosind algoritmi rapizi fără iterații. Se cere bcrypt, scrypt sau Argon2 cu salt aleatoriu.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">5. Lipsa validării certificatelor SSL/TLS</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">Aplicații care acceptă certificatele SSL/TLS expirate, autosemnate sau cu domenii incorecte, permițând man-in-the-middle attacks.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. Criptare slabă pentru data at rest</h3>
                       <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
-                          Un sistem bancar care permite transferuri negative sau un sistem de e-commerce care nu
-                          verifică stocul înainte de a accepta comenzi. Aceste probleme apar din cauza lipsei de
-                          validare a regulilor de business în design-ul aplicației.
+                          Baza de date stochează date sensibile cu criptare slabă (ROT13, Base64) sau fără criptare. Datele compromisingse ușor prin atacuri de dicționar sau brute-force.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">2. Arhitectură cu privilegii excesive</h3>
+                      <h3 className="font-medium">7. IV / Salt Non-Unique</h3>
                       <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Aplicații care rulează cu drepturi administrative sau care oferă acces la funcționalități
-                          sensibile fără o separare clară a privilegiilor. De exemplu, o aplicație care permite tuturor
-                          utilizatorilor să acceseze funcții administrative prin simpla modificare a URL-urilor.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">3. Lipsa limitărilor de resurse</h3>
-                      <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Aplicații care nu limitează resursele consumate de utilizatori, permițând atacuri de tip
-                          denial of service. De exemplu, un sistem care permite încărcarea de fișiere de dimensiuni
-                          nelimitate sau care nu restricționează numărul de cereri pe care un utilizator le poate face.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">4. Lipsa compartimentării</h3>
-                      <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Sisteme care nu separă componentele cu diferite niveluri de sensibilitate sau risc. De
-                          exemplu, o aplicație care stochează date sensibile și nesensibile în aceeași bază de date,
-                          fără separare adecvată, permițând compromiterea tuturor datelor în cazul unei breșe.
+                        <p className="text-sm font-mono">AES_Encrypt(password, static_salt=&quot;salt123&quot;)</p>
+                        <p className="mt-2 text-sm">
+                          Utilizarea unui IV sau salt static în loc de generarea aleatoriu pentru fiecare criptare reduce drastic securitatea și permite atac dictionary.
                         </p>
                       </div>
                     </div>
@@ -127,10 +139,9 @@ export default function A04Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Implementați un ciclu de dezvoltare securizat</h3>
+                        <h3 className="font-medium">Utilizați HTTPS pentru toate transmisiile</h3>
                         <p className="text-sm text-muted-foreground">
-                          Utilizați un SSDLC (Secure Software Development Lifecycle) care include securitatea în toate
-                          fazele de dezvoltare, începând cu planificarea și design-ul.
+                          Implementați TLS 1.2 sau superior pentru a cripta orice transmisii de date sensibile. Utilizați certificatele valide și actualizate.
                         </p>
                       </div>
                     </div>
@@ -138,10 +149,9 @@ export default function A04Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Utilizați modelarea amenințărilor</h3>
+                        <h3 className="font-medium">Stocați parolele cu hashing puternic</h3>
                         <p className="text-sm text-muted-foreground">
-                          Efectuați modelarea amenințărilor în faza de design pentru a identifica și aborda potențialele
-                          riscuri de securitate înainte de implementare.
+                          Utilizați bcrypt, scrypt sau Argon2 cu salt aleatoriu. Evitați MD5, SHA1 și algoritmii rapizi. Utilizați foi de lucru (work factors) adecuate.
                         </p>
                       </div>
                     </div>
@@ -149,10 +159,9 @@ export default function A04Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Utilizați biblioteci și șabloane securizate</h3>
+                        <h3 className="font-medium">Utilizați algoritmi criptografici moderni</h3>
                         <p className="text-sm text-muted-foreground">
-                          Folosiți biblioteci, framework-uri și șabloane de design care au fost testate și validate din
-                          punct de vedere al securității.
+                          Alegeți AES-256 pentru criptare, SHA-256 sau mai puternic pentru hashing. Evitați DES, RC4, MD5 și alți algoritmi vulnerabili.
                         </p>
                       </div>
                     </div>
@@ -160,10 +169,9 @@ export default function A04Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Implementați principiul privilegiului minim</h3>
+                        <h3 className="font-medium">Gestionați cheile criptografice în siguranță</h3>
                         <p className="text-sm text-muted-foreground">
-                          Proiectați sistemele astfel încât componentele și utilizatorii să aibă doar privilegiile
-                          minime necesare pentru a-și îndeplini funcțiile.
+                          Stocați cheile în sisteme de gestiune a secretelor (AWS Secrets Manager, HashiCorp Vault). Nu le hardcodificați în cod. Rotaționalizeți cheile regulat.
                         </p>
                       </div>
                     </div>
@@ -171,10 +179,9 @@ export default function A04Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Implementați compartimentarea</h3>
+                        <h3 className="font-medium">Validați certificatele SSL/TLS</h3>
                         <p className="text-sm text-muted-foreground">
-                          Separați componentele sistemului în funcție de sensibilitate și funcționalitate, limitând
-                          impactul potențial al unei breșe de securitate.
+                          Verificați semnăturile, domeniile și termenul de valabilitate. Nu acceptați certificatele autosemnate în producție.
                         </p>
                       </div>
                     </div>
@@ -182,9 +189,44 @@ export default function A04Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Implementați limitări de resurse</h3>
+                        <h3 className="font-medium">Utilizați biblioteci de criptare testate</h3>
                         <p className="text-sm text-muted-foreground">
-                          Proiectați sisteme cu limitări adecvate pentru resurse (memorie, CPU, spațiu de stocare,
+                          Utilizați libsodium, OpenSSL, cryptography library. Evitați implementări casă ale algoritmilor de criptare.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați Data at Rest Encryption</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Criptați datele sensibile în baza de date și în storage cu AES-256. Utilizați funcții de criptare ale cloud-ului (AWS KMS, Azure Key Vault, Google Cloud KMS).
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Generări IV și Salt Unic</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Pentru fiecare criptare, generați IV/salt unic și aleatoriu. Stocați IV-ul alături de text criptat pentru decriptare. Utilizați CSPRNG pentru generare.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu transmiteți date sensibile prin HTTP. Nu hardcodificați chei. Nu folosiți MD5, SHA1 sau DES. Nu adăugați criptare post-facto - planificați din design.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
                           lățime de bandă) pentru a preveni atacurile de tip denial of service.
                         </p>
                       </div>
@@ -212,42 +254,34 @@ export default function A04Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Securitate în etapa de Planificare</h3>
-                      <p className="text-sm">Integrați securitatea în faza de planificare a ciclului DevOps:</p>
+                      <h3 className="font-medium">Gestiunea Secretelor</h3>
+                      <p className="text-sm">Implementați gestiunea sigură a secretelor în pipeline-uri:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Includeți experți în securitate în echipele de planificare și design</li>
-                        <li>Efectuați modelarea amenințărilor ca parte a procesului de planificare</li>
-                        <li>Definiți cerințe de securitate clare pentru fiecare caracteristică nouă</li>
+                        <li>Utilizați Azure Key Vault, AWS Secrets Manager, sau HashiCorp Vault</li>
+                        <li>Rotația automată a cheilor și secretelor</li>
+                        <li>Auditarea accesului cu logging complet</li>
+                        <li>Injecția secretelor doar în runtime, nu în imagini Docker</li>
                       </ul>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Revizuiri de arhitectură</h3>
-                      <p className="text-sm">Implementați Revizuiri de arhitectură de securitate:</p>
+                      <h3 className="font-medium">Testare Criptografică</h3>
+                      <p className="text-sm">Integrați testarea criptografică în CI/CD:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Efectuați Revizuiri de arhitectură de securitate înainte de implementare</li>
-                        <li>Utilizați liste de verificare de securitate pentru evaluarea design-ului</li>
-                        <li>Documentați deciziile de design legate de securitate</li>
+                        <li>Verificări statice pentru algoritmi slabi sau hardcoded keys</li>
+                        <li>Teste de penetrare pentru criptare în transmisie (HTTPS/TLS)</li>
+                        <li>Audit periodic al implementării criptografice</li>
+                        <li>Validarea certificate-urilor SSL/TLS în producție</li>
                       </ul>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">Automatizare și Testare</h3>
-                      <p className="text-sm">Implementați automatizare și testare pentru validarea design-ului:</p>
+                      <h3 className="font-medium">Monitorizare și Compliance</h3>
+                      <p className="text-sm">Implementați monitorizare pentru conformitate criptografică:</p>
                       <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Creați teste automate pentru a valida implementarea controalelor de securitate</li>
-                        <li>Utilizați instrumente de analiză statică pentru a identifica probleme de design</li>
-                        <li>Implementați teste de fuzzing pentru a identifica probleme de robustețe</li>
-                      </ul>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Feedback și îmbunătățire continuă</h3>
-                      <p className="text-sm">Implementați mecanisme de feedback și îmbunătățire continuă:</p>
-                      <ul className="list-disc pl-6 text-sm space-y-1">
-                        <li>Colectați feedback de la utilizatori și echipe de securitate</li>
-                        <li>Analizați incidentele de securitate pentru a identifica probleme de design</li>
-                        <li>Actualizați șabloanele și bibliotecile de design în funcție de lecțiile învățate</li>
+                        <li>Verificare continuă de conformitate cu standardele de criptare (NIST, PCI-DSS)</li>
+                        <li>Rotația periodică a cheilor cu notification automate</li>
+                        <li>Audit logging pentru orice acces la chei și secrets</li>
                       </ul>
                     </div>
 
@@ -256,9 +290,7 @@ export default function A04Page() {
                       <div>
                         <h3 className="font-medium text-amber-800">Recomandare pentru DevOps</h3>
                         <p className="text-sm text-amber-700">
-                          Implementați "Security Champions" în echipele DevOps - membri ai echipei cu instruire
-                          suplimentară în securitate care pot identifica probleme de design nesigur în fazele incipiente
-                          ale dezvoltării și pot servi ca punct de legătură cu echipele de securitate.
+                          Implementați "Crypto as Code" - definir politici de criptare în IaC. Utilizați instrumente precum Terraform modules pre-configured cu criptare sigură. Faceți rotație de chei automat cu zero-downtime folosind versioning de chei.
                         </p>
                       </div>
                     </div>

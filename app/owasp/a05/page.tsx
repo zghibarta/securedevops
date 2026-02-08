@@ -75,57 +75,60 @@ export default function A05Page() {
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div className="space-y-1">
-                      <h3 className="font-medium">1. Configurări implicite nesigure</h3>
+                      <h3 className="font-medium">1. SQL Injection</h3>
                       <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Utilizarea configurărilor implicite pentru aplicații, framework-uri sau servere, care adesea
-                          sunt nesigure. De exemplu, un server de aplicații care vine cu conturi implicite și parole
-                          cunoscute, sau un server de baze de date configurat să accepte conexiuni de la orice adresă
-                          IP.
+                        <p className="text-sm font-mono">SELECT * FROM users WHERE id = {'{id}'}</p>
+                        <p className="mt-2 text-sm">Dacă id este &quot;1 OR 1=1&quot; fără validare, va returna toți utilizatorii. SQL Injection permite recuperarea, modificarea sau ștergerea datelor.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">2. OS Command Injection</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">exec(&quot;ping -c &quot; + userInput)</p>
+                        <p className="mt-2 text-sm">Dacă userInput este &quot;8.8.8.8; rm -rf /&quot;, va executa comanda malware. Permite execuția de comenzi arbitrare pe server.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">3. NoSQL Injection</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">{'{username: username, password: password}'}</p>
+                        <p className="mt-2 text-sm">Inputuri cum ar fi {'{&quot;$ne&quot;: &quot;&quot;}'} permit bypass-ul autentificării în bazele NoSQL.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">4. LDAP Injection</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm">Inputuri malware în căutări LDAP permit eludarea autentificării și extragerea de informații din directoare.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">5. Template Engine Injection</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">{'{{'}{'{7*7}'}{'}}'}</p>
+                        <p className="mt-2 text-sm">Serverul evaluează expresia și returnează 49. Template injection poate permite execuția de cod pe server din template-uri nevalidate.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. XPath Injection</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">xpath_query = &quot;//user[username='&quot; + user_input + &quot;']&quot;</p>
+                        <p className="mt-2 text-sm">
+                          Inputuri cum ar fi &quot;' or '1'='1&quot; permit bypaszarea autentificării în documente XML. Permite efiltrarea de date sensibile din DOM.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="font-medium">2. Servicii sau API-uri inutile activate</h3>
+                      <h3 className="font-medium">7. Expression Language (EL) Injection</h3>
                       <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Servere sau aplicații care au activate servicii, porturi, pagini, conturi sau privilegii
-                          inutile. De exemplu, un server web care are activate module sau servicii care nu sunt necesare
-                          pentru funcționalitatea aplicației, dar care pot fi exploatate de atacatori.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">3. Mesaje de eroare detaliate</h3>
-                      <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Aplicații care afișează mesaje de eroare detaliate care pot dezvălui informații sensibile
-                          despre configurația sistemului, versiunile software utilizate sau detalii despre baza de date.
-                          Aceste informații pot fi folosite de atacatori pentru a planifica atacuri mai precise.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">4. Lipsa patch-urilor de securitate</h3>
-                      <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Sisteme care nu au aplicate cele mai recente patch-uri de securitate pentru sistemul de
-                          operare, framework-uri, biblioteci sau aplicații. Aceasta lasă sistemele vulnerabile la
-                          atacuri cunoscute pentru care există deja soluții.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="font-medium">5. Configurări de securitate inconsistente</h3>
-                      <div className="rounded-md bg-muted p-4">
-                        <p className="text-sm">
-                          Configurări de securitate diferite între mediile de dezvoltare, testare și producție. Aceasta
-                          poate duce la vulnerabilități în producție care nu au fost detectate în mediile de testare din
-                          cauza configurațiilor diferite.
+                        <p className="text-sm font-mono">${'{'}{'{message}'}{'}'}  // JSF / Spring message</p>
+                        <p className="mt-2 text-sm">
+                          Dacă message vine din user input fără validare, un atacator poate injecta expresii care accesează variabile sensibile sau execută cod.
                         </p>
                       </div>
                     </div>
@@ -142,11 +145,9 @@ export default function A05Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Implementați un proces de hardening</h3>
+                        <h3 className="font-medium">Utilizați Prepared Statements</h3>
                         <p className="text-sm text-muted-foreground">
-                          Dezvoltați și mențineți un proces de hardening pentru toate componentele sistemului, inclusiv
-                          servere, aplicații, framework-uri și containere. Acest proces ar trebui să includă eliminarea
-                          sau dezactivarea funcționalităților inutile.
+                          Utilizați interogări parametrizate pentru baze de date. Codul și datele sunt separate, prevenind SQL Injection. Aproape toți driverii de baze de date suportă prepared statements.
                         </p>
                       </div>
                     </div>
@@ -154,11 +155,9 @@ export default function A05Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Automatizați verificarea configurațiilor</h3>
+                        <h3 className="font-medium">Validarea și Sanitizarea Inputului</h3>
                         <p className="text-sm text-muted-foreground">
-                          Implementați procese automatizate pentru a verifica și valida configurațiile de securitate în
-                          toate mediile. Utilizați instrumente de scanare pentru a identifica configurări greșite și
-                          vulnerabilități.
+                          Validați dacă inputul respectă formatul așteptat. Sanitizați pentru a elimina caractere periculoase. Implementați whitelist-uri de caractere permise.
                         </p>
                       </div>
                     </div>
@@ -166,11 +165,9 @@ export default function A05Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Utilizați principiul privilegiului minim</h3>
+                        <h3 className="font-medium">Evitați Constructia Dinamică a Comenzilor</h3>
                         <p className="text-sm text-muted-foreground">
-                          Configurați sistemele astfel încât să ofere doar funcționalitățile și privilegiile minime
-                          necesare pentru a-și îndeplini scopul. Dezactivați sau eliminați funcționalitățile,
-                          serviciile, paginile, conturile și privilegiile inutile.
+                          Nu construiți comenzi SQL, LDAP, sistem, etc. prin concatenare de string-uri. Utilizați API-uri sigure și parametrizate.
                         </p>
                       </div>
                     </div>
@@ -178,11 +175,60 @@ export default function A05Page() {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
                       <div>
-                        <h3 className="font-medium">Implementați un proces de gestionare a patch-urilor</h3>
+                        <h3 className="font-medium">Preveniți Template Engine Injection</h3>
                         <p className="text-sm text-muted-foreground">
-                          Dezvoltați și mențineți un proces eficient de gestionare a patch-urilor pentru toate
-                          componentele sistemului. Acest proces ar trebui să includă monitorizarea alertelor de
-                          securitate și aplicarea promptă a patch-urilor.
+                          Nu evaluați template-uri cu user input. Utilizați template-uri cu sandbox (Jinja2 sandbox, Handlebars). Validați și escapați user-supplied values.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Securizați XPath și XML Queries</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Utilizați XPath parameterized queries sau XQuery cu prepared statements. Evitați concatenarea user input în XPath expressions.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Dezactivați Expression Language Evaluation</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Dacă posibil, dezactivați EL-ul în JSP. Utilizați JNDI o alternativă care validează strict. Utilizați &lt;%@ page isELIgnored=&quot;true&quot; %&gt; pentru a dezactiva EL.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu concatenați user input în query-uri SQL, LDAP, XPath sau expresii template. Nu evaluați cod dinamic pe baza inputului utilizatorului. Nu crezdeți că whitelist-ul pe client este suficient.
+                        </p>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați Principiul Privilegiului Minim</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Bazele de date trebuie să aibă conturi cu privilegii minime. Dacă aplicația are nevoie doar de SELECT, nu dați UPDATE sau DELETE.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Practici de evitat</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Nu construiți comenzi prin concatenare. Nu omiteți validarea inputului. Nu executați cod dinamic (eval, exec). Nu ignora mesajele eroare ale bazei de date.
                         </p>
                       </div>
                     </div>

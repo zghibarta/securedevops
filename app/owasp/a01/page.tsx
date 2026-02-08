@@ -102,7 +102,7 @@ export default function A01Page() {
                           Content-Type: application/json
                           <br />
                           <br />
-                          {"{"}"id": 567{"}"}
+                          {'{id: 567}'}
                         </p>
                         <p className="mt-2 text-sm">
                           Aplicația nu verifică dacă utilizatorul autentificat are dreptul de a șterge articolul cu
@@ -117,6 +117,26 @@ export default function A01Page() {
                         <p className="text-sm">
                           Aplicația permite utilizarea metodelor PUT sau DELETE pentru endpoint-uri care ar trebui să
                           permită doar GET sau POST.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">5. SSRF (Server-Side Request Forgery)</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">GET /api/proxy?url=http://internal-admin-panel:8080/admin</p>
+                        <p className="mt-2 text-sm">
+                          Un atacator forțează serverul să efectueze cereri către servicii interne ne-authenticate, accesând astfel date administrative sau efectuând operații privilegiate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="font-medium">6. Path Traversal / Directory Traversal</h3>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-mono">GET /download?file=../../../../etc/passwd</p>
+                        <p className="mt-2 text-sm">
+                          Un atacator navighează în afara directoarei intenționate pentru a accesa fișiere sensibile cum ar fi parole, configurații sau date arhivate.
                         </p>
                       </div>
                     </div>
@@ -181,6 +201,26 @@ export default function A01Page() {
                         <p className="text-sm text-muted-foreground">
                           Asigurați-vă că token-urile JWT sunt invalidate la delogare și că au un timp de expirare
                           scurt.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Preveniți SSRF și Path Traversal</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Validați și restringeți URL-urile și filepath-urile. Implementați whitelist-uri pentru domenii permise. Nu permiteți navigarea în directoarele părinte (../).
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <h3 className="font-medium">Implementați ACL (Access Control Lists) granulare</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Definiți și testați ACL-uri detaliate. Utilizați instrumente de testare DAST (Dynamic Application Security Testing) pentru a valida controlul accesului în producție.
                         </p>
                       </div>
                     </div>

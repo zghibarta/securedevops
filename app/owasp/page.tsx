@@ -122,7 +122,7 @@ export default function OwaspPage() {
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl">OWASP Top 10: 2025</h1>
                 <p className="max-w-4xl text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Zece riscuri de securitate critice pentru aplicațiile web (Ediția a 8-a)
+                  Zece riscuri de securitate critice pentru aplicațiile web
                 </p>
               </div>
             </div>
