@@ -209,7 +209,6 @@ export default function A05Page() {
                         <p className="text-sm text-muted-foreground">
                           Nu concatenați user input în query-uri SQL, LDAP, XPath sau expresii template. Nu evaluați cod dinamic pe baza inputului utilizatorului. Nu crezdeți că whitelist-ul pe client este suficient.
                         </p>
-                        </p>
                       </div>
                     </div>
 

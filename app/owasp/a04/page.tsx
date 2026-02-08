@@ -227,12 +227,6 @@ export default function A04Page() {
                     </div>
                   </CardContent>
                 </Card>
-                          lățime de bandă) pentru a preveni atacurile de tip denial of service.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-2">
                       <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
                       <div>
                         <h3 className="font-medium">Practici de evitat</h3>

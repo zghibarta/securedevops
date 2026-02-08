@@ -68,11 +68,22 @@ export default function A07Page() {
                 <TabsTrigger value="devops">DevOps</TabsTrigger>
               </TabsList>
 
+              <TabsContent value="exemple" className="space-y-2 pt-2">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Exemple de Vulnerabilități</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="space-y-1">
+                      <h3 className="font-medium">1. Permiterea atacurilor de forță brută</h3>
+                      <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Aplicații care nu implementează mecanisme de protecție împotriva atacurilor de forță brută,
                           cum ar fi blocarea contului după un număr de încercări eșuate sau implementarea de întârzieri
                           progresive între încercări.
                         </p>
+                      </div>
+                    </div>
                       </div>
                     </div>
 

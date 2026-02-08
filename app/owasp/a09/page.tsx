@@ -233,10 +233,6 @@ export default function A09Page() {
                         </p>
                       </div>
                     </div>
-                          a detecta manipularea jurnalelor.
-                        </p>
-                      </div>
-                    </div>
 
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />

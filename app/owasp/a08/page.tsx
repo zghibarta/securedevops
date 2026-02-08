@@ -68,12 +68,23 @@ export default function A08Page() {
                 <TabsTrigger value="devops">DevOps</TabsTrigger>
               </TabsList>
 
+              <TabsContent value="exemple" className="space-y-2 pt-2">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Exemple de Vulnerabilități</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="space-y-1">
+                      <h3 className="font-medium">1. Atacuri asupra lanțului de aprovizionare</h3>
+                      <div className="rounded-md bg-muted p-4">
                         <p className="text-sm">
                           Atacuri în care un adversar compromite un pachet sau o bibliotecă utilizată de multe
                           aplicații. De exemplu, atacul SolarWinds din 2020, în care atacatorii au inserat cod malițios
                           într-o actualizare a software-ului, care a fost apoi distribuită clienților prin canalele
                           oficiale.
                         </p>
+                      </div>
+                    </div>
                       </div>
                     </div>
 
