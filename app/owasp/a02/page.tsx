@@ -45,7 +45,7 @@ export default function A02Page() {
                 <div className="flex justify-center my-6">
                   <Image
                     src="/images/A02.jpg"
-                    alt="Configurare inadecvată - Server misconfigurat cu erori în pagina de status care expun informații sensibile"
+                    alt="Configurare Greșită de Securitate - Diagram showing security misconfiguration with default credentials"
                     width={800}
                     height={400}
                     className="rounded-lg"

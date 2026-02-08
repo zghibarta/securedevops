@@ -55,6 +55,18 @@ export default function A04Page() {
                     <strong>Statistici OWASP 2025:</strong> A04 coboară din poziția A02:2021 la A04:2025. Cu toate acestea, rămâne o vulnerabilitate critică cu impact înalt.
                   </p>
                 </div>
+                <div className="flex justify-center my-6">
+                  <Image
+                    src="/images/A04.jpg"
+                    alt="Eșecuri Criptografice - Diagram showing how a hacker can monitor network, steal cookies and hijack sessions"
+                    width={800}
+                    height={400}
+                    className="rounded-lg"
+                  />
+                </div>
+                <p>
+                Exemplu în imagine: un site care nu aplică TLS poate permite unui atacator să fure cookie-ul de sesiune al utilizatorului, să îl modifice și să deturneze sesiunea autentificată, obținând acces la datele private ale utilizatorului.
+                </p>                
               </CardContent>
             </Card>
 

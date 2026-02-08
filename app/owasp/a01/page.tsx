@@ -45,7 +45,7 @@ export default function A01Page() {
                 <div className="flex justify-center my-6">
                   <Image
                     src="/images/A01.jpg"
-                    alt="Control de Acces Defectuos - Diagram showing how an attacker can intercept and change user IDs"
+                    alt="Control Acces Defectuos - Diagram showing how an attacker can intercept and change user IDs"
                     width={800}
                     height={400}
                     className="rounded-lg"

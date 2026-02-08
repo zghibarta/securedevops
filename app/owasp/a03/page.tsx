@@ -42,6 +42,15 @@ export default function A03Page() {
                 <p>
                   <strong>A03:2025 este o categorie nouă în OWASP 2025</strong>, creată din necesitatea de a acoperi riscurile emergente legate de compromiterea lanțului de aprovizionare. A fost votată în mod copleșitor ca o preocupare principală în sondajul comunității. Această categorie are cea mai mare medie a scorurilor de exploit și impact din CVE-uri.
                 </p>
+                <div className="flex justify-center my-6">
+                  <Image
+                    src="/images/A03.jpg"
+                    alt="A03"
+                    width={800}
+                    height={400}
+                    className="rounded-lg"
+                  />
+                </div>
               </CardContent>
             </Card>
 

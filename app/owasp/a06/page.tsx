@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Lightbulb, ArrowLeft, Shield, CheckCircle, XCircle, AlertTriangle } from "lucide-react"
+import Image from "next/image"
 
 export default function A06Page() {
   return (
@@ -57,6 +58,18 @@ export default function A06Page() {
                     <strong>Statistici OWASP 2025:</strong> Proiectarea nesecurizată apare în peste 40% din aplicațiile moderne și necesită intervenție din primele faze de proiectare.
                   </p>
                 </div>
+                <div className="flex justify-center my-6">
+                  <Image
+                    src="/images/A06.jpg"
+                    alt="Design Nesigur - Diagram showing insecure design in a booking portal"
+                    width={800}
+                    height={400}
+                    className="rounded-lg"
+                  />
+                </div>
+                <p>
+                Exemplu în imagine: un atacator poate rezerva 600 de bilete de film pentru o anumită perioadă, împiedicând cumpărătorii reali să le rezerve. Aceasta putea fi evitată printr-un design care să limiteze rezervările la maxim 15 bilete.
+                </p>
               </CardContent>
             </Card>
 

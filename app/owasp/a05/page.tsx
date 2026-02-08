@@ -58,6 +58,15 @@ export default function A05Page() {
                     <strong>Statistici OWASP 2025:</strong> Injectarea afectează practic toate aplicațiile web și rămâne una din cele mai frequente și periculoase vulnerabilități.
                   </p>
                 </div>
+                <div className="flex justify-center my-6">
+                  <Image
+                    src="/images/A05.jpg"
+                    alt="Injecție - Diagram showing SQL injection attack flow"
+                    width={800}
+                    height={400}
+                    className="rounded-lg"
+                  />
+                </div>
               </CardContent>
             </Card>
 

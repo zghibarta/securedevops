@@ -44,6 +44,15 @@ export default function A09Page() {
                   Această vulnerabilitate permite atacatorilor să persiste în sistem, să pivoteze către alte sisteme și
                   să manipuleze, extragă sau distrugă date fără a fi detectați.
                 </p>
+                <div className="flex justify-center my-6">
+                  <Image
+                    src="/images/A09.jpg"
+                    alt="A09"
+                    width={800}
+                    height={400}
+                    className="rounded-lg"
+                  />
+                </div>
               </CardContent>
             </Card>
 
