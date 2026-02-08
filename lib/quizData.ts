@@ -30,7 +30,7 @@ export function shuffleArray<T>(array: T[]): T[] {
 }
 
 
-// --- OWASP Top 10 2025 Quiz Data (Ediția a 8-a) ---
+// --- OWASP Top 10 2025 Quiz Data ---
 export const owaspQuizData: Question[] = [
   // OWASP 2025 questions...
   {
